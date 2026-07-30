@@ -1,0 +1,136 @@
+{
+  "file_count": 21,
+  "files": [
+    {
+      "digest": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+      "digest_algorithm": "git-sha1",
+      "path": ".gitattributes",
+      "size": 1570
+    },
+    {
+      "digest": "7f2b6b89fb526643c2c4f6dcd9f98c70c2b7a170",
+      "digest_algorithm": "git-sha1",
+      "path": "README.md",
+      "size": 44004
+    },
+    {
+      "digest": "04c53c7d1f9832f8cce2dab9cbde247a1c66b680",
+      "digest_algorithm": "git-sha1",
+      "path": "chat_template.jinja",
+      "size": 6294
+    },
+    {
+      "digest": "b4889a3be4cd8670a930b01e1cba45f7e706438d",
+      "digest_algorithm": "git-sha1",
+      "path": "config.json",
+      "size": 2214
+    },
+    {
+      "digest": "619544e348d447a09099e35aca3e30bcab5872b4",
+      "digest_algorithm": "git-sha1",
+      "path": "hf_quant_config.json",
+      "size": 14102
+    },
+    {
+      "digest": "0536fc0774c061f006fbc0f8062300b80f7fa3c6395753f9558a53231ccdfdaf",
+      "digest_algorithm": "sha256",
+      "path": "model-00001-of-00009.safetensors",
+      "size": 19797851172
+    },
+    {
+      "digest": "94046cd4c60e9f8b84e646af29b48d972b16328ef16c68e1d224e7cc1c108f69",
+      "digest_algorithm": "sha256",
+      "path": "model-00002-of-00009.safetensors",
+      "size": 18832947622
+    },
+    {
+      "digest": "5b011d77adab48cfedab8d82da3ee45e9658a298b5a2efe79386c9f80be83c90",
+      "digest_algorithm": "sha256",
+      "path": "model-00003-of-00009.safetensors",
+      "size": 19460482192
+    },
+    {
+      "digest": "f84efa4eab97da5d95e42813cd40a682439cfbd6cbdc9e644cc2aed650034b66",
+      "digest_algorithm": "sha256",
+      "path": "model-00004-of-00009.safetensors",
+      "size": 19886208500
+    },
+    {
+      "digest": "04911920af137efb2bac5a8a3c65b1cd727b1c8f0a6ddcc691534c52e5cb3dce",
+      "digest_algorithm": "sha256",
+      "path": "model-00005-of-00009.safetensors",
+      "size": 19970085622
+    },
+    {
+      "digest": "6f2e9eb03063a3cdbc9361fd7f203d213476d7ca3295fe45757e2fe1f26513a8",
+      "digest_algorithm": "sha256",
+      "path": "model-00006-of-00009.safetensors",
+      "size": 18910731870
+    },
+    {
+      "digest": "728792823d6ba5b214503a3d75d39bbd239ba129a40b34ddb67f6d93e03fc0df",
+      "digest_algorithm": "sha256",
+      "path": "model-00007-of-00009.safetensors",
+      "size": 15485561834
+    },
+    {
+      "digest": "dc821c24f1af8342e02a456f06315c8c6c1e374d2060e258864117a660fbf37e",
+      "digest_algorithm": "sha256",
+      "path": "model-00008-of-00009.safetensors",
+      "size": 19791451186
+    },
+    {
+      "digest": "c91d957b4a0cf277822f4174a5bc6071eec51b0c7243f53069c6f3e3bb8a93fb",
+      "digest_algorithm": "sha256",
+      "path": "model-00009-of-00009.safetensors",
+      "size": 14134068242
+    },
+    {
+      "digest": "72a2576abd9e6956d79a43a985f85424843f8270",
+      "digest_algorithm": "git-sha1",
+      "path": "model.safetensors.index.json",
+      "size": 116141
+    },
+    {
+      "digest": "d286dd21cb982a0052d24ee0077ec6fc38f5a766dc6953e6c4b85c6473bfa7b3",
+      "digest_algorithm": "sha256",
+      "path": "mtp.safetensors",
+      "size": 4463845392
+    },
+    {
+      "digest": "5119c4247a30de9fea35fe269cc786db37b8d67b",
+      "digest_algorithm": "git-sha1",
+      "path": "processor_config.json",
+      "size": 1110
+    },
+    {
+      "digest": "0c6ed62743194dc98ba50d3ca338bf906503b80b",
+      "digest_algorithm": "git-sha1",
+      "path": "special_tokens_map.json",
+      "size": 517
+    },
+    {
+      "digest": "bc253fd2b702f7a6da7105eaa8f3463b2f1247e83614f23e5323b921088bed2a",
+      "digest_algorithm": "sha256",
+      "path": "tiktoken/tokenizer.model",
+      "size": 3615874
+    },
+    {
+      "digest": "9fb6333a7db8fe5da90728e741e4a3ee4ac2ae12c5dd4958cc6f31688787d3c2",
+      "digest_algorithm": "sha256",
+      "path": "tokenizer.json",
+      "size": 27875797
+    },
+    {
+      "digest": "3f7b53bb76be489908376923167e78d060fa20c6",
+      "digest_algorithm": "git-sha1",
+      "path": "tokenizer_config.json",
+      "size": 12111
+    }
+  ],
+  "repo_id": "thinkingmachines/Inkling-Small-NVFP4",
+  "revision": "b6a99534467840620d411e4cd4ad5819b2610d9c",
+  "schema_version": 1,
+  "source": "https://huggingface.co/api/models/thinkingmachines/Inkling-Small-NVFP4",
+  "total_bytes": 170764923366
+}
