@@ -1,0 +1,15 @@
+diff --git a/python/sglang/kernels/ops/moe/inkling_moe.py b/patches/sglang-b7252-sm121/inkling_moe.py
+index 2ec7109..b821ed0 100644
+--- a/python/sglang/kernels/ops/moe/inkling_moe.py
++++ b/patches/sglang-b7252-sm121/inkling_moe.py
+@@ -884,7 +884,9 @@ def grouped_gemm_triton(
+             "BLOCK_SIZE_K": 128,
+             "GROUP_SIZE_M": 8,
+             "num_warps": 4,
+-            "num_stages": 4,
++            # SM121 has 101,376 bytes/CTA; four stages require 110,592.
++            # Three stages preserve the native tile and pass the full-dimension probe.
++            "num_stages": 3,
+         }
+     else:
+         assert block_size_m == BLOCK_SIZE_M, f"{block_size_m=}"

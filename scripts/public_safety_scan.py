@@ -62,13 +62,22 @@ def tracked_or_exported_files(root: Path) -> list[Path]:
     )
     if top.returncode == 0 and Path(top.stdout.strip()) == root:
         result = subprocess.run(
-            ["git", "-C", str(root), "ls-files", "-z"],
+            [
+                "git",
+                "-C",
+                str(root),
+                "ls-files",
+                "-z",
+                "--cached",
+                "--others",
+                "--exclude-standard",
+            ],
             check=False,
             capture_output=True,
         )
         if result.returncode != 0:
             raise RuntimeError("git ls-files failed for the public repository root")
-        return [root / item.decode() for item in result.stdout.split(b"\0") if item]
+        return sorted(root / item.decode() for item in result.stdout.split(b"\0") if item)
     return sorted(
         path
         for path in root.rglob("*")
@@ -123,7 +132,6 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    scanner = Path(__file__).resolve()
     failures: list[str] = []
     for root in args.roots:
         try:
@@ -133,7 +141,7 @@ def main() -> int:
                 f"{root}: invalid public root (symlink/nofollow check): {exc}"
             )
             continue
-        failures.extend(scan_files(files, {scanner}))
+        failures.extend(scan_files(files))
     if failures:
         print("PUBLIC_SAFETY_SCAN=FAIL")
         for failure in failures[:200]:

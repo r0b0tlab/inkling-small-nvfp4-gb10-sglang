@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkling/evidence.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "status", "claim", "runtime_manifest_sha256", "rows"],
+  "properties": {
+    "schema_version": {"const": 1}, "status": {"enum": ["NO_VERDICT", "NOT_RUN", "DIAGNOSTIC", "DISQUALIFIED"]}, "claim": {"type": "string", "minLength": 1}, "runtime_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "rows": {"type": "array"}
+  }
+}

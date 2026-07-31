@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inkling-sglang-release"
+version = "0.1.0"
+description = "Fail-closed release tooling for Inkling-Small NVFP4 on dual GB10"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+pythonpath = ["src"]

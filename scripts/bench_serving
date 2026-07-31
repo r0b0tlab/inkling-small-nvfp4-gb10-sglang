@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# Render-only benchmark wrapper. Live execution is intentionally unavailable here.
+set -eu
+exec python3 scripts/bench_serving.py "$@"

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkling/image.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["image_ref", "base_image_manifest", "base_image_config", "source_commit", "source_tree", "model_revision", "torchcodec_version", "torchcodec_wheel_url", "torchcodec_wheel_sha256"],
+  "properties": {
+    "image_ref": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]{0,254}@sha256:[0-9a-f]{64}$"},
+    "base_image_manifest": {"const": "sha256:c60f221f8f42929469bedf74716b4314a1951ff97556dd9e17d9e11040512ac6"},
+    "base_image_config": {"const": "sha256:a2364fcb06508b66f464ecd16921144619bdacaa883391bcdec95be2b632293"},
+    "source_commit": {"const": "b7252cc6b0c78b25ecea7ee5efa91a6ae37d0f19"},
+    "source_tree": {"const": "b8c966b81dcce80824261ccae7aa9d33441935a7"},
+    "model_revision": {"const": "b6a99534467840620d411e4cd4ad5819b2610d9c"},
+    "torchcodec_version": {"const": "0.12.0+cu130"},
+    "torchcodec_wheel_url": {"const": "https://download.pytorch.org/whl/cu130/torchcodec-0.12.0%2Bcu130-cp312-cp312-manylinux_2_28_aarch64.whl"},
+    "torchcodec_wheel_sha256": {"const": "7293d3bbf3e27621f7d5888cc10e233d828faa5896f76f4d3f3ab1457e9c8c9e"}
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "name": "inkling-small-nvfp4",
+  "description": "Conservative two-node native ModelOpt NVFP4 correctness profile.",
+  "model_path": "/models/Inkling-Small-NVFP4",
+  "server_executable": ["sglang", "serve"],
+  "base_args": [
+    "--trust-remote-code",
+    "--model-type", "llm",
+    "--model-path", "/models/Inkling-Small-NVFP4",
+    "--served-model-name", "inkling-small-nvfp4",
+    "--model-impl", "sglang",
+    "--tp", "2",
+    "--nnodes", "2",
+    "--quantization", "modelopt_fp4",
+    "--kv-cache-dtype", "bfloat16",
+    "--attention-backend", "fa4",
+    "--page-size", "128",
+    "--fp4-gemm-backend", "flashinfer_trtllm",
+    "--moe-runner-backend", "flashinfer_cutlass",
+    "--mamba-radix-cache-strategy", "extra_buffer",
+    "--swa-full-tokens-ratio", "0.1",
+    "--mamba-full-memory-ratio", "0.1",
+    "--enable-multimodal",
+    "--reasoning-parser", "inkling",
+    "--tool-call-parser", "inkling",
+    "--random-seed", "0"
+  ],
+  "defaults": {
+    "context_length": 32768,
+    "concurrency": 1,
+    "kv_dtype": "bf16",
+    "chunk_size": 2048,
+    "graph_max_decode_batch": 1
+  },
+  "mtp": {
+    "layers": 0,
+    "draft_layers": 0,
+    "total_layers": 0
+  },
+  "mem_fraction_static": 0.85,
+  "runtime_mode": "native-cuda13-arm64-sm121"
+}

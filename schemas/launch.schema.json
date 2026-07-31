@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkling/launch.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "manifest_sha256", "source_commit", "image_ref", "image_kind", "image_manifest", "image_config", "preflight", "container_name", "argv", "execute"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"enum": ["READY", "DRY_RUN", "STARTED", "FAILED"]},
+    "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "image_ref": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]{0,254}@sha256:[0-9a-f]{64}$"},
+    "image_kind": {"enum": ["base", "derivative"]},
+    "image_manifest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "image_config": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "preflight": {"type": "object"},
+    "container_name": {"pattern": "^inkling-sglang-tp2-rank[01]$"},
+    "argv": {"type": "array", "items": {"type": "string"}},
+    "execute": {"type": "boolean"},
+    "node_rank": {"enum": [0, 1]}
+  }
+}

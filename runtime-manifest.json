@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "model": {
+    "repo_id": "thinkingmachines/Inkling-Small-NVFP4",
+    "revision": "b6a99534467840620d411e4cd4ad5819b2610d9c",
+    "manifest_sha256": "8b46f4b3c1d47a31341acee60b42d3340d5937744b90752605d177481a9470e4",
+    "file_count": 21,
+    "payload_bytes": 170764923366
+  },
+  "source": {
+    "repository": "sgl-project/sglang",
+    "commit": "b7252cc6b0c78b25ecea7ee5efa91a6ae37d0f19",
+    "tree": "b8c966b81dcce80824261ccae7aa9d33441935a7"
+  },
+  "image": {
+    "repository": "lmsysorg/sglang",
+    "image_index": "sha256:fbea1a4e25b26660dbc2384a27ead8817e9b7670f257b5c3143e0450d14524d7",
+    "linux_arm64_manifest": "sha256:c60f221f8f42929469bedf74716b4314a1951ff97556dd9e17d9e11040512ac6",
+    "config": "sha256:a2364fcb06508b66f464ecd16921144619bdac9aa883391bcdec95be2b632293",
+    "torchcodec_version": "0.12.0+cu130",
+    "torchcodec_wheel_sha256": "7293d3bbf3e27621f7d5888cc10e233d828faa5896f76f4d3f3ab1457e9c8c9e",
+    "candidate_derivative_config": "sha256:3c8c3e0fce6035eca12911540c7ddd8c11917dd5eb2cff46fa6a65bca9e2c412"
+  },
+  "recipe": {
+    "trust_remote_code": true,
+    "model_type": "llm",
+    "model_path": "/models/Inkling-Small-NVFP4",
+    "model_impl": "sglang",
+    "tp": 2,
+    "nnodes": 2,
+    "quantization": "modelopt_fp4",
+    "kv_cache_dtype": "bf16",
+    "attention_backend": "fa4",
+    "relative_bias_path": "fa4-generic-score-mod-sm120",
+    "page_size": 128,
+    "fp4_gemm_backend": "flashinfer_trtllm",
+    "moe_runner_backend": "flashinfer_cutlass",
+    "enable_torch_symm_mem": false,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mem_fraction_static": 0.85,
+    "swa_full_tokens_ratio": 0.1,
+    "mamba_full_memory_ratio": 0.1,
+    "enable_multimodal": true,
+    "reasoning_parser": "inkling",
+    "tool_call_parser": "inkling",
+    "random_seed": 0,
+    "env": {
+      "SGLANG_ENABLE_UNIFIED_RADIX_TREE": "1",
+      "SGLANG_OPT_USE_INKLING_SHEARED_BIAS": "0",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "MAX_JOBS": "6",
+      "NVCC_THREADS": "2",
+      "FLASHINFER_NVCC_THREADS": "2"
+    }
+  },
+  "policies": {
+    "native_only": true,
+    "offline_model_mount": true,
+    "renderer_executes": false,
+    "fp4_kv_excluded": true,
+    "verdict": "NO_VERDICT"
+  }
+}

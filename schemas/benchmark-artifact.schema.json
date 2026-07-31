@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkling/benchmark-artifact.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "runtime_manifest_sha256", "rows", "infrastructure_failures"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"enum": ["NOT_RUN", "ELIGIBLE", "DIAGNOSTIC", "DISQUALIFIED"]},
+    "runtime_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "infrastructure_failures": {"type": "integer", "minimum": 0},
+    "rows": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 1764,
+      "items": {"$ref": "benchmark.schema.json"}
+    }
+  },
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "NOT_RUN"}}}, "then": {"properties": {"rows": {"maxItems": 0}, "infrastructure_failures": {"const": 0}}}},
+    {"if": {"properties": {"status": {"const": "ELIGIBLE"}}}, "then": {"properties": {"infrastructure_failures": {"const": 0}, "rows": {"minItems": 1764, "maxItems": 1764}}}}
+  ]
+}

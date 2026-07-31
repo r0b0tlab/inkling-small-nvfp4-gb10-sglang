@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkling/runtime-manifest.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "model", "source", "image", "recipe", "policies"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repo_id", "revision", "manifest_sha256", "file_count", "payload_bytes"],
+      "properties": {
+        "repo_id": {"const": "thinkingmachines/Inkling-Small-NVFP4"},
+        "revision": {"const": "b6a99534467840620d411e4cd4ad5819b2610d9c"},
+        "manifest_sha256": {"const": "8b46f4b3c1d47a31341acee60b42d3340d5937744b90752605d177481a9470e4"},
+        "file_count": {"const": 21},
+        "payload_bytes": {"const": 170764923366}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "tree"],
+      "properties": {
+        "repository": {"const": "sgl-project/sglang"},
+        "commit": {"const": "b7252cc6b0c78b25ecea7ee5efa91a6ae37d0f19"},
+        "tree": {"const": "b8c966b81dcce80824261ccae7aa9d33441935a7"}
+      }
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "image_index", "linux_arm64_manifest", "config", "torchcodec_version", "torchcodec_wheel_sha256", "candidate_derivative_config"],
+      "properties": {
+        "repository": {"const": "lmsysorg/sglang"},
+        "image_index": {"const": "sha256:fbea1a4e25b26660dbc2384a27ead8817e9b7670f257b5c3143e0450d14524d7"},
+        "linux_arm64_manifest": {"const": "sha256:c60f221f8f42929469bedf74716b4314a1951ff97556dd9e17d9e11040512ac6"},
+        "config": {"const": "sha256:a2364fcb06508b66f464ecd16921144619bdac9aa883391bcdec95be2b632293"},
+        "torchcodec_version": {"const": "0.12.0+cu130"},
+        "torchcodec_wheel_sha256": {"const": "7293d3bbf3e27621f7d5888cc10e233d828faa5896f76f4d3f3ab1457e9c8c9e"},
+        "candidate_derivative_config": {"const": "sha256:3c8c3e0fce6035eca12911540c7ddd8c11917dd5eb2cff46fa6a65bca9e2c412"}
+      }
+    },
+    "recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trust_remote_code", "model_type", "model_path", "model_impl", "tp", "nnodes", "quantization", "kv_cache_dtype", "attention_backend", "relative_bias_path", "page_size", "fp4_gemm_backend", "moe_runner_backend", "enable_torch_symm_mem", "mamba_radix_cache_strategy", "mem_fraction_static", "swa_full_tokens_ratio", "mamba_full_memory_ratio", "enable_multimodal", "reasoning_parser", "tool_call_parser", "random_seed", "env"],
+      "properties": {
+        "trust_remote_code": {"const": true},
+        "model_type": {"const": "llm"},
+        "model_path": {"const": "/models/Inkling-Small-NVFP4"},
+        "model_impl": {"const": "sglang"},
+        "tp": {"const": 2},
+        "nnodes": {"const": 2},
+        "quantization": {"const": "modelopt_fp4"},
+        "kv_cache_dtype": {"const": "bf16"},
+        "attention_backend": {"const": "fa4"},
+        "relative_bias_path": {"const": "fa4-generic-score-mod-sm120"},
+        "page_size": {"const": 128},
+        "fp4_gemm_backend": {"const": "flashinfer_trtllm"},
+        "moe_runner_backend": {"const": "flashinfer_cutlass"},
+        "enable_torch_symm_mem": {"const": false},
+        "mamba_radix_cache_strategy": {"const": "extra_buffer"},
+        "mem_fraction_static": {"const": 0.85},
+        "swa_full_tokens_ratio": {"const": 0.1},
+        "mamba_full_memory_ratio": {"const": 0.1},
+        "enable_multimodal": {"const": true},
+        "reasoning_parser": {"const": "inkling"},
+        "tool_call_parser": {"const": "inkling"},
+        "random_seed": {"const": 0},
+        "env": {
+          "const": {
+            "SGLANG_ENABLE_UNIFIED_RADIX_TREE": "1",
+            "SGLANG_OPT_USE_INKLING_SHEARED_BIAS": "0",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "MAX_JOBS": "6",
+            "NVCC_THREADS": "2",
+            "FLASHINFER_NVCC_THREADS": "2"
+          }
+        }
+      }
+    },
+    "policies": {
+      "const": {
+        "native_only": true,
+        "offline_model_mount": true,
+        "renderer_executes": false,
+        "fp4_kv_excluded": true,
+        "verdict": "NO_VERDICT"
+      }
+    }
+  }
+}
