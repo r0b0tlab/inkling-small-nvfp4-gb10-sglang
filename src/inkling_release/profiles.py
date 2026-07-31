@@ -37,7 +37,7 @@ def load_profile(path: Path) -> dict[str, Any]:
         "--attention-backend": "triton",
         "--page-size": "128",
         "--fp4-gemm-backend": "flashinfer_trtllm",
-        "--moe-runner-backend": "flashinfer_trtllm_routed",
+        "--moe-runner-backend": "flashinfer_cutlass",
         "--random-seed": "0",
         "--cuda-graph-backend-decode": "disabled",
         "--cuda-graph-backend-prefill": "disabled",
@@ -52,6 +52,8 @@ def load_profile(path: Path) -> dict[str, Any]:
             raise ValueError(f"critical option has unexpected value: {flag}")
     if "--enable-torch-symm-mem" in value["base_args"]:
         raise ValueError("torch symmetric memory is unsupported on SM121")
+    if value["base_args"].count("--disable-flashinfer-autotune") != 1:
+        raise ValueError("FlashInfer autotuning must be disabled on SM121")
     defaults = value["defaults"]
     if not isinstance(defaults, dict):
         raise ValueError("defaults must be an object")

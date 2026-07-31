@@ -17,6 +17,13 @@
       "upstream_sha256": "f23a37756472631be7046b178ac6689287670c38a29928d56a1961a35b65e5c5"
     },
     {
+      "path": "flashinfer_cutlass.py",
+      "sha256": "ef821f846c63f2d22397373f37ae259eeabcda2c011dc962e6e4bc7b2e666309",
+      "target": "/sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/flashinfer_cutlass.py",
+      "upstream_sha256": "db8cdd8b8f7b1e7e28b1cb8de09b44581d0fd360dcadfda291850bf5f1a7a8b7",
+      "purpose": "decode Inkling PackedTopKOutput for native FlashInfer CUTLASS NVFP4 MoE"
+    },
+    {
       "path": "silu_and_mul_interleaved_sm_121.json",
       "sha256": "f3c208dadf040c55a20f5afb553c6fb33a38c32a70864a8e0af0ab93a82f1214",
       "target": "/sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json",

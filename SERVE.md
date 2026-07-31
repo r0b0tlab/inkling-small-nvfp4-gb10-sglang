@@ -17,7 +17,7 @@ SGLANG_ENABLE_UNIFIED_RADIX_TREE=1
 --dist-init-addr RANK0_HOST:PORT
 --quantization modelopt_fp4 --attention-backend triton --page-size 128
 --fp4-gemm-backend flashinfer_trtllm
---moe-runner-backend flashinfer_trtllm_routed
+--moe-runner-backend flashinfer_cutlass --disable-flashinfer-autotune
 --cuda-graph-backend-decode disabled --cuda-graph-backend-prefill disabled
 --mamba-radix-cache-strategy extra_buffer
 --mem-fraction-static 0.85
