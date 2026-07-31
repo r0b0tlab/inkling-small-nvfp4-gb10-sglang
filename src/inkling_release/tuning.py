@@ -15,7 +15,7 @@ def plan_tuning(
 ) -> list[dict[str, Any]]:
     fractions = mem_fraction_static or [0.85]
     contexts = context_lengths or [32768]
-    chunks = chunk_sizes or [2048]
+    chunks = chunk_sizes or [1024]
     concurrencies = concurrency or [1]
     if any(not 0.50 <= value <= 0.95 for value in fractions):
         raise ValueError("mem_fraction_static must stay in [0.50, 0.95]")

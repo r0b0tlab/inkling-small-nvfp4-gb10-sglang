@@ -24,7 +24,7 @@
         "context_length": {"const": 32768},
         "concurrency": {"const": 1},
         "kv_dtype": {"enum": ["bf16", "mxfp8"]},
-        "chunk_size": {"const": 2048},
+        "chunk_size": {"const": 1024},
         "graph_max_decode_batch": {"const": 1}
       }
     },

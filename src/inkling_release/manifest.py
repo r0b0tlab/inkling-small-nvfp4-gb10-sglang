@@ -100,11 +100,10 @@ def validate_runtime_manifest(value: Any) -> dict[str, Any]:
         "nnodes": 2,
         "quantization": "modelopt_fp4",
         "kv_cache_dtype": "bf16",
-        "attention_backend": "fa4",
-        "relative_bias_path": "fa4-generic-score-mod-sm120",
+        "attention_backend": "triton",
         "page_size": 128,
         "fp4_gemm_backend": "flashinfer_trtllm",
-        "moe_runner_backend": "flashinfer_cutlass",
+        "moe_runner_backend": "flashinfer_trtllm_routed",
         "enable_torch_symm_mem": False,
         "mamba_radix_cache_strategy": "extra_buffer",
         "swa_full_tokens_ratio": 0.1,
@@ -113,6 +112,11 @@ def validate_runtime_manifest(value: Any) -> dict[str, Any]:
         "reasoning_parser": "inkling",
         "tool_call_parser": "inkling",
         "random_seed": 0,
+        "context_length": 32768,
+        "chunked_prefill_size": 1024,
+        "max_running_requests": 1,
+        "cuda_graph_backend_decode": "disabled",
+        "cuda_graph_backend_prefill": "disabled",
     }
     if set(recipe) != set(expected_flags) | {"mem_fraction_static", "env"}:
         raise ValueError("recipe keys do not match the frozen contract")

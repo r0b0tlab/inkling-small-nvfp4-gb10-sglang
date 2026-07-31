@@ -45,7 +45,7 @@
     "recipe": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["trust_remote_code", "model_type", "model_path", "model_impl", "tp", "nnodes", "quantization", "kv_cache_dtype", "attention_backend", "relative_bias_path", "page_size", "fp4_gemm_backend", "moe_runner_backend", "enable_torch_symm_mem", "mamba_radix_cache_strategy", "mem_fraction_static", "swa_full_tokens_ratio", "mamba_full_memory_ratio", "enable_multimodal", "reasoning_parser", "tool_call_parser", "random_seed", "env"],
+      "required": ["trust_remote_code", "model_type", "model_path", "model_impl", "tp", "nnodes", "quantization", "kv_cache_dtype", "attention_backend", "page_size", "fp4_gemm_backend", "moe_runner_backend", "enable_torch_symm_mem", "mamba_radix_cache_strategy", "mem_fraction_static", "swa_full_tokens_ratio", "mamba_full_memory_ratio", "enable_multimodal", "reasoning_parser", "tool_call_parser", "random_seed", "context_length", "chunked_prefill_size", "max_running_requests", "cuda_graph_backend_decode", "cuda_graph_backend_prefill", "env"],
       "properties": {
         "trust_remote_code": {"const": true},
         "model_type": {"const": "llm"},
@@ -55,11 +55,10 @@
         "nnodes": {"const": 2},
         "quantization": {"const": "modelopt_fp4"},
         "kv_cache_dtype": {"const": "bf16"},
-        "attention_backend": {"const": "fa4"},
-        "relative_bias_path": {"const": "fa4-generic-score-mod-sm120"},
+        "attention_backend": {"const": "triton"},
         "page_size": {"const": 128},
         "fp4_gemm_backend": {"const": "flashinfer_trtllm"},
-        "moe_runner_backend": {"const": "flashinfer_cutlass"},
+        "moe_runner_backend": {"const": "flashinfer_trtllm_routed"},
         "enable_torch_symm_mem": {"const": false},
         "mamba_radix_cache_strategy": {"const": "extra_buffer"},
         "mem_fraction_static": {"const": 0.85},
@@ -69,6 +68,11 @@
         "reasoning_parser": {"const": "inkling"},
         "tool_call_parser": {"const": "inkling"},
         "random_seed": {"const": 0},
+        "context_length": {"const": 32768},
+        "chunked_prefill_size": {"const": 1024},
+        "max_running_requests": {"const": 1},
+        "cuda_graph_backend_decode": {"const": "disabled"},
+        "cuda_graph_backend_prefill": {"const": "disabled"},
         "env": {
           "const": {
             "SGLANG_ENABLE_UNIFIED_RADIX_TREE": "1",

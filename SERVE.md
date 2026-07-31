@@ -15,10 +15,10 @@ SGLANG_ENABLE_UNIFIED_RADIX_TREE=1
 --trust-remote-code
 --model-impl sglang --tp 2 --nnodes 2 --node-rank RANK
 --dist-init-addr RANK0_HOST:PORT
---quantization modelopt_fp4 --attention-backend fa4 --page-size 128
+--quantization modelopt_fp4 --attention-backend triton --page-size 128
 --fp4-gemm-backend flashinfer_trtllm
 --moe-runner-backend flashinfer_trtllm_routed
---enable-torch-symm-mem
+--cuda-graph-backend-decode disabled --cuda-graph-backend-prefill disabled
 --mamba-radix-cache-strategy extra_buffer
 --mem-fraction-static 0.85
 --swa-full-tokens-ratio 0.1 --mamba-full-memory-ratio 0.1
@@ -26,7 +26,7 @@ SGLANG_ENABLE_UNIFIED_RADIX_TREE=1
 ```
 
 The conservative profile is context 32768, concurrency 1, BF16/default KV,
-chunk 2048, and graph max decode batch 1. `--mem-fraction-static` is tunable
+chunk 1024, and both CUDA-graph phases disabled. `--mem-fraction-static` is tunable
 only through the bounded tuning driver. The MTP candidate is exact `8-1-9`
 and includes `--enable-multi-layer-eagle`. MXFP8 is a separate candidate and
 is not evidence for the FP4 profile.

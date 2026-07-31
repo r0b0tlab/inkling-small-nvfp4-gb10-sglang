@@ -1,0 +1,36 @@
+{
+  "useful_configs": {
+    "1": "helion.Config(block_sizes=[1, 1024], indexing=['tensor_descriptor', 'tensor_descriptor', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['last', 'first', 'last'], loop_orders=[[1, 0]], num_stages=5, num_warps=1, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])",
+    "2": "helion.Config(block_sizes=[2, 512], indexing=['pointer', 'tensor_descriptor', 'pointer'], l2_groupings=[2], load_eviction_policies=['last', ''], loop_orders=[[0, 1]], num_stages=2, num_warps=1, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])"
+  },
+  "hash_configs": {
+    "(1024, (2,), (False,))": 1,
+    "(1024, (2,), (True,))": 1,
+    "(1536, (2,), (False,))": 1,
+    "(1536, (2,), (True,))": 1,
+    "(2048, (2,), (False,))": 1,
+    "(2048, (2,), (True,))": 1,
+    "(3072, (2,), (False,))": 1,
+    "(3072, (2,), (True,))": 1,
+    "(4096, (2,), (False,))": 1,
+    "(4096, (2,), (True,))": 1,
+    "(4608, (2,), (False,))": 2,
+    "(4608, (2,), (True,))": 1,
+    "(6144, (2,), (False,))": 1,
+    "(6144, (2,), (True,))": 1,
+    "(7680, (2,), (False,))": 2,
+    "(7680, (2,), (True,))": 1,
+    "(8192, (2,), (False,))": 1,
+    "(8192, (2,), (True,))": 1,
+    "(9216, (2,), (False,))": 1,
+    "(9216, (2,), (True,))": 1,
+    "(10240, (2,), (False,))": 1,
+    "(10240, (2,), (True,))": 1,
+    "(12288, (2,), (False,))": 1,
+    "(12288, (2,), (True,))": 1,
+    "(14336, (2,), (False,))": 1,
+    "(14336, (2,), (True,))": 1,
+    "(16384, (2,), (False,))": 1,
+    "(16384, (2,), (True,))": 1
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "sglang": {
+    "commit": "b7252cc6b0c78b25ecea7ee5efa91a6ae37d0f19",
+    "tree": "b8c966b81dcce80824261ccae7aa9d33441935a7"
+  },
+  "files": [
+    {
+      "path": "grouped-gemm-sm121.patch",
+      "sha256": "6284f95992494d32d69fad042e2abb72233c089c6499a10d83922360a33afbcf",
+      "purpose": "reviewable one-line stage-4 to stage-3 source diff"
+    },
+    {
+      "path": "inkling_moe.py",
+      "sha256": "d473736bdf300b46c6f2f546ee13ab3c2769abca5a2761a78c0bfcc229f4e777",
+      "target": "/sgl-workspace/sglang/python/sglang/kernels/ops/moe/inkling_moe.py",
+      "upstream_sha256": "f23a37756472631be7046b178ac6689287670c38a29928d56a1961a35b65e5c5"
+    },
+    {
+      "path": "silu_and_mul_interleaved_sm_121.json",
+      "sha256": "f3c208dadf040c55a20f5afb553c6fb33a38c32a70864a8e0af0ab93a82f1214",
+      "target": "/sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json",
+      "provenance": "SM100 useful-config seed retuned natively on NVIDIA GB10 SM121; c18r activation passed"
+    }
+  ]
+}

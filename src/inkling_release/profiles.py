@@ -34,10 +34,13 @@ def load_profile(path: Path) -> dict[str, Any]:
         "--tp": "2",
         "--nnodes": "2",
         "--quantization": "modelopt_fp4",
-        "--attention-backend": "fa4",
+        "--attention-backend": "triton",
+        "--page-size": "128",
         "--fp4-gemm-backend": "flashinfer_trtllm",
-        "--moe-runner-backend": "flashinfer_cutlass",
+        "--moe-runner-backend": "flashinfer_trtllm_routed",
         "--random-seed": "0",
+        "--cuda-graph-backend-decode": "disabled",
+        "--cuda-graph-backend-prefill": "disabled",
     }
     expected_kv_flag = "mxfp8" if value["name"].endswith("mxfp8-candidate") else "bfloat16"
     critical_pairs["--kv-cache-dtype"] = expected_kv_flag
@@ -55,7 +58,7 @@ def load_profile(path: Path) -> dict[str, Any]:
     if defaults.get("context_length") != 32768 or defaults.get("concurrency") != 1:
         raise ValueError("conservative default profile is required")
     expected_kv = "mxfp8" if value["name"].endswith("mxfp8-candidate") else "bf16"
-    if defaults.get("kv_dtype") != expected_kv or defaults.get("chunk_size") != 2048:
+    if defaults.get("kv_dtype") != expected_kv or defaults.get("chunk_size") != 1024:
         raise ValueError("conservative KV/chunk defaults are required")
     if defaults.get("graph_max_decode_batch") != 1:
         raise ValueError("conservative graph batch default is required")

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import importlib.util
+import json
 from pathlib import Path
 
 import pytest
@@ -108,3 +110,28 @@ def test_report_contains_validated_posture() -> None:
     evidence = {"schema_version": 1, "status": "NO_VERDICT", "claim": "no runtime verdict", "runtime_manifest_sha256": "c" * 64, "rows": []}
     report = render_report(evidence)
     assert "NO_VERDICT" in report and "no runtime verdict" in report
+
+
+def _subset_module(name: str):
+    script = Path(__file__).resolve().parents[1] / "scripts" / "generate_core_subset_contract.py"
+    spec = importlib.util.spec_from_file_location(name, script)
+    assert spec and spec.loader
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_core_subset_contract_is_deterministic_and_disjoint() -> None:
+    module = _subset_module("subset_contract_test")
+    first = module.generate_contract()
+    assert first == module.generate_contract()
+    assert (first["scored_rows"], first["quality_rows"], first["bfcl_rows"]) == (1764, 964, 800)
+    assert first["qa_gsm8k_overlap_ids"] == []
+    assert len(first["lanes"]["qa"]["ids"]) == 400
+    assert first["lanes"]["qa"]["eligible_after_gsm8k_exclusion"] == 7515
+
+
+def test_checked_in_core_subset_contract_matches_generator() -> None:
+    root = Path(__file__).resolve().parents[1]
+    checked = json.loads((root / "benchmark" / "contracts" / "core-subset-aligned-v1.json").read_text())
+    assert checked == _subset_module("subset_contract_checked").generate_contract()
