@@ -42,3 +42,12 @@ RUN set -eux; \
     test "$(sha256sum /usr/share/inkling-sglang/patch-bundle.json | cut -d' ' -f1)" = "$PATCH_BUNDLE_SHA256"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/kernels/ops/moe/inkling_moe.py | cut -d' ' -f1)" = "d473736bdf300b46c6f2f546ee13ab3c2769abca5a2761a78c0bfcc229f4e777"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json | cut -d' ' -f1)" = "$HELION_CONFIG_SHA256"
+
+# FlashInfer materializes checksummed routed-MoE artifacts and compatibility
+# symlinks lazily below this cache root. Keep site-packages immutable except for
+# the exact sticky cache directory required by the non-root runtime UID.
+RUN set -eux; \
+    cubin_root=/usr/local/lib/python3.12/dist-packages/flashinfer_cubin/cubins; \
+    test -d "$cubin_root"; \
+    chmod 1777 "$cubin_root"; \
+    test "$(stat -c '%a' "$cubin_root")" = 1777
