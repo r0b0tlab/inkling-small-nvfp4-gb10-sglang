@@ -24,6 +24,13 @@
       "purpose": "decode Inkling PackedTopKOutput and supply FP32 route scales for native FlashInfer CUTLASS NVFP4 MoE"
     },
     {
+      "path": "inkling_common_moe.py",
+      "sha256": "2addced79a2a2132e89edba9a96efebd6568f291fa99ec06fc5098dd62002d9a",
+      "target": "/sgl-workspace/sglang/python/sglang/srt/models/inkling_common/moe.py",
+      "upstream_sha256": "36cbc6b7c717024cfccc04d1f530c36ddf7e363fc2ac0cd20d256039721c3094",
+      "purpose": "emit standard FP32 route weights and int32 expert IDs for CUTLASS; reserve packed routing for TRT-LLM routed MoE"
+    },
+    {
       "path": "silu_and_mul_interleaved_sm_121.json",
       "sha256": "f3c208dadf040c55a20f5afb553c6fb33a38c32a70864a8e0af0ab93a82f1214",
       "target": "/sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json",
