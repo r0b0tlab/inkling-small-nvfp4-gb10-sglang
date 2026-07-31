@@ -188,7 +188,7 @@ def _unpack_topk_output(topk_output) -> tuple[torch.Tensor, torch.Tensor]:
 
     topk_ids = torch.bitwise_right_shift(packed, 16)
     weight_bits = torch.bitwise_and(packed, 0xFFFF).to(torch.int16)
-    topk_weights = weight_bits.view(torch.bfloat16)
+    topk_weights = weight_bits.view(torch.bfloat16).to(torch.float32)
     return topk_weights, topk_ids
 
 

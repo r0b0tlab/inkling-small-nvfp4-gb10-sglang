@@ -43,7 +43,7 @@ RUN set -eux; \
     test -n "$HELION_CONFIG_SHA256"; \
     test "$(sha256sum /usr/share/inkling-sglang/patch-bundle.json | cut -d' ' -f1)" = "$PATCH_BUNDLE_SHA256"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/kernels/ops/moe/inkling_moe.py | cut -d' ' -f1)" = "d473736bdf300b46c6f2f546ee13ab3c2769abca5a2761a78c0bfcc229f4e777"; \
-    test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/flashinfer_cutlass.py | cut -d' ' -f1)" = "ef821f846c63f2d22397373f37ae259eeabcda2c011dc962e6e4bc7b2e666309"; \
+    test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/flashinfer_cutlass.py | cut -d' ' -f1)" = "4b3057068aebc7d80583d3249818f6a4ac40d34a1d8eba0ffa116a813ef17260"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json | cut -d' ' -f1)" = "$HELION_CONFIG_SHA256"
 
 # FlashInfer materializes checksummed routed-MoE artifacts and compatibility
