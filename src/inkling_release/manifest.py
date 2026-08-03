@@ -86,6 +86,9 @@ def validate_runtime_manifest(value: Any) -> dict[str, Any]:
         "torchcodec_version": TORCHCODEC_VERSION,
         "torchcodec_wheel_sha256": TORCHCODEC_WHEEL_SHA256,
         "candidate_derivative_config": "sha256:3c8c3e0fce6035eca12911540c7ddd8c11917dd5eb2cff46fa6a65bca9e2c412",
+        "aot_cache_manifest_sha256": "06e14cfd0d77c5247c11c9d2d07910c6c87cd76e997b833dba7c3fc3f92cae99",
+        "aot_cache_file_count": 785,
+        "aot_cache_total_bytes": 353213788,
     }
     if not isinstance(image, dict) or image != expected_image:
         raise ValueError("image identity is not the frozen candidate contract")
@@ -134,6 +137,15 @@ def validate_runtime_manifest(value: Any) -> dict[str, Any]:
         "MAX_JOBS": "6",
         "NVCC_THREADS": "2",
         "FLASHINFER_NVCC_THREADS": "2",
+        "FLASHINFER_DISABLE_JIT": "1",
+        "FLASHINFER_WORKSPACE_BASE": "/tmp/flashinfer",
+        "HELION_AOT_AUTOTUNE": "none",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_CROSS_NIC": "0",
+        "NCCL_NET": "IB",
+        "NCCL_DEBUG": "INFO",
+        "NCCL_DEBUG_SUBSYS": "INIT,NET",
+        "TVM_FFI_CACHE_DIR": "/cache/user-cache/.cache/tvm-ffi",
     }
     if recipe.get("env") != expected_env:
         raise ValueError("runtime environment contract is missing")

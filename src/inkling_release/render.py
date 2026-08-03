@@ -128,6 +128,8 @@ def render_command(
     _add_pair(argv, "--mem-fraction-static", profile.get("mem_fraction_static", 0.85))
     env = {
         "FLASHINFER_NVCC_THREADS": "2",
+        "FLASHINFER_DISABLE_JIT": "1",
+        "FLASHINFER_WORKSPACE_BASE": "/tmp/flashinfer",
         "HF_HUB_OFFLINE": "1",
         "MAX_JOBS": "6",
         "NVCC_THREADS": "2",
@@ -136,6 +138,23 @@ def render_command(
         "SGLANG_OPT_USE_INKLING_SHEARED_BIAS": "0",
         "TRANSFORMERS_OFFLINE": "1",
     }
+    if node_rank == 0:
+        env.update({
+            "NCCL_SOCKET_IFNAME": "=enp1s0f0np0",
+            "NCCL_IB_HCA": "=rocep1s0f0",
+        })
+    else:
+        env.update({
+            "NCCL_SOCKET_IFNAME": "=enp1s0f1np1",
+            "NCCL_IB_HCA": "=rocep1s0f1",
+        })
+    env.update({
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_CROSS_NIC": "0",
+        "NCCL_NET": "IB",
+        "NCCL_DEBUG": "INFO",
+        "NCCL_DEBUG_SUBSYS": "INIT,NET",
+    })
     result: dict[str, Any] = {
         "argv": argv,
         "env": env,

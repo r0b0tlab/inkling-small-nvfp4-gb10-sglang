@@ -22,6 +22,13 @@ _SAFE_PASSTHROUGH_PREFIXES = ("CUDA_", "NCCL_", "GLOO_", "HELION_", "SGLANG_", "
 _TMPFS_MOUNTS = (
     "type=tmpfs,destination=/tmp,tmpfs-mode=1777,tmpfs-size=4294967296",
 )
+_RDMA_DEVICES = (
+    "/dev/infiniband/rdma_cm",
+    "/dev/infiniband/uverbs0",
+    "/dev/infiniband/uverbs1",
+    "/dev/infiniband/uverbs2",
+    "/dev/infiniband/uverbs3",
+)
 
 
 def owned_container_name(node_rank: int) -> str:
@@ -127,8 +134,9 @@ def build_docker_argv(
         "--ulimit", "memlock=-1:-1",
         "--read-only",
         "--mount", f"type=bind,source={source},target=/models/Inkling-Small-NVFP4,readonly",
-        "--mount", f"type=bind,source={cache},target=/cache",
     ]
+    for device in _RDMA_DEVICES:
+        argv.extend(("--device", device))
     for mount in _TMPFS_MOUNTS:
         argv.extend(("--mount", mount))
     if manifest_sha256_value is not None:
@@ -138,13 +146,14 @@ def build_docker_argv(
     env = dict(rendered.get("env", {}))
     env.update({
         "TMPDIR": "/tmp",
-        "HOME": "/cache/home",
+        "HOME": "/cache/user-cache",
         "USER": "inkling",
         "LOGNAME": "inkling",
         "HF_HOME": "/cache/hf",
         "TORCH_HOME": "/cache/torch",
         "TORCHINDUCTOR_CACHE_DIR": "/cache/torchinductor",
         "TRITON_CACHE_DIR": "/cache/triton",
+        "TVM_FFI_CACHE_DIR": "/cache/user-cache/.cache/tvm-ffi",
         "CUDA_CACHE_PATH": "/cache/cuda",
     })
     for key, value in sorted(env.items()):

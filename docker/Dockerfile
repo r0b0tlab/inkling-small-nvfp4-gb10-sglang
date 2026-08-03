@@ -4,6 +4,14 @@ FROM lmsysorg/sglang@sha256:c60f221f8f42929469bedf74716b4314a1951ff97556dd9e17d9
 ARG RELEASE_BUILD_REVISION
 ARG PATCH_BUNDLE_SHA256
 ARG HELION_CONFIG_SHA256
+ARG AOT_CACHE_MANIFEST_SHA256
+
+# The two admitted GB10 hosts use UIDs 1000 and 1001 respectively.  Keep both
+# names in the immutable image so TorchInductor/getpass can resolve the
+# non-root runtime UID without mounting host account files.
+RUN set -eux; \
+    getent passwd 1001 >/dev/null || printf '%s\n' 'inkling-rank0:x:1001:1001:Inkling rank 0:/tmp/inkling-home:/usr/sbin/nologin' >> /etc/passwd; \
+    getent group 1001 >/dev/null || printf '%s\n' 'inkling-rank0:x:1001:' >> /etc/group
 
 LABEL org.opencontainers.image.title="SGLang Inkling-Small NVFP4 GB10 runtime" \
       org.opencontainers.image.source="https://github.com/r0b0tlab/inkling-small-nvfp4-gb10-sglang" \
@@ -14,6 +22,7 @@ LABEL org.opencontainers.image.title="SGLang Inkling-Small NVFP4 GB10 runtime" \
       io.r0b0tlab.sglang.tree="b8c966b81dcce80824261ccae7aa9d33441935a7" \
       io.r0b0tlab.sglang.patch-bundle-sha256="$PATCH_BUNDLE_SHA256" \
       io.r0b0tlab.helion.silu-interleaved-sm121-sha256="$HELION_CONFIG_SHA256" \
+      io.r0b0tlab.aot-cache.manifest-sha256="$AOT_CACHE_MANIFEST_SHA256" \
       io.r0b0tlab.torchcodec.version="0.12.0+cu130" \
       io.r0b0tlab.torchcodec.wheel.sha256="7293d3bbf3e27621f7d5888cc10e233d828faa5896f76f4d3f3ab1457e9c8c9e" \
       io.r0b0tlab.model.id="thinkingmachines/Inkling-Small-NVFP4" \
@@ -38,12 +47,23 @@ COPY patches/sglang-b7252-sm121/silu_and_mul_interleaved_sm_121.json \
   /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json
 COPY patches/sglang-b7252-sm121/bundle-descriptor.json \
   /usr/share/inkling-sglang/patch-bundle.json
+COPY scripts/verify_aot_cache.py /tmp/verify_aot_cache.py
+COPY aot-cache/ /cache/
+COPY aot-cache-manifest.json /usr/share/inkling-sglang/aot-cache-manifest.json
 
 RUN set -eux; \
     test -n "$RELEASE_BUILD_REVISION"; \
     test -n "$PATCH_BUNDLE_SHA256"; \
     test -n "$HELION_CONFIG_SHA256"; \
+    test -n "$AOT_CACHE_MANIFEST_SHA256"; \
     test "$(sha256sum /usr/share/inkling-sglang/patch-bundle.json | cut -d' ' -f1)" = "$PATCH_BUNDLE_SHA256"; \
+    test "$(sha256sum /usr/share/inkling-sglang/aot-cache-manifest.json | cut -d' ' -f1)" = "$AOT_CACHE_MANIFEST_SHA256"; \
+    test -d /cache/user-cache/.cache/tvm-ffi; \
+    test -d /cache/torchinductor; \
+    test -d /cache/triton; \
+    chmod -R a-w /cache; \
+    python /tmp/verify_aot_cache.py --root /cache --manifest /usr/share/inkling-sglang/aot-cache-manifest.json; \
+    rm -f /tmp/verify_aot_cache.py; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/kernels/ops/moe/inkling_moe.py | cut -d' ' -f1)" = "d473736bdf300b46c6f2f546ee13ab3c2769abca5a2761a78c0bfcc229f4e777"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/flashinfer_cutlass.py | cut -d' ' -f1)" = "4b3057068aebc7d80583d3249818f6a4ac40d34a1d8eba0ffa116a813ef17260"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/models/inkling_common/moe.py | cut -d' ' -f1)" = "2addced79a2a2132e89edba9a96efebd6568f291fa99ec06fc5098dd62002d9a"; \

@@ -18,6 +18,33 @@ No Docker build is part of this foundation check. A future live build must
 re-check the parent image index, arm64 manifest, config digest, and Docker Hub
 source-commit label before any evidence can be reused.
 
+## Embedded AOT cache input
+
+The precompiled runtime cache is a release artifact, not source-controlled data.
+`aot-cache/` and `aot-cache-manifest.json` are intentionally ignored by Git but
+are admitted into the Docker build context through `.dockerignore` exceptions.
+A clean build must stage both inputs before invoking BuildKit:
+
+```text
+rm -rf aot-cache aot-cache-manifest.json
+tar --zstd -xf "$AOT_CACHE_ARCHIVE" -C .
+cp "$AOT_CACHE_MANIFEST" aot-cache-manifest.json
+CACHE_SHA256=$(sha256sum aot-cache-manifest.json | cut -d' ' -f1)
+test "$CACHE_SHA256" = "$EXPECTED_AOT_CACHE_MANIFEST_SHA256"
+```
+
+The archive must contain the exact `aot-cache/` directory produced by the
+native SM121 AOT campaign. Do not substitute an empty directory, a config-only
+JSON, or a host bind mount. The Dockerfile recursively removes write bits from
+`/cache`, embeds the manifest, and fails if the supplied manifest hash or
+required cache roots do not match.
+
+After staging, the final image build supplies
+`--build-arg AOT_CACHE_MANIFEST_SHA256="$CACHE_SHA256"` together with the
+source, patch-bundle, and Helion configuration hashes. Preserve the archive,
+manifest, and their checksums beside the image export as independent build
+provenance.
+
 ## Immutable inputs
 
 * Model: `thinkingmachines/Inkling-Small-NVFP4@b6a99534467840620d411e4cd4ad5819b2610d9c`
