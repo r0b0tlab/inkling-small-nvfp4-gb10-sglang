@@ -42,6 +42,13 @@
       "target": "/sgl-workspace/sglang/python/sglang/srt/multimodal/inkling/image_processing.py",
       "upstream_sha256": "bf11425a3eda1180ef585c0fd0b6461063c608ebe93540bac3a73273872af6bf",
       "purpose": "disable disk caching for the CPU Numba image patch helper so the official Inkling multimodal processor registers under the read-only editable source path"
+    },
+    {
+      "path": "dense_mlp.py",
+      "sha256": "c760c8f6be9708e608ab4fc6d1919156a5be66792c6eb1562f5976afd8224813",
+      "target": "/sgl-workspace/sglang/python/sglang/srt/models/inkling_common/dense_mlp.py",
+      "upstream_sha256": "28b1c39a66590d85dddc794f4cab5edae7129498752844b0945e3543e7649a9d",
+      "purpose": "remove unconditional torch.compile decorators from Inkling SwiGLU and shared-expert reduction paths so disabled-compile serving cannot spawn TorchInductor workers"
     }
   ]
 }
