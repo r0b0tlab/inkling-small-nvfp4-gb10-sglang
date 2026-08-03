@@ -25,6 +25,12 @@ SGLANG_ENABLE_UNIFIED_RADIX_TREE=1
 --enable-multimodal --reasoning-parser inkling --tool-call-parser inkling
 ```
 
+The derivative image includes a content-addressed overlay for the official
+Inkling image/audio processor: its CPU Numba patch helper is `cache=False` so
+processor discovery works under the read-only editable source tree without
+writing an in-image cache. Image/audio requests still require separate live
+semantic canaries; Inkling video is not admitted by this profile.
+
 The conservative profile is context 32768, concurrency 1, BF16/default KV,
 chunk 1024, and both CUDA-graph phases disabled. `--mem-fraction-static` is tunable
 only through the bounded tuning driver. The MTP candidate is exact `8-1-9`

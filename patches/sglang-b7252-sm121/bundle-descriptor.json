@@ -35,6 +35,13 @@
       "sha256": "2f4e13b6b29e5e6a38b191300630bde76560921960193a2150457250595b1953",
       "target": "/sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json",
       "provenance": "SM100 useful-config seed retuned natively on NVIDIA GB10 SM121; c18r activation passed"
+    },
+    {
+      "path": "image_processing.py",
+      "sha256": "1e4c4ec6e7f3fc9af69cc44df08647a283e0717a85dcacd176032360327f3215",
+      "target": "/sgl-workspace/sglang/python/sglang/srt/multimodal/inkling/image_processing.py",
+      "upstream_sha256": "bf11425a3eda1180ef585c0fd0b6461063c608ebe93540bac3a73273872af6bf",
+      "purpose": "disable disk caching for the CPU Numba image patch helper so the official Inkling multimodal processor registers under the read-only editable source path"
     }
   ]
 }

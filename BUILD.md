@@ -39,6 +39,14 @@ JSON, or a host bind mount. The Dockerfile recursively removes write bits from
 `/cache`, embeds the manifest, and fails if the supplied manifest hash or
 required cache roots do not match.
 
+The patch bundle also overlays the upstream Inkling multimodal image processor
+with the reviewed `@njit(cache=False)` import fix. The pinned editable SGLang
+source has no writable in-tree Numba cache locator under the final read-only
+non-root container; the upstream decorator otherwise causes processor discovery
+to be discarded before server startup. The CPU helper may JIT on an actual image
+request, but it never writes a persistent cache into the immutable image. Inkling
+video remains outside this release's admitted modality scope.
+
 After staging, the final image build supplies
 `--build-arg AOT_CACHE_MANIFEST_SHA256="$CACHE_SHA256"` together with the
 source, patch-bundle, and Helion configuration hashes. Preserve the archive,
