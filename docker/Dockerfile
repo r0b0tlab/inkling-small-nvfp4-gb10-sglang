@@ -66,6 +66,7 @@ RUN set -eux; \
     test -d /cache/torchinductor; \
     test -d /cache/triton; \
     chmod -R a-w /cache; \
+    find /cache -type d -exec chmod a+rx {} +; \
     python /tmp/verify_aot_cache.py --root /cache --manifest /usr/share/inkling-sglang/aot-cache-manifest.json; \
     rm -f /tmp/verify_aot_cache.py; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/kernels/ops/moe/inkling_moe.py | cut -d' ' -f1)" = "d473736bdf300b46c6f2f546ee13ab3c2769abca5a2761a78c0bfcc229f4e777"; \
