@@ -18,7 +18,7 @@ from .render import render_command
 
 OWNED_CONTAINER_RE = re.compile(r"^inkling-sglang-tp2-rank[01]$")
 _ENV_NAME_RE = re.compile(r"^[A-Z][A-Z0-9_]{0,127}$")
-_SAFE_PASSTHROUGH_PREFIXES = ("CUDA_", "NCCL_", "GLOO_", "SGLANG_", "TORCH_", "TRITON_", "HF_")
+_SAFE_PASSTHROUGH_PREFIXES = ("CUDA_", "NCCL_", "GLOO_", "HELION_", "SGLANG_", "TORCH_", "TRITON_", "HF_")
 _TMPFS_MOUNTS = (
     "type=tmpfs,destination=/tmp,tmpfs-mode=1777,tmpfs-size=4294967296",
 )

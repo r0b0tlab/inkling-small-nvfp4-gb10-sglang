@@ -95,6 +95,8 @@ def test_docker_argv_rejects_credentials_and_unsafe_cache(tmp_path: Path) -> Non
     model, cache = _model(tmp_path), _cache(tmp_path)
     with pytest.raises(ValueError, match="credential"):
         build_docker_argv(image_ref=IMAGE, rendered=_rendered(), model_root=model, cache_root=cache, node_rank=0, env_passthrough=["HF_TOKEN"])
+    argv = build_docker_argv(image_ref=IMAGE, rendered=_rendered(), model_root=model, cache_root=cache, node_rank=0, env_passthrough={"HELION_AOT_AUTOTUNE": "none"})
+    assert "HELION_AOT_AUTOTUNE=none" in argv
     cache.chmod(0o777)
     with pytest.raises(ValueError, match="group/world"):
         build_docker_argv(image_ref=IMAGE, rendered=_rendered(), model_root=model, cache_root=cache, node_rank=0)
