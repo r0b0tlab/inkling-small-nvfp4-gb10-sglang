@@ -47,7 +47,8 @@ RUN set -eux; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/kernels/ops/moe/inkling_moe.py | cut -d' ' -f1)" = "d473736bdf300b46c6f2f546ee13ab3c2769abca5a2761a78c0bfcc229f4e777"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/flashinfer_cutlass.py | cut -d' ' -f1)" = "4b3057068aebc7d80583d3249818f6a4ac40d34a1d8eba0ffa116a813ef17260"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/models/inkling_common/moe.py | cut -d' ' -f1)" = "2addced79a2a2132e89edba9a96efebd6568f291fa99ec06fc5098dd62002d9a"; \
-    test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json | cut -d' ' -f1)" = "$HELION_CONFIG_SHA256"
+    test "$(stat -c '%a' /sglang-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json)" = "644"; \
+    test "$(sha256sum /sglang-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json | cut -d' ' -f1)" = "$HELION_CONFIG_SHA256"
 
 # FlashInfer materializes checksummed routed-MoE artifacts and compatibility
 # symlinks lazily below this cache root. Keep site-packages immutable except for
