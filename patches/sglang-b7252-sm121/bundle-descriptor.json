@@ -24,6 +24,13 @@
       "purpose": "decode Inkling PackedTopKOutput and supply FP32 route scales for native FlashInfer CUTLASS NVFP4 MoE"
     },
     {
+      "path": "flashinfer_fused_moe.py",
+      "sha256": "edea66ca4c77b97845f54e586fa79a0367386a0aad9032aed3cd8341fa94af47",
+      "target": "/usr/local/lib/python3.12/dist-packages/flashinfer/jit/fused_moe.py",
+      "upstream_sha256": "ffab244f889af9e80d2ee80401360b5b6c9bca225d7f0e0c8d9496dd06862468",
+      "purpose": "fail closed before CUTLASS fused-MoE source generation when FlashInfer JIT is disabled and the required AOT module is absent"
+    },
+    {
       "path": "inkling_common_moe.py",
       "sha256": "2addced79a2a2132e89edba9a96efebd6568f291fa99ec06fc5098dd62002d9a",
       "target": "/sgl-workspace/sglang/python/sglang/srt/models/inkling_common/moe.py",

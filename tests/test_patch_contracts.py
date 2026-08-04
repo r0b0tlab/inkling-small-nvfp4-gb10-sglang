@@ -19,6 +19,7 @@ def test_docker_context_reopens_patch_parent_directories() -> None:
     for name in (
         "inkling_moe.py",
         "flashinfer_cutlass.py",
+        "flashinfer_fused_moe.py",
         "inkling_common_moe.py",
         "image_processing.py",
         "dense_mlp.py",
@@ -59,3 +60,15 @@ def test_inkling_dense_mlp_has_no_unconditional_torch_compile() -> None:
     assert hashlib.sha256(patch.read_bytes()).hexdigest() == entry["sha256"]
     assert entry["target"].endswith("/sglang/srt/models/inkling_common/dense_mlp.py")
     assert "@torch.compile" not in patch.read_text()
+
+
+def test_flashinfer_fused_moe_fails_closed_before_disabled_jit_generation() -> None:
+    descriptor = json.loads((PATCH_DIR / "bundle-descriptor.json").read_text())
+    entry = next(item for item in descriptor["files"] if item["path"] == "flashinfer_fused_moe.py")
+    patch = PATCH_DIR / entry["path"]
+    assert hashlib.sha256(patch.read_bytes()).hexdigest() == entry["sha256"]
+    assert entry["target"].endswith("/flashinfer/jit/fused_moe.py")
+    text = patch.read_text()
+    assert "MissingJITCacheError" in text
+    assert "if os.environ.get(\"FLASHINFER_DISABLE_JIT\")" in text
+    assert "aot_path.exists()" in text

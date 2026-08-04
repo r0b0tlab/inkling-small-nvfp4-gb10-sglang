@@ -41,6 +41,8 @@ COPY patches/sglang-b7252-sm121/inkling_moe.py \
   /sgl-workspace/sglang/python/sglang/kernels/ops/moe/inkling_moe.py
 COPY patches/sglang-b7252-sm121/flashinfer_cutlass.py \
   /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/flashinfer_cutlass.py
+COPY patches/sglang-b7252-sm121/flashinfer_fused_moe.py \
+  /usr/local/lib/python3.12/dist-packages/flashinfer/jit/fused_moe.py
 COPY patches/sglang-b7252-sm121/inkling_common_moe.py \
   /sgl-workspace/sglang/python/sglang/srt/models/inkling_common/moe.py
 COPY patches/sglang-b7252-sm121/image_processing.py \
@@ -65,6 +67,7 @@ RUN set -eux; \
       /usr/share/inkling-sglang/aot-cache-manifest.json \
       /sgl-workspace/sglang/python/sglang/kernels/ops/moe/inkling_moe.py \
       /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/flashinfer_cutlass.py \
+      /usr/local/lib/python3.12/dist-packages/flashinfer/jit/fused_moe.py \
       /sgl-workspace/sglang/python/sglang/srt/models/inkling_common/moe.py \
       /sgl-workspace/sglang/python/sglang/srt/multimodal/inkling/image_processing.py \
       /sgl-workspace/sglang/python/sglang/srt/models/inkling_common/dense_mlp.py \
@@ -83,6 +86,7 @@ RUN set -eux; \
     rm -f /tmp/verify_aot_cache.py; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/kernels/ops/moe/inkling_moe.py | cut -d' ' -f1)" = "d473736bdf300b46c6f2f546ee13ab3c2769abca5a2761a78c0bfcc229f4e777"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/flashinfer_cutlass.py | cut -d' ' -f1)" = "4b3057068aebc7d80583d3249818f6a4ac40d34a1d8eba0ffa116a813ef17260"; \
+    test "$(sha256sum /usr/local/lib/python3.12/dist-packages/flashinfer/jit/fused_moe.py | cut -d' ' -f1)" = "edea66ca4c77b97845f54e586fa79a0367386a0aad9032aed3cd8341fa94af47"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/models/inkling_common/moe.py | cut -d' ' -f1)" = "2addced79a2a2132e89edba9a96efebd6568f291fa99ec06fc5098dd62002d9a"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/multimodal/inkling/image_processing.py | cut -d' ' -f1)" = "1e4c4ec6e7f3fc9af69cc44df08647a283e0717a85dcacd176032360327f3215"; \
     test "$(sha256sum /sgl-workspace/sglang/python/sglang/srt/models/inkling_common/dense_mlp.py | cut -d' ' -f1)" = "c760c8f6be9708e608ab4fc6d1919156a5be66792c6eb1562f5976afd8224813"; \

@@ -5,6 +5,7 @@
 !patches/sglang-b7252-sm121/
 !patches/sglang-b7252-sm121/inkling_moe.py
 !patches/sglang-b7252-sm121/flashinfer_cutlass.py
+!patches/sglang-b7252-sm121/flashinfer_fused_moe.py
 !patches/sglang-b7252-sm121/inkling_common_moe.py
 !patches/sglang-b7252-sm121/image_processing.py
 !patches/sglang-b7252-sm121/dense_mlp.py
