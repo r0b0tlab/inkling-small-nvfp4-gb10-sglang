@@ -88,6 +88,7 @@ def test_docker_argv_is_hardened_and_weights_read_only(tmp_path: Path) -> None:
     joined = " ".join(argv)
     for expected in ("--pull never", "--network host", "--ipc host", "--gpus all", "--cap-drop ALL", "--security-opt no-new-privileges:true", "--read-only", "target=/models/Inkling-Small-NVFP4,readonly", "--device /dev/infiniband/rdma_cm", "--device /dev/infiniband/uverbs0", "--device /dev/infiniband/uverbs1", "--device /dev/infiniband/uverbs2", "--device /dev/infiniband/uverbs3", "FLASHINFER_DISABLE_JIT=1", "FLASHINFER_WORKSPACE_BASE=/tmp/flashinfer", "NCCL_IB_HCA==rocep1s0f0", "NCCL_NET=IB", "TVM_FFI_CACHE_DIR=/cache/user-cache/.cache/tvm-ffi", "inkling.manifest_sha256=" + DIGEST):
         assert expected in joined
+    assert "--user 1001:1001" in joined
     assert "--model" not in argv
 
 

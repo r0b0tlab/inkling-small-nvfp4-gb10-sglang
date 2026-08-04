@@ -39,21 +39,23 @@
         "config": {"const": "sha256:a2364fcb06508b66f464ecd16921144619bdac9aa883391bcdec95be2b632293"},
         "torchcodec_version": {"const": "0.12.0+cu130"},
         "torchcodec_wheel_sha256": {"const": "7293d3bbf3e27621f7d5888cc10e233d828faa5896f76f4d3f3ab1457e9c8c9e"},
-        "candidate_derivative_config": {"const": "sha256:3c8c3e0fce6035eca12911540c7ddd8c11917dd5eb2cff46fa6a65bca9e2c412"},
-        "aot_cache_manifest_sha256": {"const": "06e14cfd0d77c5247c11c9d2d07910c6c87cd76e997b833dba7c3fc3f92cae99"},
-        "aot_cache_file_count": {"const": 785},
-        "aot_cache_total_bytes": {"const": 353213788}
+        "candidate_derivative_config": {"const": "sha256:0303cae18c7a8d1526ba736eca81775a735e3e45fca49b3eea977eceb2e10c68"},
+        "aot_cache_manifest_sha256": {"const": "32ac33e97af24f0fe50175272eafc5c66bcb3615d8c9778a23a5a50f57952980"},
+        "aot_cache_file_count": {"const": 809},
+        "aot_cache_total_bytes": {"const": 354049685}
       }
     },
     "recipe": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["trust_remote_code", "model_type", "model_path", "model_impl", "tp", "nnodes", "quantization", "kv_cache_dtype", "attention_backend", "page_size", "fp4_gemm_backend", "moe_runner_backend", "enable_torch_symm_mem", "mamba_radix_cache_strategy", "mem_fraction_static", "swa_full_tokens_ratio", "mamba_full_memory_ratio", "enable_multimodal", "reasoning_parser", "tool_call_parser", "random_seed", "context_length", "chunked_prefill_size", "max_running_requests", "cuda_graph_backend_decode", "cuda_graph_backend_prefill", "env"],
+      "required": ["trust_remote_code", "model_type", "model_path", "model_impl", "runtime_uid", "runtime_gid", "tp", "nnodes", "quantization", "kv_cache_dtype", "attention_backend", "page_size", "fp4_gemm_backend", "moe_runner_backend", "enable_torch_symm_mem", "mamba_radix_cache_strategy", "mem_fraction_static", "swa_full_tokens_ratio", "mamba_full_memory_ratio", "enable_multimodal", "reasoning_parser", "tool_call_parser", "random_seed", "context_length", "chunked_prefill_size", "max_running_requests", "cuda_graph_backend_decode", "cuda_graph_backend_prefill", "env"],
       "properties": {
         "trust_remote_code": {"const": true},
         "model_type": {"const": "llm"},
         "model_path": {"const": "/models/Inkling-Small-NVFP4"},
         "model_impl": {"const": "sglang"},
+        "runtime_uid": {"const": 1001},
+        "runtime_gid": {"const": 1001},
         "tp": {"const": 2},
         "nnodes": {"const": 2},
         "quantization": {"const": "modelopt_fp4"},

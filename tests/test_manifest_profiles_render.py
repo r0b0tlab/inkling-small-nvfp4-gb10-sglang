@@ -18,6 +18,8 @@ def test_frozen_runtime_manifest_and_lock() -> None:
     manifest = load_runtime_manifest(MANIFEST)
     assert manifest["model"]["revision"] == MODEL_REVISION
     assert manifest["source"]["commit"] == SOURCE_COMMIT
+    assert manifest["recipe"]["runtime_uid"] == 1001
+    assert manifest["recipe"]["runtime_gid"] == 1001
     lock = json.loads((ROOT / "runtime-manifest.lock.json").read_text())
     assert lock == {"schema_version": 1, "manifest_sha256": manifest_sha256(manifest)}
 

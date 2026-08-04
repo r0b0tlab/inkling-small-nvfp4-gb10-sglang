@@ -18,6 +18,8 @@ BASE_IMAGE_REF = f"{IMAGE_REPOSITORY}@{IMAGE_ARM64_MANIFEST}"
 TORCHCODEC_VERSION = "0.12.0+cu130"
 TORCHCODEC_WHEEL_URL = "https://download.pytorch.org/whl/cu130/torchcodec-0.12.0%2Bcu130-cp312-cp312-manylinux_2_28_aarch64.whl"
 TORCHCODEC_WHEEL_SHA256 = "7293d3bbf3e27621f7d5888cc10e233d828faa5896f76f4d3f3ab1457e9c8c9e"
+RUNTIME_UID = 1001
+RUNTIME_GID = 1001
 
 _REQUIRED_TOP = {"schema_version", "model", "source", "image", "recipe", "policies"}
 _HEX = frozenset("0123456789abcdef")
@@ -85,10 +87,10 @@ def validate_runtime_manifest(value: Any) -> dict[str, Any]:
         "config": IMAGE_CONFIG,
         "torchcodec_version": TORCHCODEC_VERSION,
         "torchcodec_wheel_sha256": TORCHCODEC_WHEEL_SHA256,
-        "candidate_derivative_config": "sha256:3c8c3e0fce6035eca12911540c7ddd8c11917dd5eb2cff46fa6a65bca9e2c412",
-        "aot_cache_manifest_sha256": "06e14cfd0d77c5247c11c9d2d07910c6c87cd76e997b833dba7c3fc3f92cae99",
-        "aot_cache_file_count": 785,
-        "aot_cache_total_bytes": 353213788,
+        "candidate_derivative_config": "sha256:0303cae18c7a8d1526ba736eca81775a735e3e45fca49b3eea977eceb2e10c68",
+        "aot_cache_manifest_sha256": "32ac33e97af24f0fe50175272eafc5c66bcb3615d8c9778a23a5a50f57952980",
+        "aot_cache_file_count": 809,
+        "aot_cache_total_bytes": 354049685,
     }
     if not isinstance(image, dict) or image != expected_image:
         raise ValueError("image identity is not the frozen candidate contract")
@@ -99,6 +101,8 @@ def validate_runtime_manifest(value: Any) -> dict[str, Any]:
         "model_type": "llm",
         "model_path": "/models/Inkling-Small-NVFP4",
         "model_impl": "sglang",
+        "runtime_uid": RUNTIME_UID,
+        "runtime_gid": RUNTIME_GID,
         "tp": 2,
         "nnodes": 2,
         "quantization": "modelopt_fp4",
