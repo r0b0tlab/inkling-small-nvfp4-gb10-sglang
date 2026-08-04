@@ -60,6 +60,18 @@ RUN set -eux; \
     test -n "$PATCH_BUNDLE_SHA256"; \
     test -n "$HELION_CONFIG_SHA256"; \
     test -n "$AOT_CACHE_MANIFEST_SHA256"; \
+    for artifact in \
+      /usr/share/inkling-sglang/patch-bundle.json \
+      /usr/share/inkling-sglang/aot-cache-manifest.json \
+      /sgl-workspace/sglang/python/sglang/kernels/ops/moe/inkling_moe.py \
+      /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/flashinfer_cutlass.py \
+      /sgl-workspace/sglang/python/sglang/srt/models/inkling_common/moe.py \
+      /sgl-workspace/sglang/python/sglang/srt/multimodal/inkling/image_processing.py \
+      /sgl-workspace/sglang/python/sglang/srt/models/inkling_common/dense_mlp.py \
+      /sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json; do \
+        chmod 0644 "$artifact"; \
+        test "$(stat -c '%a' "$artifact")" = "644"; \
+    done; \
     test "$(sha256sum /usr/share/inkling-sglang/patch-bundle.json | cut -d' ' -f1)" = "$PATCH_BUNDLE_SHA256"; \
     test "$(sha256sum /usr/share/inkling-sglang/aot-cache-manifest.json | cut -d' ' -f1)" = "$AOT_CACHE_MANIFEST_SHA256"; \
     test -d /cache/user-cache/.cache/tvm-ffi; \

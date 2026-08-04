@@ -11,8 +11,10 @@ PATCH_DIR = ROOT / "patches" / "sglang-b7252-sm121"
 
 def test_docker_context_reopens_patch_parent_directories() -> None:
     dockerignore = (ROOT / ".dockerignore").read_text().splitlines()
+    assert "!docker/" in dockerignore
     assert "!patches/" in dockerignore
     assert "!patches/sglang-b7252-sm121/" in dockerignore
+    assert "!scripts/" in dockerignore
     parent_index = dockerignore.index("!patches/sglang-b7252-sm121/")
     for name in (
         "inkling_moe.py",
@@ -26,6 +28,16 @@ def test_docker_context_reopens_patch_parent_directories() -> None:
         entry = f"!patches/sglang-b7252-sm121/{name}"
         assert entry in dockerignore
         assert dockerignore.index(entry) > parent_index
+
+
+def test_shipped_patch_sources_are_readable_and_not_writable() -> None:
+    descriptor = json.loads((PATCH_DIR / "bundle-descriptor.json").read_text())
+    shipped = [PATCH_DIR / "bundle-descriptor.json"]
+    shipped.extend(PATCH_DIR / item["path"] for item in descriptor["files"])
+    for path in shipped:
+        mode = path.stat().st_mode
+        assert mode & 0o444 == 0o444, path
+        assert mode & 0o022 == 0, path
 
 
 def test_inkling_multimodal_import_fix_is_content_addressed() -> None:
