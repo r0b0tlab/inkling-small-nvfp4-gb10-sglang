@@ -32,10 +32,10 @@
     },
     {
       "path": "inkling_common_moe.py",
-      "sha256": "2addced79a2a2132e89edba9a96efebd6568f291fa99ec06fc5098dd62002d9a",
+      "sha256": "36cbc6b7c717024cfccc04d1f530c36ddf7e363fc2ac0cd20d256039721c3094",
       "target": "/sgl-workspace/sglang/python/sglang/srt/models/inkling_common/moe.py",
       "upstream_sha256": "36cbc6b7c717024cfccc04d1f530c36ddf7e363fc2ac0cd20d256039721c3094",
-      "purpose": "emit standard FP32 route weights and int32 expert IDs for CUTLASS; reserve packed routing for TRT-LLM routed MoE"
+      "purpose": "preserve the frozen SGLang packed-top-k contract for quantized stock SRT MoE paths"
     },
     {
       "path": "silu_and_mul_interleaved_sm_121.json",

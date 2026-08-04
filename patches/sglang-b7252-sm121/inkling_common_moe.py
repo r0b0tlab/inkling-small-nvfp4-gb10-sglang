@@ -914,18 +914,13 @@ class InklingMoE(nn.Module):
             )
         )
 
-        # Only the FlashInfer TRT-LLM routed runner consumes packed top-k.
-        # Other quantized runners (including FlashInfer CUTLASS) require the
-        # gate's native FP32 weights and int32 expert IDs as StandardTopKOutput.
-        # Packing all quantized paths loses that distinction and can yield
-        # numerically corrupt output even when CUTLASS accepts an unpacked copy.
-        self.gate.emit_packed_topk = (
-            not lora_compatible_layout_enabled()
-            and get_moe_runner_backend().is_flashinfer_trtllm_routed()
-            and (
-                not isinstance(self.experts.quant_method, UnquantizedFusedMoEMethod)
-                or bf16_routed_uses_stock_fused_moe(self.quant_config)
-            )
+        # Packed topk is for the stock SRT apply path: quantized layers, or bf16 on the
+        # trtllm_routed runner (unquantized ckpts only — a quantized ckpt's excluded
+        # bf16 layers resolve to the triton runner, which needs standard topk).
+        # moe_tp_forward and MoE-LoRA also need standard topk (LoRA packs internally).
+        self.gate.emit_packed_topk = not lora_compatible_layout_enabled() and (
+            not isinstance(self.experts.quant_method, UnquantizedFusedMoEMethod)
+            or bf16_routed_uses_stock_fused_moe(self.quant_config)
         )
 
     def _forward_routed(

@@ -5,14 +5,16 @@ ROOT = Path(__file__).resolve().parents[1]
 PATCH = ROOT / "patches" / "sglang-b7252-sm121" / "inkling_common_moe.py"
 
 
-def test_cutlass_uses_standard_topk_routing() -> None:
+def test_quantized_stock_paths_preserve_packed_topk_routing() -> None:
     source = PATCH.read_text()
     assignment = source.split("self.gate.emit_packed_topk =", 1)[1].split(")\n\n    def _forward_routed", 1)[0]
-    assert "get_moe_runner_backend().is_flashinfer_trtllm_routed()" in assignment
-    assert "is_flashinfer_cutlass" not in assignment
+    assert "not isinstance(self.experts.quant_method, UnquantizedFusedMoEMethod)" in assignment
+    assert "bf16_routed_uses_stock_fused_moe" in assignment
+    assert "is_flashinfer_trtllm_routed()" not in assignment
 
 
-def test_patched_source_is_not_upstream_copy() -> None:
-    source = PATCH.read_text()
-    assert "Only the FlashInfer TRT-LLM routed runner consumes packed top-k" in source
-    assert "numerically corrupt output" in source
+def test_pinned_inkling_common_moe_matches_upstream() -> None:
+    import hashlib
+
+    digest = hashlib.sha256(PATCH.read_bytes()).hexdigest()
+    assert digest == "36cbc6b7c717024cfccc04d1f530c36ddf7e363fc2ac0cd20d256039721c3094"
