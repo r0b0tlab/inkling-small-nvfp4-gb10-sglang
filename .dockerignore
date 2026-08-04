@@ -1,5 +1,7 @@
 **
 !docker/Dockerfile
+!patches/
+!patches/sglang-b7252-sm121/
 !patches/sglang-b7252-sm121/inkling_moe.py
 !patches/sglang-b7252-sm121/flashinfer_cutlass.py
 !patches/sglang-b7252-sm121/inkling_common_moe.py
