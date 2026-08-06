@@ -19,13 +19,18 @@
     "config": "sha256:a2364fcb06508b66f464ecd16921144619bdac9aa883391bcdec95be2b632293",
     "torchcodec_version": "0.12.0+cu130",
     "torchcodec_wheel_sha256": "7293d3bbf3e27621f7d5888cc10e233d828faa5896f76f4d3f3ab1457e9c8c9e",
-    "candidate_derivative_config": "sha256:3c8c3e0fce6035eca12911540c7ddd8c11917dd5eb2cff46fa6a65bca9e2c412"
+    "candidate_derivative_config": "sha256:0303cae18c7a8d1526ba736eca81775a735e3e45fca49b3eea977eceb2e10c68",
+    "aot_cache_manifest_sha256": "32ac33e97af24f0fe50175272eafc5c66bcb3615d8c9778a23a5a50f57952980",
+    "aot_cache_file_count": 809,
+    "aot_cache_total_bytes": 354049685
   },
   "recipe": {
     "trust_remote_code": true,
     "model_type": "llm",
     "model_path": "/models/Inkling-Small-NVFP4",
     "model_impl": "sglang",
+    "runtime_uid": 1001,
+    "runtime_gid": 1001,
     "tp": 2,
     "nnodes": 2,
     "quantization": "modelopt_fp4",
@@ -56,7 +61,16 @@
       "TRANSFORMERS_OFFLINE": "1",
       "MAX_JOBS": "6",
       "NVCC_THREADS": "2",
-      "FLASHINFER_NVCC_THREADS": "2"
+      "FLASHINFER_NVCC_THREADS": "2",
+      "FLASHINFER_DISABLE_JIT": "1",
+      "FLASHINFER_WORKSPACE_BASE": "/tmp/flashinfer",
+      "HELION_AOT_AUTOTUNE": "none",
+      "NCCL_IB_GID_INDEX": "3",
+      "NCCL_CROSS_NIC": "0",
+      "NCCL_NET": "IB",
+      "NCCL_DEBUG": "INFO",
+      "NCCL_DEBUG_SUBSYS": "INIT,NET",
+      "TVM_FFI_CACHE_DIR": "/cache/user-cache/.cache/tvm-ffi"
     }
   },
   "policies": {

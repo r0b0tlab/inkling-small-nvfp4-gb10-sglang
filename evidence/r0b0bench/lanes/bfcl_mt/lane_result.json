@@ -1,0 +1,47 @@
+{
+  "artifacts": {
+    "bfcl_mt.json": "<LOCAL_PATH>",
+    "log": "<LOCAL_PATH>"
+  },
+  "elapsed_s": 6021.727099938958,
+  "imported": false,
+  "infra_errors": 0,
+  "lane_id": "bfcl_mt",
+  "status": "PASS",
+  "summary": {
+    "accuracy": 0.54,
+    "base_url": "http://<NODE_IP>:30000/v1/",
+    "category": "multi_turn_base",
+    "expected_rows": 200,
+    "model": "/models/Inkling-Small-NVFP4",
+    "project": "<LOCAL_PATH>",
+    "score": {
+      "accuracy": 0.54,
+      "correct": 108,
+      "csv": [
+        "<LOCAL_PATH>",
+        "<LOCAL_PATH>",
+        "<LOCAL_PATH>",
+        "<LOCAL_PATH>",
+        "<LOCAL_PATH>",
+        "<LOCAL_PATH>"
+      ],
+      "csv_rows": [
+        "Rank,Overall Acc,Model,Model Link,Total Cost ($),Latency Mean (s),Latency Standard Deviation (s),Latency 95th Percentile (s),Non-Live AST Acc,Non-Live Simple AST,Non-Live Multiple AST,Non-Live Parallel AST,Non-Live Parallel Multiple AST,Live Acc,Live Simple AST,Live Multiple AST,Live Parallel AST,Live Parallel Multiple AST,Multi Turn Acc,Multi Turn Base,Multi Turn Miss Func,Multi Turn Miss Param,Multi Turn Long Context,Web Search Acc,Web Search Base,Web Search No Snippet,Memory Acc,Memory KV,Memory Vector,Memory Recursive Summarization,Relevance Detection,Irrelevance Detection,Format Sensitivity Max Delta,Format Sensitivity Standard Deviation,Organization,License",
+        "Rank,Model,Multi Turn Overall Acc,Base,Miss Func,Miss Param,Long Context"
+      ],
+      "primary": {
+        "accuracy": 0.54,
+        "correct_count": 108,
+        "total_count": 200
+      },
+      "primary_path": "<LOCAL_PATH>",
+      "score_files": [
+        "<LOCAL_PATH>",
+        "<LOCAL_PATH>"
+      ],
+      "total": 200
+    },
+    "status": "PASS"
+  }
+}

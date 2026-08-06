@@ -23,6 +23,8 @@ dist/
 *.gguf
 model-cache/
 jit-cache/
+aot-cache/
+aot-cache-manifest.json
 evidence/private/
 evidence/raw/
 evidence/work/

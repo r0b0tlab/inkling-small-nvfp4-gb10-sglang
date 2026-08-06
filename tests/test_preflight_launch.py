@@ -86,8 +86,9 @@ def test_bind_admission_adds_identity_and_private_mode(tmp_path: Path) -> None:
 def test_docker_argv_is_hardened_and_weights_read_only(tmp_path: Path) -> None:
     argv = build_docker_argv(image_ref=IMAGE, rendered=_rendered(), model_root=_model(tmp_path), cache_root=_cache(tmp_path), node_rank=0, manifest_sha256_value=DIGEST)
     joined = " ".join(argv)
-    for expected in ("--pull never", "--network host", "--ipc host", "--gpus all", "--cap-drop ALL", "--security-opt no-new-privileges:true", "--read-only", "target=/models/Inkling-Small-NVFP4,readonly", "inkling.manifest_sha256=" + DIGEST):
+    for expected in ("--pull never", "--network host", "--ipc host", "--gpus all", "--cap-drop ALL", "--security-opt no-new-privileges:true", "--read-only", "target=/models/Inkling-Small-NVFP4,readonly", "--device /dev/infiniband/rdma_cm", "--device /dev/infiniband/uverbs0", "--device /dev/infiniband/uverbs1", "--device /dev/infiniband/uverbs2", "--device /dev/infiniband/uverbs3", "FLASHINFER_DISABLE_JIT=1", "FLASHINFER_WORKSPACE_BASE=/tmp/flashinfer", "NCCL_IB_HCA==rocep1s0f0", "NCCL_NET=IB", "TVM_FFI_CACHE_DIR=/cache/user-cache/.cache/tvm-ffi", "inkling.manifest_sha256=" + DIGEST):
         assert expected in joined
+    assert "--user 1001:1001" in joined
     assert "--model" not in argv
 
 
@@ -95,6 +96,8 @@ def test_docker_argv_rejects_credentials_and_unsafe_cache(tmp_path: Path) -> Non
     model, cache = _model(tmp_path), _cache(tmp_path)
     with pytest.raises(ValueError, match="credential"):
         build_docker_argv(image_ref=IMAGE, rendered=_rendered(), model_root=model, cache_root=cache, node_rank=0, env_passthrough=["HF_TOKEN"])
+    argv = build_docker_argv(image_ref=IMAGE, rendered=_rendered(), model_root=model, cache_root=cache, node_rank=0, env_passthrough={"HELION_AOT_AUTOTUNE": "none"})
+    assert "HELION_AOT_AUTOTUNE=none" in argv
     cache.chmod(0o777)
     with pytest.raises(ValueError, match="group/world"):
         build_docker_argv(image_ref=IMAGE, rendered=_rendered(), model_root=model, cache_root=cache, node_rank=0)

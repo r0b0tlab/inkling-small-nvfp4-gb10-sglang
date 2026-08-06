@@ -1,0 +1,21 @@
+{
+  "e2el_ms": 9105.776061012875,
+  "elapsed_s": 9.105776061012875,
+  "finish_reason": "length",
+  "http_status": 200,
+  "itl_ms_mean": null,
+  "itl_ms_p50": null,
+  "itl_ms_p95": null,
+  "ok": true,
+  "rep": 3,
+  "stream_completion_chunks": 0,
+  "text": "",
+  "ttft_ms": null,
+  "usage": {
+    "completion_tokens": 128,
+    "prompt_tokens": 30,
+    "prompt_tokens_details": null,
+    "reasoning_tokens": 128,
+    "total_tokens": 158
+  }
+}

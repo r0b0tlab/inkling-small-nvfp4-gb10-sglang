@@ -24,17 +24,38 @@
       "purpose": "decode Inkling PackedTopKOutput and supply FP32 route scales for native FlashInfer CUTLASS NVFP4 MoE"
     },
     {
+      "path": "flashinfer_fused_moe.py",
+      "sha256": "edea66ca4c77b97845f54e586fa79a0367386a0aad9032aed3cd8341fa94af47",
+      "target": "/usr/local/lib/python3.12/dist-packages/flashinfer/jit/fused_moe.py",
+      "upstream_sha256": "ffab244f889af9e80d2ee80401360b5b6c9bca225d7f0e0c8d9496dd06862468",
+      "purpose": "fail closed before CUTLASS fused-MoE source generation when FlashInfer JIT is disabled and the required AOT module is absent"
+    },
+    {
       "path": "inkling_common_moe.py",
-      "sha256": "2addced79a2a2132e89edba9a96efebd6568f291fa99ec06fc5098dd62002d9a",
+      "sha256": "36cbc6b7c717024cfccc04d1f530c36ddf7e363fc2ac0cd20d256039721c3094",
       "target": "/sgl-workspace/sglang/python/sglang/srt/models/inkling_common/moe.py",
       "upstream_sha256": "36cbc6b7c717024cfccc04d1f530c36ddf7e363fc2ac0cd20d256039721c3094",
-      "purpose": "emit standard FP32 route weights and int32 expert IDs for CUTLASS; reserve packed routing for TRT-LLM routed MoE"
+      "purpose": "preserve the frozen SGLang packed-top-k contract for quantized stock SRT MoE paths"
     },
     {
       "path": "silu_and_mul_interleaved_sm_121.json",
-      "sha256": "f3c208dadf040c55a20f5afb553c6fb33a38c32a70864a8e0af0ab93a82f1214",
+      "sha256": "2f4e13b6b29e5e6a38b191300630bde76560921960193a2150457250595b1953",
       "target": "/sgl-workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton_utils/configs/silu_and_mul_interleaved_sm_121.json",
       "provenance": "SM100 useful-config seed retuned natively on NVIDIA GB10 SM121; c18r activation passed"
+    },
+    {
+      "path": "image_processing.py",
+      "sha256": "1e4c4ec6e7f3fc9af69cc44df08647a283e0717a85dcacd176032360327f3215",
+      "target": "/sgl-workspace/sglang/python/sglang/srt/multimodal/inkling/image_processing.py",
+      "upstream_sha256": "bf11425a3eda1180ef585c0fd0b6461063c608ebe93540bac3a73273872af6bf",
+      "purpose": "disable disk caching for the CPU Numba image patch helper so the official Inkling multimodal processor registers under the read-only editable source path"
+    },
+    {
+      "path": "dense_mlp.py",
+      "sha256": "c760c8f6be9708e608ab4fc6d1919156a5be66792c6eb1562f5976afd8224813",
+      "target": "/sgl-workspace/sglang/python/sglang/srt/models/inkling_common/dense_mlp.py",
+      "upstream_sha256": "28b1c39a66590d85dddc794f4cab5edae7129498752844b0945e3543e7649a9d",
+      "purpose": "remove unconditional torch.compile decorators from Inkling SwiGLU and shared-expert reduction paths so disabled-compile serving cannot spawn TorchInductor workers"
     }
   ]
 }

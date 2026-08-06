@@ -11,16 +11,31 @@ from urllib.error import URLError
 from urllib.request import Request, urlopen
 
 from .image import validate_image_ref
-from .manifest import BASE_IMAGE_REF, IMAGE_ARM64_MANIFEST, IMAGE_CONFIG, load_runtime_manifest, manifest_sha256
+from .manifest import (
+    BASE_IMAGE_REF,
+    IMAGE_ARM64_MANIFEST,
+    IMAGE_CONFIG,
+    RUNTIME_GID,
+    RUNTIME_UID,
+    load_runtime_manifest,
+    manifest_sha256,
+)
 from .preflight import run_preflight
 from .profiles import load_profile
 from .render import render_command
 
 OWNED_CONTAINER_RE = re.compile(r"^inkling-sglang-tp2-rank[01]$")
 _ENV_NAME_RE = re.compile(r"^[A-Z][A-Z0-9_]{0,127}$")
-_SAFE_PASSTHROUGH_PREFIXES = ("CUDA_", "NCCL_", "GLOO_", "SGLANG_", "TORCH_", "TRITON_", "HF_")
+_SAFE_PASSTHROUGH_PREFIXES = ("CUDA_", "NCCL_", "GLOO_", "HELION_", "SGLANG_", "TORCH_", "TRITON_", "HF_")
 _TMPFS_MOUNTS = (
     "type=tmpfs,destination=/tmp,tmpfs-mode=1777,tmpfs-size=4294967296",
+)
+_RDMA_DEVICES = (
+    "/dev/infiniband/rdma_cm",
+    "/dev/infiniband/uverbs0",
+    "/dev/infiniband/uverbs1",
+    "/dev/infiniband/uverbs2",
+    "/dev/infiniband/uverbs3",
 )
 
 
@@ -43,7 +58,14 @@ def _safe_source_path(path: Path) -> str:
     return supplied.as_posix()
 
 
-def _safe_cache_path(path: Path) -> str:
+def _validate_runtime_identity(runtime_uid: int, runtime_gid: int) -> None:
+    if type(runtime_uid) is not int or not 0 <= runtime_uid <= 65535:
+        raise ValueError("runtime_uid must be an integer in the numeric UID range")
+    if type(runtime_gid) is not int or not 0 <= runtime_gid <= 65535:
+        raise ValueError("runtime_gid must be an integer in the numeric GID range")
+
+
+def _safe_cache_path(path: Path, *, runtime_uid: int, runtime_gid: int) -> str:
     raw = os.fspath(path)
     supplied = PurePosixPath(raw)
     if not supplied.is_absolute() or any(part in ("", ".", "..") for part in supplied.parts):
@@ -53,12 +75,13 @@ def _safe_cache_path(path: Path) -> str:
     info = os.lstat(path)
     if not stat_is_directory(info.st_mode) or stat_is_symlink(info.st_mode) or info.st_nlink < 1:
         raise ValueError("cache root must be a non-symlink directory")
-    if info.st_uid != os.getuid():
-        raise ValueError("cache root must be owned by the admitted runtime user")
+    _validate_runtime_identity(runtime_uid, runtime_gid)
+    if info.st_uid != runtime_uid or info.st_gid != runtime_gid:
+        raise ValueError("cache root must be owned by the declared runtime UID/GID")
+    if info.st_mode & 0o700 != 0o700:
+        raise ValueError("cache root must be readable, writable, and searchable by the runtime user")
     if info.st_mode & 0o022:
         raise ValueError("cache root must not be group/world writable")
-    if not os.access(path, os.R_OK | os.W_OK | os.X_OK):
-        raise ValueError("cache root must be readable, writable, and searchable")
     flags = os.statvfs(path).f_flag
     if flags & getattr(os, "ST_NOEXEC", 8):
         raise ValueError("cache root filesystem must permit native/JIT execution")
@@ -106,18 +129,25 @@ def build_docker_argv(
     node_rank: int,
     manifest_sha256_value: str | None = None,
     env_passthrough: Mapping[str, str] | Sequence[str] | None = None,
+    runtime_uid: int = RUNTIME_UID,
+    runtime_gid: int = RUNTIME_GID,
 ) -> list[str]:
     validate_image_ref(image_ref)
+    _validate_runtime_identity(runtime_uid, runtime_gid)
     name = owned_container_name(node_rank)
     source = _safe_source_path(model_root)
-    cache = _safe_cache_path(cache_root)
+    cache = _safe_cache_path(
+        cache_root,
+        runtime_uid=runtime_uid,
+        runtime_gid=runtime_gid,
+    )
     if not isinstance(rendered, dict) or rendered.get("executes") is not False:
         raise ValueError("launcher accepts only a render-only command description")
     argv = [
         "docker", "run", "--rm", "--pull", "never", "--init", "--name", name,
         "--label", "inkling.release=sglang",
         "--label", f"inkling.rank={node_rank}",
-        "--user", f"{os.getuid()}:{os.getgid()}",
+        "--user", f"{runtime_uid}:{runtime_gid}",
         "--network", "host",
         "--ipc", "host",
         "--gpus", "all",
@@ -127,8 +157,9 @@ def build_docker_argv(
         "--ulimit", "memlock=-1:-1",
         "--read-only",
         "--mount", f"type=bind,source={source},target=/models/Inkling-Small-NVFP4,readonly",
-        "--mount", f"type=bind,source={cache},target=/cache",
     ]
+    for device in _RDMA_DEVICES:
+        argv.extend(("--device", device))
     for mount in _TMPFS_MOUNTS:
         argv.extend(("--mount", mount))
     if manifest_sha256_value is not None:
@@ -138,13 +169,14 @@ def build_docker_argv(
     env = dict(rendered.get("env", {}))
     env.update({
         "TMPDIR": "/tmp",
-        "HOME": "/cache/home",
+        "HOME": "/cache/user-cache",
         "USER": "inkling",
         "LOGNAME": "inkling",
         "HF_HOME": "/cache/hf",
         "TORCH_HOME": "/cache/torch",
         "TORCHINDUCTOR_CACHE_DIR": "/cache/torchinductor",
         "TRITON_CACHE_DIR": "/cache/triton",
+        "TVM_FFI_CACHE_DIR": "/cache/user-cache/.cache/tvm-ffi",
         "CUDA_CACHE_PATH": "/cache/cuda",
     })
     for key, value in sorted(env.items()):
@@ -182,6 +214,8 @@ def build_launch_spec(
     profile = load_profile(profile_path)
     selected_image = image_ref or BASE_IMAGE_REF
     validate_image_ref(selected_image)
+    runtime_uid = manifest["recipe"]["runtime_uid"]
+    runtime_gid = manifest["recipe"]["runtime_gid"]
     rendered = render_command(profile, node_rank=node_rank, dist_init_addr=dist_init_addr, image_ref=selected_image)
     docker_argv = build_docker_argv(
         image_ref=selected_image,
@@ -191,6 +225,8 @@ def build_launch_spec(
         node_rank=node_rank,
         manifest_sha256_value=manifest_digest,
         env_passthrough=env_passthrough,
+        runtime_uid=runtime_uid,
+        runtime_gid=runtime_gid,
     )
     image_kind = "base" if selected_image == BASE_IMAGE_REF else "derivative"
     return {
@@ -206,6 +242,8 @@ def build_launch_spec(
         "container_name": owned_container_name(node_rank),
         "argv": docker_argv,
         "node_rank": node_rank,
+        "runtime_uid": runtime_uid,
+        "runtime_gid": runtime_gid,
         "execute": False,
     }
 
