@@ -1,0 +1,24 @@
+{
+  "artifacts": {
+    "gsm8k.json": "<LOCAL_PATH>"
+  },
+  "elapsed_s": 2429.308303389,
+  "imported": false,
+  "infra_errors": 0,
+  "lane_id": "gsm8k",
+  "status": "PASS",
+  "summary": {
+    "accuracy": 0.81,
+    "concurrency": 2,
+    "correct": 162,
+    "data_path": "<LOCAL_PATH>",
+    "infra_http_errors": 0,
+    "method": "gsm8k_0shot_flexible_extract",
+    "n": 200,
+    "seed": 0,
+    "wilson95": {
+      "high": 0.8583290620754351,
+      "low": 0.7499864142552062
+    }
+  }
+}

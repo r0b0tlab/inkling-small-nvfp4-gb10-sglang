@@ -1,7 +1,11 @@
 {
   "results": [
     {
+<<<<<<< HEAD
       "elapsed_s": 3.29577176598832,
+=======
+      "elapsed_s": 4.063843749987427,
+>>>>>>> origin/publication/marlin-sm121
       "http_status": 200,
       "id": "identity",
       "response": {
@@ -19,8 +23,13 @@
             }
           }
         ],
+<<<<<<< HEAD
         "created": 1786034654,
         "id": "61fe07bbc88f4dacb81908b61b254f2b",
+=======
+        "created": 1786048108,
+        "id": "7adb4e8c88fc47148a6ae7792c22e418",
+>>>>>>> origin/publication/marlin-sm121
         "metadata": {
           "weight_version": "default"
         },
@@ -36,7 +45,11 @@
       }
     },
     {
+<<<<<<< HEAD
       "elapsed_s": 1.5878980900160968,
+=======
+      "elapsed_s": 1.7834358669933863,
+>>>>>>> origin/publication/marlin-sm121
       "http_status": 200,
       "id": "zh_arithmetic",
       "response": {
@@ -54,8 +67,13 @@
             }
           }
         ],
+<<<<<<< HEAD
         "created": 1786034655,
         "id": "ab1b4b3f7bd84b5286c7bff76d6477ec",
+=======
+        "created": 1786048110,
+        "id": "bac98751466e48c4b4e61a04cb29e35e",
+>>>>>>> origin/publication/marlin-sm121
         "metadata": {
           "weight_version": "default"
         },
@@ -71,7 +89,11 @@
       }
     },
     {
+<<<<<<< HEAD
       "elapsed_s": 2.940618953027297,
+=======
+      "elapsed_s": 3.5486053900094703,
+>>>>>>> origin/publication/marlin-sm121
       "http_status": 200,
       "id": "structured",
       "response": {
@@ -89,8 +111,13 @@
             }
           }
         ],
+<<<<<<< HEAD
         "created": 1786034658,
         "id": "e3972304244547b785efc24e043c576f",
+=======
+        "created": 1786048113,
+        "id": "053e11e85f6040b6a102e51f4fd695f1",
+>>>>>>> origin/publication/marlin-sm121
         "metadata": {
           "weight_version": "default"
         },
@@ -106,7 +133,11 @@
       }
     },
     {
+<<<<<<< HEAD
       "elapsed_s": 5.348240218008868,
+=======
+      "elapsed_s": 4.889622077986132,
+>>>>>>> origin/publication/marlin-sm121
       "http_status": 200,
       "id": "tool_call",
       "response": {
@@ -126,7 +157,11 @@
                     "arguments": "{\"location\": \"Tokyo\"}",
                     "name": "get_weather"
                   },
+<<<<<<< HEAD
                   "id": "call_ae5344702db9401baa9073eb",
+=======
+                  "id": "call_281e0b455cbf43d185aff6b9",
+>>>>>>> origin/publication/marlin-sm121
                   "index": 0,
                   "type": "function"
                 }
@@ -134,8 +169,13 @@
             }
           }
         ],
+<<<<<<< HEAD
         "created": 1786034664,
         "id": "9814d8ded2774055b754125311fe0b0d",
+=======
+        "created": 1786048118,
+        "id": "5928d7393ad74baab297431d658e192b",
+>>>>>>> origin/publication/marlin-sm121
         "metadata": {
           "weight_version": "default"
         },
@@ -151,7 +191,11 @@
       }
     },
     {
+<<<<<<< HEAD
       "elapsed_s": 16.080453047994524,
+=======
+      "elapsed_s": 19.219328077044338,
+>>>>>>> origin/publication/marlin-sm121
       "http_status": 200,
       "id": "needle",
       "response": {
@@ -163,25 +207,42 @@
             "matched_stop": 200006,
             "message": {
               "content": "A9Q7",
+<<<<<<< HEAD
               "reasoning_content": "We need parse user message. There's a huge repetition of \"filler red blue green.\" then \"The verification code is A9Q7.\" then more filler \"filler one two three.\" repeated. At end: \"What is the verification code? Reply with only the code.\"\n\nSo answer: A9Q7.",
+=======
+              "reasoning_content": "We need parse user message. It contains repeated filler red blue green etc. Then \"The verification code is A9Q7.\" Then more filler one two three. Then \"What is the verification code? Reply with only the code.\" So answer: A9Q7.",
+>>>>>>> origin/publication/marlin-sm121
               "role": "assistant",
               "tool_calls": null
             }
           }
         ],
+<<<<<<< HEAD
         "created": 1786034680,
         "id": "b1fc1797a037479899a52a40bee30d04",
+=======
+        "created": 1786048138,
+        "id": "c9ebcd4862374fa99c8a716776a0ba5c",
+>>>>>>> origin/publication/marlin-sm121
         "metadata": {
           "weight_version": "default"
         },
         "model": "/models/Inkling-Small-NVFP4",
         "object": "chat.completion",
         "usage": {
+<<<<<<< HEAD
           "completion_tokens": 76,
           "prompt_tokens": 8037,
           "prompt_tokens_details": null,
           "reasoning_tokens": 68,
           "total_tokens": 8113
+=======
+          "completion_tokens": 66,
+          "prompt_tokens": 8037,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 58,
+          "total_tokens": 8103
+>>>>>>> origin/publication/marlin-sm121
         }
       }
     }

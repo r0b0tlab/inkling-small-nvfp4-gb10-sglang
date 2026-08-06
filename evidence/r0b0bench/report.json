@@ -1,9 +1,30 @@
 {
   "base_url": "http://<NODE_IP>:30000/v1",
-  "elapsed_s": 10604.638653105998,
+  "elapsed_s": 22425.92840575293,
   "infra_errors_total": 1,
   "invalid_for_publish": true,
   "lanes": [
+    {
+      "artifacts": {
+        "canary.json": "<LOCAL_PATH>"
+      },
+      "elapsed_s": 33.505935163993854,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "canary",
+      "status": "PASS",
+      "summary": {
+        "checks": {
+          "identity": true,
+          "needle": true,
+          "structured": true,
+          "tool_call": true,
+          "zh_arithmetic": true
+        },
+        "n": 5,
+        "passed": true
+      }
+    },
     {
       "artifacts": {
         "bfcl_mt.json": "<LOCAL_PATH>",
@@ -560,12 +581,107 @@
         },
         "total": 2
       }
+    },
+    {
+      "artifacts": {
+        "qa.json": "<LOCAL_PATH>"
+      },
+      "elapsed_s": 590.628445231996,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "qa",
+      "status": "PASS",
+      "summary": {
+        "accuracy": 0.245,
+        "concurrency": 2,
+        "correct": 98,
+        "data_path": "<LOCAL_PATH>",
+        "dataset": "allenai/ai2_arc ARC-Easy test",
+        "infra_http_errors": 0,
+        "method": "arc_easy_mc_letter",
+        "n": 400,
+        "wilson95": {
+          "high": 0.28944339616699555,
+          "low": 0.20540805053884156
+        }
+      }
+    },
+    {
+      "artifacts": {
+        "ifeval.json": "<LOCAL_PATH>"
+      },
+      "elapsed_s": 6654.648596791027,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "ifeval",
+      "status": "PASS",
+      "summary": {
+        "accuracy": 0.425,
+        "concurrency": 2,
+        "correct": 85,
+        "data_path": "<LOCAL_PATH>",
+        "infra_http_errors": 0,
+        "method": "ifeval_lightweight_constraint_scorer",
+        "n": 200,
+        "note": "Not full official IFEval scorer; common instruction families only. Label as lightweight.",
+        "wilson95": {
+          "high": 0.4942919487953179,
+          "low": 0.35853495209243025
+        }
+      }
+    },
+    {
+      "artifacts": {
+        "humaneval.json": "<LOCAL_PATH>",
+        "samples.jsonl": "<LOCAL_PATH>"
+      },
+      "elapsed_s": 2113.193932369002,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "humaneval",
+      "status": "PASS",
+      "summary": {
+        "concurrency": 2,
+        "data_path": "<LOCAL_PATH>",
+        "eval_error": null,
+        "infra_http_errors": 0,
+        "method": "humaneval_functional_correctness",
+        "n": 164,
+        "pass@1": 0.7317073170731707,
+        "pass_at": {
+          "pass@1": 0.7317073170731707
+        }
+      }
+    },
+    {
+      "artifacts": {
+        "gsm8k.json": "<LOCAL_PATH>"
+      },
+      "elapsed_s": 2429.308303389,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "gsm8k",
+      "status": "PASS",
+      "summary": {
+        "accuracy": 0.81,
+        "concurrency": 2,
+        "correct": 162,
+        "data_path": "<LOCAL_PATH>",
+        "infra_http_errors": 0,
+        "method": "gsm8k_0shot_flexible_extract",
+        "n": 200,
+        "seed": 0,
+        "wilson95": {
+          "high": 0.8583290620754351,
+          "low": 0.7499864142552062
+        }
+      }
     }
   ],
   "model": "/models/Inkling-Small-NVFP4",
   "profile": "core-subset",
   "r0b0bench_version": "1.0.0rc2",
-  "run_id": "inkling-small-sm121-marlin-20260806",
+  "run_id": "inkling-small-sm121-marlin-full-20260806",
   "schema_version": 2,
   "started_utc": "2026-08-06T19:42:01.857224+00:00",
   "systems_lanes": [

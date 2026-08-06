@@ -1,0 +1,24 @@
+{
+  "artifacts": {
+    "qa.json": "<LOCAL_PATH>"
+  },
+  "elapsed_s": 590.628445231996,
+  "imported": false,
+  "infra_errors": 0,
+  "lane_id": "qa",
+  "status": "PASS",
+  "summary": {
+    "accuracy": 0.245,
+    "concurrency": 2,
+    "correct": 98,
+    "data_path": "<LOCAL_PATH>",
+    "dataset": "allenai/ai2_arc ARC-Easy test",
+    "infra_http_errors": 0,
+    "method": "arc_easy_mc_letter",
+    "n": 400,
+    "wilson95": {
+      "high": 0.28944339616699555,
+      "low": 0.20540805053884156
+    }
+  }
+}

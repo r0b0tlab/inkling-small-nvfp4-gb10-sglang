@@ -2,7 +2,7 @@
   "artifacts": {
     "canary.json": "<LOCAL_PATH>"
   },
-  "elapsed_s": 29.253887468017638,
+  "elapsed_s": 33.505935163993854,
   "imported": false,
   "infra_errors": 0,
   "lane_id": "canary",
