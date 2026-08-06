@@ -1,0 +1,16 @@
+{
+  "depth": 524256,
+  "elapsed_s": 0.34607329504797235,
+  "finish_reason": null,
+  "fraction_of_usable": 0.5,
+  "http_status": 400,
+  "infra_errors": 1,
+  "max_model_len": 1048576,
+  "needle_fraction_effective": 0.4999942776048343,
+  "passed": false,
+  "prompt_sha256": "ffb6c12c522d6036fccc6b03972b8687fd41b5bfef4653c8789a34608211bd57",
+  "prompt_tokens_constructed": 524256,
+  "response_text": "",
+  "status": "ERROR",
+  "usage": null
+}

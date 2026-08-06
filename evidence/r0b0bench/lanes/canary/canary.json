@@ -1,0 +1,200 @@
+{
+  "results": [
+    {
+      "elapsed_s": 3.29577176598832,
+      "http_status": 200,
+      "id": "identity",
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "matched_stop": 200006,
+            "message": {
+              "content": "R0B0BENCH_OK",
+              "reasoning_content": "The user wants me to reply with exactly \"R0B0BENCH_OK\" and nothing else. I need to make sure there are no extra characters, no punctuation, no explanation, just that exact string.",
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1786034654,
+        "id": "61fe07bbc88f4dacb81908b61b254f2b",
+        "metadata": {
+          "weight_version": "default"
+        },
+        "model": "/models/Inkling-Small-NVFP4",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 57,
+          "prompt_tokens": 28,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 46,
+          "total_tokens": 85
+        }
+      }
+    },
+    {
+      "elapsed_s": 1.5878980900160968,
+      "http_status": 200,
+      "id": "zh_arithmetic",
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "matched_stop": 200006,
+            "message": {
+              "content": "323",
+              "reasoning_content": "We need answer: 17*19 = 323. Provide only number.",
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1786034655,
+        "id": "ab1b4b3f7bd84b5286c7bff76d6477ec",
+        "metadata": {
+          "weight_version": "default"
+        },
+        "model": "/models/Inkling-Small-NVFP4",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 26,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 19,
+          "total_tokens": 50
+        }
+      }
+    },
+    {
+      "elapsed_s": 2.940618953027297,
+      "http_status": 200,
+      "id": "structured",
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "matched_stop": 200006,
+            "message": {
+              "content": "{\"alpha\":2,\"beta\":3}",
+              "reasoning_content": "The user wants a compact JSON object with keys \"alpha\" and \"beta\" set to integers 2 and 3. No prose. Just return the JSON.",
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1786034658,
+        "id": "e3972304244547b785efc24e043c576f",
+        "metadata": {
+          "weight_version": "default"
+        },
+        "model": "/models/Inkling-Small-NVFP4",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 37,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 36,
+          "total_tokens": 86
+        }
+      }
+    },
+    {
+      "elapsed_s": 5.348240218008868,
+      "http_status": 200,
+      "id": "tool_call",
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "tool_calls",
+            "index": 0,
+            "logprobs": null,
+            "matched_stop": null,
+            "message": {
+              "content": "",
+              "reasoning_content": "The user is asking for the current weather in Tokyo and explicitly asks to use the provided tool. I have the `get_weather` function available. I should call it with location \"Tokyo\".",
+              "role": "assistant",
+              "tool_calls": [
+                {
+                  "function": {
+                    "arguments": "{\"location\": \"Tokyo\"}",
+                    "name": "get_weather"
+                  },
+                  "id": "call_ae5344702db9401baa9073eb",
+                  "index": 0,
+                  "type": "function"
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1786034664,
+        "id": "9814d8ded2774055b754125311fe0b0d",
+        "metadata": {
+          "weight_version": "default"
+        },
+        "model": "/models/Inkling-Small-NVFP4",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 59,
+          "prompt_tokens": 80,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 41,
+          "total_tokens": 139
+        }
+      }
+    },
+    {
+      "elapsed_s": 16.080453047994524,
+      "http_status": 200,
+      "id": "needle",
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "matched_stop": 200006,
+            "message": {
+              "content": "A9Q7",
+              "reasoning_content": "We need parse user message. There's a huge repetition of \"filler red blue green.\" then \"The verification code is A9Q7.\" then more filler \"filler one two three.\" repeated. At end: \"What is the verification code? Reply with only the code.\"\n\nSo answer: A9Q7.",
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1786034680,
+        "id": "b1fc1797a037479899a52a40bee30d04",
+        "metadata": {
+          "weight_version": "default"
+        },
+        "model": "/models/Inkling-Small-NVFP4",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 76,
+          "prompt_tokens": 8037,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 68,
+          "total_tokens": 8113
+        }
+      }
+    }
+  ],
+  "summary": {
+    "checks": {
+      "identity": true,
+      "needle": true,
+      "structured": true,
+      "tool_call": true,
+      "zh_arithmetic": true
+    },
+    "n": 5,
+    "passed": true
+  }
+}

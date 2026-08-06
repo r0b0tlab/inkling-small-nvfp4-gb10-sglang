@@ -1,6 +1,6 @@
 {
   "artifacts": {
-    "canary.json": "/home/r0b0tdgx/artifacts/inkling-small-publication/r0b0bench/inkling-small-sm121-marlin-20260806/lanes/canary/canary.json"
+    "canary.json": "<LOCAL_PATH>"
   },
   "elapsed_s": 29.253887468017638,
   "imported": false,

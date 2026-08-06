@@ -1,0 +1,580 @@
+{
+  "base_url": "http://<NODE_IP>:30000/v1",
+  "elapsed_s": 10604.638653105998,
+  "infra_errors_total": 1,
+  "invalid_for_publish": true,
+  "lanes": [
+    {
+      "artifacts": {
+        "bfcl_mt.json": "<LOCAL_PATH>",
+        "log": "<LOCAL_PATH>"
+      },
+      "elapsed_s": 6021.727099938958,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "bfcl_mt",
+      "status": "PASS",
+      "summary": {
+        "accuracy": 0.54,
+        "base_url": "http://<NODE_IP>:30000/v1/",
+        "category": "multi_turn_base",
+        "expected_rows": 200,
+        "model": "/models/Inkling-Small-NVFP4",
+        "project": "<LOCAL_PATH>",
+        "score": {
+          "accuracy": 0.54,
+          "correct": 108,
+          "csv": [
+            "<LOCAL_PATH>",
+            "<LOCAL_PATH>",
+            "<LOCAL_PATH>",
+            "<LOCAL_PATH>",
+            "<LOCAL_PATH>",
+            "<LOCAL_PATH>"
+          ],
+          "csv_rows": [
+            "Rank,Overall Acc,Model,Model Link,Total Cost ($),Latency Mean (s),Latency Standard Deviation (s),Latency 95th Percentile (s),Non-Live AST Acc,Non-Live Simple AST,Non-Live Multiple AST,Non-Live Parallel AST,Non-Live Parallel Multiple AST,Live Acc,Live Simple AST,Live Multiple AST,Live Parallel AST,Live Parallel Multiple AST,Multi Turn Acc,Multi Turn Base,Multi Turn Miss Func,Multi Turn Miss Param,Multi Turn Long Context,Web Search Acc,Web Search Base,Web Search No Snippet,Memory Acc,Memory KV,Memory Vector,Memory Recursive Summarization,Relevance Detection,Irrelevance Detection,Format Sensitivity Max Delta,Format Sensitivity Standard Deviation,Organization,License",
+            "Rank,Model,Multi Turn Overall Acc,Base,Miss Func,Miss Param,Long Context"
+          ],
+          "primary": {
+            "accuracy": 0.54,
+            "correct_count": 108,
+            "total_count": 200
+          },
+          "primary_path": "<LOCAL_PATH>",
+          "score_files": [
+            "<LOCAL_PATH>",
+            "<LOCAL_PATH>"
+          ],
+          "total": 200
+        },
+        "status": "PASS"
+      }
+    },
+    {
+      "artifacts": {
+        "bfcl_ast.json": "<LOCAL_PATH>",
+        "log": "<LOCAL_PATH>"
+      },
+      "elapsed_s": 2263.094109889993,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "bfcl_ast",
+      "status": "PASS",
+      "summary": {
+        "base_url": "http://<NODE_IP>:30000/v1/",
+        "categories": [
+          "multiple",
+          "parallel",
+          "parallel_multiple"
+        ],
+        "micro_accuracy": 0.3016666666666667,
+        "micro_correct": 181,
+        "micro_total": 600,
+        "model": "/models/Inkling-Small-NVFP4",
+        "project": "<LOCAL_PATH>",
+        "score": {
+          "categories": {
+            "multiple": {
+              "accuracy": 0.19,
+              "correct_count": 38,
+              "path": "<LOCAL_PATH>",
+              "raw": {
+                "accuracy": 0.19,
+                "correct_count": 38,
+                "total_count": 200
+              },
+              "total_count": 200
+            },
+            "parallel": {
+              "accuracy": 0.525,
+              "correct_count": 105,
+              "path": "<LOCAL_PATH>",
+              "raw": {
+                "accuracy": 0.525,
+                "correct_count": 105,
+                "total_count": 200
+              },
+              "total_count": 200
+            },
+            "parallel_multiple": {
+              "accuracy": 0.19,
+              "correct_count": 38,
+              "path": "<LOCAL_PATH>",
+              "raw": {
+                "accuracy": 0.19,
+                "correct_count": 38,
+                "total_count": 200
+              },
+              "total_count": 200
+            }
+          },
+          "micro_accuracy": 0.3016666666666667,
+          "micro_correct": 181,
+          "micro_total": 600
+        },
+        "status": "PASS"
+      }
+    },
+    {
+      "artifacts": {
+        "summary.json": "<LOCAL_PATH>"
+      },
+      "elapsed_s": 70.56614088499919,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "latency",
+      "status": "PASS",
+      "summary": {
+        "drop_first_rep": true,
+        "failed": 0,
+        "method": "openai_chat_stream_c1_latency",
+        "nonstream": {
+          "e2el_ms_mean": 8537.075379979797,
+          "n_stable": 2,
+          "rows": [
+            {
+              "completion_tokens": 128,
+              "e2el_ms": 9053.454718959983,
+              "elapsed_s": 9.053454718959983,
+              "http_status": 200,
+              "ok": true,
+              "prompt_tokens": 30,
+              "rep": 1
+            },
+            {
+              "completion_tokens": 128,
+              "e2el_ms": 8595.187583996449,
+              "elapsed_s": 8.595187583996449,
+              "http_status": 200,
+              "ok": true,
+              "prompt_tokens": 30,
+              "rep": 2
+            },
+            {
+              "completion_tokens": 128,
+              "e2el_ms": 8478.963175963145,
+              "elapsed_s": 8.478963175963145,
+              "http_status": 200,
+              "ok": true,
+              "prompt_tokens": 30,
+              "rep": 3
+            }
+          ]
+        },
+        "output_tokens": 128,
+        "reps": 5,
+        "stream": {
+          "e2el_ms_mean": 8869.863463987713,
+          "itl_ms_mean": null,
+          "itl_ms_p50_mean": null,
+          "itl_ms_p95_mean": null,
+          "n_stable": 4,
+          "rows": [
+            {
+              "e2el_ms": 8954.965121985879,
+              "elapsed_s": 8.954965121985879,
+              "finish_reason": "length",
+              "http_status": 200,
+              "itl_ms_mean": null,
+              "itl_ms_p50": null,
+              "itl_ms_p95": null,
+              "ok": true,
+              "rep": 1,
+              "stream_completion_chunks": 0,
+              "text": "",
+              "ttft_ms": null,
+              "usage": {
+                "completion_tokens": 128,
+                "prompt_tokens": 30,
+                "prompt_tokens_details": null,
+                "reasoning_tokens": 128,
+                "total_tokens": 158
+              }
+            },
+            {
+              "e2el_ms": 8706.888475979213,
+              "elapsed_s": 8.706888475979213,
+              "finish_reason": "length",
+              "http_status": 200,
+              "itl_ms_mean": null,
+              "itl_ms_p50": null,
+              "itl_ms_p95": null,
+              "ok": true,
+              "rep": 2,
+              "stream_completion_chunks": 0,
+              "text": "",
+              "ttft_ms": null,
+              "usage": {
+                "completion_tokens": 128,
+                "prompt_tokens": 30,
+                "prompt_tokens_details": null,
+                "reasoning_tokens": 128,
+                "total_tokens": 158
+              }
+            },
+            {
+              "e2el_ms": 9105.776061012875,
+              "elapsed_s": 9.105776061012875,
+              "finish_reason": "length",
+              "http_status": 200,
+              "itl_ms_mean": null,
+              "itl_ms_p50": null,
+              "itl_ms_p95": null,
+              "ok": true,
+              "rep": 3,
+              "stream_completion_chunks": 0,
+              "text": "",
+              "ttft_ms": null,
+              "usage": {
+                "completion_tokens": 128,
+                "prompt_tokens": 30,
+                "prompt_tokens_details": null,
+                "reasoning_tokens": 128,
+                "total_tokens": 158
+              }
+            },
+            {
+              "e2el_ms": 9097.402668965515,
+              "elapsed_s": 9.097402668965515,
+              "finish_reason": "length",
+              "http_status": 200,
+              "itl_ms_mean": null,
+              "itl_ms_p50": null,
+              "itl_ms_p95": null,
+              "ok": true,
+              "rep": 4,
+              "stream_completion_chunks": 0,
+              "text": "",
+              "ttft_ms": null,
+              "usage": {
+                "completion_tokens": 128,
+                "prompt_tokens": 30,
+                "prompt_tokens_details": null,
+                "reasoning_tokens": 128,
+                "total_tokens": 158
+              }
+            },
+            {
+              "e2el_ms": 8569.386649993248,
+              "elapsed_s": 8.569386649993248,
+              "finish_reason": "length",
+              "http_status": 200,
+              "itl_ms_mean": null,
+              "itl_ms_p50": null,
+              "itl_ms_p95": null,
+              "ok": true,
+              "rep": 5,
+              "stream_completion_chunks": 0,
+              "text": "",
+              "ttft_ms": null,
+              "usage": {
+                "completion_tokens": 128,
+                "prompt_tokens": 30,
+                "prompt_tokens_details": null,
+                "reasoning_tokens": 128,
+                "total_tokens": 158
+              }
+            }
+          ],
+          "ttft_ms_mean": null
+        }
+      }
+    },
+    {
+      "artifacts": {
+        "summary.json": "<LOCAL_PATH>"
+      },
+      "elapsed_s": 1090.6200585920014,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "concurrency",
+      "status": "PASS",
+      "summary": {
+        "backend": "openai_portable",
+        "drop_first_rep": true,
+        "levels": [
+          1,
+          2,
+          4,
+          6
+        ],
+        "method": "openai_portable_concurrency_ladder",
+        "output_tokens": 512,
+        "reps": 3,
+        "rows": [
+          {
+            "aggregate_output_tok_s": 14.091118098480779,
+            "completed": 4,
+            "concurrency": 1,
+            "failed": 0,
+            "mean_e2el_ms": 36350.875290241675,
+            "median_client_output_tok_s": 14.092943597187698,
+            "output_tokens": 512,
+            "repetitions_present": 3,
+            "warmup_rep_dropped": 1
+          },
+          {
+            "aggregate_output_tok_s": 26.653336214361307,
+            "completed": 8,
+            "concurrency": 2,
+            "failed": 0,
+            "mean_e2el_ms": 38479.2527382524,
+            "median_client_output_tok_s": 13.33429526017986,
+            "output_tokens": 512,
+            "repetitions_present": 3,
+            "warmup_rep_dropped": 1
+          },
+          {
+            "aggregate_output_tok_s": 46.82806453785662,
+            "completed": 16,
+            "concurrency": 4,
+            "failed": 0,
+            "mean_e2el_ms": 43733.1452022554,
+            "median_client_output_tok_s": 11.707985827086077,
+            "output_tokens": 512,
+            "repetitions_present": 3,
+            "warmup_rep_dropped": 1
+          },
+          {
+            "aggregate_output_tok_s": 48.693735618310306,
+            "completed": 24,
+            "concurrency": 6,
+            "failed": 0,
+            "mean_e2el_ms": 63154.91287933158,
+            "median_client_output_tok_s": 8.11806581859218,
+            "output_tokens": 512,
+            "repetitions_present": 3,
+            "warmup_rep_dropped": 1
+          }
+        ],
+        "total_failed": 0
+      }
+    },
+    {
+      "artifacts": {
+        "summary.json": "<LOCAL_PATH>"
+      },
+      "elapsed_s": 778.602842384018,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "throughput",
+      "status": "PASS",
+      "summary": {
+        "backend": "openai_portable",
+        "decode": {
+          "mean_client_output_tok_s": 13.977849472894817,
+          "median_client_output_tok_s": 13.779343858388762,
+          "n_stable": 4,
+          "output_tokens_requested": 2048,
+          "reps": 5,
+          "rows": [
+            {
+              "client_output_tokens_per_second": 13.080153558314901,
+              "completion_tokens": 2048,
+              "elapsed_s": 156.57308538997313,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "decode",
+              "ok": true,
+              "prompt_tokens": 45,
+              "rep": 1,
+              "server_prompt_tokens_per_second": 0.28740571783406765
+            },
+            {
+              "client_output_tokens_per_second": 13.819385394611325,
+              "completion_tokens": 2048,
+              "elapsed_s": 148.19761816604296,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "decode",
+              "ok": true,
+              "prompt_tokens": 45,
+              "rep": 2,
+              "server_prompt_tokens_per_second": 0.30364860486206524
+            },
+            {
+              "client_output_tokens_per_second": 15.56108274801479,
+              "completion_tokens": 2048,
+              "elapsed_s": 131.61037912103347,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "decode",
+              "ok": true,
+              "prompt_tokens": 45,
+              "rep": 3,
+              "server_prompt_tokens_per_second": 0.34191832209993434
+            },
+            {
+              "client_output_tokens_per_second": 13.739302322166198,
+              "completion_tokens": 2048,
+              "elapsed_s": 149.06142626295332,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "decode",
+              "ok": true,
+              "prompt_tokens": 45,
+              "rep": 4,
+              "server_prompt_tokens_per_second": 0.30188896703978463
+            },
+            {
+              "client_output_tokens_per_second": 12.791627426786958,
+              "completion_tokens": 2048,
+              "elapsed_s": 160.10472566698445,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "decode",
+              "ok": true,
+              "prompt_tokens": 45,
+              "rep": 5,
+              "server_prompt_tokens_per_second": 0.28106603232686184
+            }
+          ]
+        },
+        "drop_first_rep": true,
+        "failed": 0,
+        "method": "openai_portable_c1_throughput",
+        "prefill": {
+          "mean_server_prompt_tok_s": 14109.462673088641,
+          "median_prompt_tokens": 22776.0,
+          "median_server_prompt_tok_s": 14109.462673088641,
+          "n_stable": 2,
+          "note": "prompt tok/s is e2e wall proxy (includes short decode); not pure prefill kernel metric",
+          "output_tokens": 16,
+          "prompt_tokens_target": 14000,
+          "reps": 3,
+          "rows": [
+            {
+              "client_output_tokens_per_second": 0.5365290269456131,
+              "completion_tokens": 16,
+              "elapsed_s": 29.821312914020382,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "prefill",
+              "ok": true,
+              "prompt_tokens": 22776,
+              "rep": 1,
+              "server_prompt_tokens_per_second": 763.7490698570801
+            },
+            {
+              "client_output_tokens_per_second": 9.806204785877517,
+              "completion_tokens": 16,
+              "elapsed_s": 1.6316200150176883,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "prefill",
+              "ok": true,
+              "prompt_tokens": 22776,
+              "rep": 2,
+              "server_prompt_tokens_per_second": 13959.132512696644
+            },
+            {
+              "client_output_tokens_per_second": 10.017416813123035,
+              "completion_tokens": 16,
+              "elapsed_s": 1.597218154987786,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "prefill",
+              "ok": true,
+              "prompt_tokens": 22776,
+              "rep": 3,
+              "server_prompt_tokens_per_second": 14259.79283348064
+            }
+          ]
+        }
+      }
+    },
+    {
+      "artifacts": {
+        "niah.json": "<LOCAL_PATH>"
+      },
+      "elapsed_s": 379.96936418901896,
+      "imported": false,
+      "infra_errors": 1,
+      "lane_id": "niah",
+      "status": "ERROR",
+      "summary": {
+        "all_passed": false,
+        "code": "R0B0-NIAH-7K3M",
+        "depth_policy": "frac_of_max_context",
+        "depths": [
+          262128,
+          524256,
+          943660
+        ],
+        "fractions": [
+          0.25,
+          0.5,
+          0.9
+        ],
+        "generation_reserve": 64,
+        "kv_cache_size_tokens": null,
+        "marker": "R0B0BENCH_NIAH_SLOT",
+        "max_model_len": 1048576,
+        "note": "Depths are always 25/50/90% of (max_model_len - generation_reserve). This is the standard max-context capacity package; physical KV shortfall surfaces as infra ERROR.",
+        "pass_count": 1,
+        "rows": [
+          {
+            "depth": 262128,
+            "elapsed_s": 372.14778075396316,
+            "finish_reason": "length",
+            "fraction_of_usable": 0.25,
+            "http_status": 200,
+            "infra_errors": 0,
+            "max_model_len": 1048576,
+            "needle_fraction_effective": 0.49998855520966856,
+            "passed": true,
+            "prompt_sha256": "f5677e18b7b9d5fb98162594203b208139a99881a777a7bdb90d6abe8806773c",
+            "prompt_tokens_constructed": 262128,
+            "response_text": "We need parse. The user says \"What is the secret verification code? Reply with only the code, nothing else.\" In the long text there is a line: \"IMPORTANT SECRET VERIFICATION CODE: R0B0-NIAH-7K3M\". So answer: R0B0-NIAH",
+            "status": "PASS",
+            "usage": {
+              "completion_tokens": 64,
+              "prompt_tokens": 262128,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "total_tokens": 262192
+            }
+          },
+          {
+            "depth": 524256,
+            "elapsed_s": 0.34607329504797235,
+            "finish_reason": null,
+            "fraction_of_usable": 0.5,
+            "http_status": 400,
+            "infra_errors": 1,
+            "max_model_len": 1048576,
+            "needle_fraction_effective": 0.4999942776048343,
+            "passed": false,
+            "prompt_sha256": "ffb6c12c522d6036fccc6b03972b8687fd41b5bfef4653c8789a34608211bd57",
+            "prompt_tokens_constructed": 524256,
+            "response_text": "",
+            "status": "ERROR",
+            "usage": null
+          }
+        ],
+        "template_source": "transformers_chat_template (render_failed=Client error '404 Not Found' for url 'http://<NODE_IP>:30000/v1/chat/completions/render'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404)",
+        "tokenizer": {
+          "backend": "tokenizers",
+          "path": "<LOCAL_PATH>"
+        },
+        "total": 2
+      }
+    }
+  ],
+  "model": "/models/Inkling-Small-NVFP4",
+  "profile": "core-subset",
+  "r0b0bench_version": "1.0.0rc2",
+  "run_id": "inkling-small-sm121-marlin-20260806",
+  "schema_version": 2,
+  "started_utc": "2026-08-06T19:42:01.857224+00:00",
+  "systems_lanes": [
+    "canary",
+    "bfcl_mt",
+    "bfcl_ast",
+    "latency",
+    "concurrency",
+    "throughput",
+    "niah"
+  ]
+}

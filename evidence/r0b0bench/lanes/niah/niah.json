@@ -1,0 +1,67 @@
+{
+  "all_passed": false,
+  "code": "R0B0-NIAH-7K3M",
+  "depth_policy": "frac_of_max_context",
+  "depths": [
+    262128,
+    524256,
+    943660
+  ],
+  "fractions": [
+    0.25,
+    0.5,
+    0.9
+  ],
+  "generation_reserve": 64,
+  "kv_cache_size_tokens": null,
+  "marker": "R0B0BENCH_NIAH_SLOT",
+  "max_model_len": 1048576,
+  "note": "Depths are always 25/50/90% of (max_model_len - generation_reserve). This is the standard max-context capacity package; physical KV shortfall surfaces as infra ERROR.",
+  "pass_count": 1,
+  "rows": [
+    {
+      "depth": 262128,
+      "elapsed_s": 372.14778075396316,
+      "finish_reason": "length",
+      "fraction_of_usable": 0.25,
+      "http_status": 200,
+      "infra_errors": 0,
+      "max_model_len": 1048576,
+      "needle_fraction_effective": 0.49998855520966856,
+      "passed": true,
+      "prompt_sha256": "f5677e18b7b9d5fb98162594203b208139a99881a777a7bdb90d6abe8806773c",
+      "prompt_tokens_constructed": 262128,
+      "response_text": "We need parse. The user says \"What is the secret verification code? Reply with only the code, nothing else.\" In the long text there is a line: \"IMPORTANT SECRET VERIFICATION CODE: R0B0-NIAH-7K3M\". So answer: R0B0-NIAH",
+      "status": "PASS",
+      "usage": {
+        "completion_tokens": 64,
+        "prompt_tokens": 262128,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0,
+        "total_tokens": 262192
+      }
+    },
+    {
+      "depth": 524256,
+      "elapsed_s": 0.34607329504797235,
+      "finish_reason": null,
+      "fraction_of_usable": 0.5,
+      "http_status": 400,
+      "infra_errors": 1,
+      "max_model_len": 1048576,
+      "needle_fraction_effective": 0.4999942776048343,
+      "passed": false,
+      "prompt_sha256": "ffb6c12c522d6036fccc6b03972b8687fd41b5bfef4653c8789a34608211bd57",
+      "prompt_tokens_constructed": 524256,
+      "response_text": "",
+      "status": "ERROR",
+      "usage": null
+    }
+  ],
+  "template_source": "transformers_chat_template (render_failed=Client error '404 Not Found' for url 'http://<NODE_IP>:30000/v1/chat/completions/render'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404)",
+  "tokenizer": {
+    "backend": "tokenizers",
+    "path": "<LOCAL_PATH>"
+  },
+  "total": 2
+}
