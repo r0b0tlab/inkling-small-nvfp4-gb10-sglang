@@ -1,0 +1,21 @@
+{
+  "artifacts": {
+    "canary.json": "/home/r0b0tdgx/artifacts/inkling-small-publication/r0b0bench/inkling-small-sm121-marlin-20260806/lanes/canary/canary.json"
+  },
+  "elapsed_s": 29.253887468017638,
+  "imported": false,
+  "infra_errors": 0,
+  "lane_id": "canary",
+  "status": "PASS",
+  "summary": {
+    "checks": {
+      "identity": true,
+      "needle": true,
+      "structured": true,
+      "tool_call": true,
+      "zh_arithmetic": true
+    },
+    "n": 5,
+    "passed": true
+  }
+}
