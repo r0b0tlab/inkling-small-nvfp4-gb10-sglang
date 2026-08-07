@@ -1,0 +1,1164 @@
+{
+  "samples_meta": [
+    {
+      "completion": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    if len(numbers) < 2:\n        return False\n    sorted_numbers = sorted(numbers)\n    for i in range(len(sorted_numbers) - 1):\n        if sorted_numbers[i + 1] - sorted_numbers[i] < threshold:\n            return True\n    return False",
+      "elapsed_s": 17.300048727891408,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/0"
+    },
+    {
+      "completion": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    result = []\n    current = []\n    depth = 0\n    for ch in paren_string:\n        if ch == \" \":\n            continue\n        if ch == \"(\":\n            depth += 1\n            current.append(ch)\n        elif ch == \")\":\n            current.append(ch)\n            depth -= 1\n            if depth == 0:\n                result.append(\"\".join(current))\n                current = []\n    return result",
+      "elapsed_s": 23.40455398906488,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/1"
+    },
+    {
+      "completion": "def truncate_number(number: float) -> float:\n    return number - int(number)",
+      "elapsed_s": 8.776665041106753,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/2"
+    },
+    {
+      "completion": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    balance = 0\n    for op in operations:\n        balance += op\n        if balance < 0:\n            return True\n    return False",
+      "elapsed_s": 8.944256827002391,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/3"
+    },
+    {
+      "completion": "    mean = sum(numbers) / len(numbers)\n    return sum(abs(x - mean) for x in numbers) / len(numbers)",
+      "elapsed_s": 18.706438894965686,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/4"
+    },
+    {
+      "completion": "    result: List[int] = []\n    for i, num in enumerate(numbers):\n        result.append(num)\n        if i < len(numbers) - 1:\n            result.append(delimeter)\n    return result",
+      "elapsed_s": 24.395917206071317,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/5"
+    },
+    {
+      "completion": "from typing import List\n\n\ndef parse_nested_parens(paren_string: str) -> List[int]:\n    result = []\n    for group in paren_string.split():\n        depth = 0\n        max_depth = 0\n        for ch in group:\n            if ch == '(':\n                depth += 1\n                if depth > max_depth:\n                    max_depth = depth\n            elif ch == ')':\n                depth -= 1\n        result.append(max_depth)\n    return result",
+      "elapsed_s": 18.674523106077686,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/6"
+    },
+    {
+      "completion": "def sum_product(numbers: List[int]) -> Tuple[int, int]:\n    total = sum(numbers)\n    product = 1\n    for n in numbers:\n        product *= n\n    return total, product",
+      "elapsed_s": 13.070683195954189,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/8"
+    },
+    {
+      "completion": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list nust integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n    result = []\n    current_max = float('-inf')\n    for num in numbers:\n        if num > current_max:\n            current_max = num\n        result.append(current_max)\n    return result",
+      "elapsed_s": 16.890100138029084,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/9"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 38.37267069704831,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/7"
+    },
+    {
+      "completion": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    res = []\n    for i in range(max(len(a), len(b))):\n        x = a[i] if i < len(a) else '0'\n        y = b[i] if i < len(b) else '0'\n        res.append('1' if x != y else '0')\n    return ''.join(res)",
+      "elapsed_s": 25.491715061943978,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/11"
+    },
+    {
+      "completion": "def make_palindrome(string: str) -> str:\n    for i in range(len(string) + 1):\n        if is_palindrome(string[i:]):\n            return string + string[:i][::-1]",
+      "elapsed_s": 36.32300228497479,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/10"
+    },
+    {
+      "completion": "def greatest_common_divisor(a: int, b: int) -> int:\n    while b:\n        a, b = b, a % b\n    return abs(a)",
+      "elapsed_s": 8.203247866011225,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/13"
+    },
+    {
+      "completion": "from typing import List, Optional\n\n\ndef longest(strings: List[str]) -> Optional[str]:\n    \"\"\" Out of list of strings, return the longest one. Return the first one in case of same length. Return None in case the input list is empty.\n    >>> longest([])\n\n    >>> longest(['a', 'b', 'c'])\n    'a'\n    >>> longest(['a', 'bb', 'ccc'])\n    'ccc'\n    \"\"\"\n    if not strings:\n        return None\n    return max(strings, key=len)",
+      "elapsed_s": 22.991756528965198,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/12"
+    },
+    {
+      "completion": "    return [string[:i] for i in range(1, len(string) + 1)]",
+      "elapsed_s": 8.32215986691881,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/14"
+    },
+    {
+      "completion": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return \" \".join(str(i) for i in range(n + 1))",
+      "elapsed_s": 7.645702423993498,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/15"
+    },
+    {
+      "completion": "from typing import List\n\ndef parse_music(music_string: str) -> List[int]:\n    beats = []\n    for token in music_string.split():\n        if token == 'o':\n            beats.append(4)\n        elif token == 'o|':\n            beats.append(2)\n        elif token == '.|':\n            beats.append(1)\n    return beats",
+      "elapsed_s": 13.442723060958087,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/17"
+    },
+    {
+      "completion": "def how_many_times(string: str, substring: str) -> int:\n    if not substring:\n        return 0\n    count = 0\n    start = 0\n    while True:\n        idx = string.find(substring, start)\n        if idx == -1:\n            break\n        count += 1\n        start = idx + 1\n    return count",
+      "elapsed_s": 14.33692400495056,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/18"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 36.11987815692555,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/16"
+    },
+    {
+      "completion": "    order = {\n        'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4,\n        'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9\n    }\n    words = numbers.split()\n    words.sort(key=lambda w: order[w])\n    return ' '.join(words)",
+      "elapsed_s": 23.218837118009105,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/19"
+    },
+    {
+      "completion": "    sorted_numbers = sorted(numbers)\n    closest_pair = (sorted_numbers[0], sorted_numbers[1])\n    min_diff = sorted_numbers[1] - sorted_numbers[0]\n    for i in range(1, len(sorted_numbers) - 1):\n        diff = sorted_numbers[i + 1] - sorted_numbers[i]\n        if diff < min_diff:\n            min_diff = diff\n            closest_pair = (sorted_numbers[i], sorted_numbers[i + 1])\n    return closest_pair",
+      "elapsed_s": 32.437319529941306,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/20"
+    },
+    {
+      "completion": "    min_val = min(numbers)\n    max_val = max(numbers)\n    if max_val == min_val:\n        return [0.0] * len(numbers)\n    return [(x - min_val) / (max_val - min_val) for x in numbers]",
+      "elapsed_s": 25.134027914959006,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/21"
+    },
+    {
+      "completion": "def strlen(string: str) -> int:\n    \"\"\" Return length of given string\n    >>> strlen('')\n    0\n    >>> strlen('abc')\n    3\n    \"\"\"\n    return len(string)",
+      "elapsed_s": 5.529581794049591,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/23"
+    },
+    {
+      "completion": "    return [x for x in values if isinstance(x, int) and not isinstance(x, bool)]",
+      "elapsed_s": 21.71688089694362,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/22"
+    },
+    {
+      "completion": "def largest_divisor(n: int) -> int:\n    \"\"\"For a given number n, find the largest number that divides n evenly, smaller than n.\"\"\"\n    if n <= 1:\n        return 0\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return n // i\n    return 1",
+      "elapsed_s": 19.444469082984142,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/24"
+    },
+    {
+      "completion": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    factors = []\n    while n % 2 == 0:\n        factors.append(2)\n        n //= 2\n    f = 3\n    while f * f <= n:\n        while n % f == 0:\n            factors.append(f)\n            n //= f\n        f += 2\n    if n > 1:\n        factors.append(n)\n    return factors",
+      "elapsed_s": 29.070030170027167,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/25"
+    },
+    {
+      "completion": "def flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n    return string.swapcase()",
+      "elapsed_s": 5.2766299759969115,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/27"
+    },
+    {
+      "completion": "from typing import List\nfrom collections import Counter\n\n\ndef remove_duplicates(numbers: List[int]) -> List[int]:\n    \"\"\" From a list of integers, remove all elements that occur more than once.\n    Keep order of elements left the same as in the input.\n    >>> remove_duplicates([1, 2, 3, 2, 4])\n    [1, 3, 4]\n    \"\"\"\n    counts = Counter(numbers)\n    return [n for n in numbers if counts[n] == 1]",
+      "elapsed_s": 22.258876087958924,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/26"
+    },
+    {
+      "completion": "    return ''.join(strings)",
+      "elapsed_s": 5.849325750954449,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/28"
+    },
+    {
+      "completion": "from typing import List\n\n\ndef filter_by_prefix(strings: List[str], prefix: str) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones that start with a given prefix\n    >>> filter_by_prefix([], 'a')\n    []\n    >>> filter_by_prefix(['abc', 'bcd', 'cde', 'array'], 'a')\n    ['abc', 'array']\n    \"\"\"\n    return [s for s in strings if s.startswith(prefix)]",
+      "elapsed_s": 9.6579985920107,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/29"
+    },
+    {
+      "completion": "def get_positive(l: list):\n    \"\"\"Return only positive numbers in the list.\n    >>> get_positive([-1, 2, -4, 5, 6])\n    [2, 5, 6]\n    >>> get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    [5, 3, 2, 3, 9, 123, 1]\n    \"\"\"\n    return [x for x in l if x > 0]",
+      "elapsed_s": 11.905692989006639,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/30"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.42946395103354,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/31"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.3300016609719,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/32"
+    },
+    {
+      "completion": "def unique(l: list):\n    \"\"\"Return sorted unique elements in a list\n    >>> unique([5, 3, 5, 2, 3, 3, 9, 0, 123])\n    [0, 2, 3, 5, 9, 123]\n    \"\"\"\n    return sorted(set(l))",
+      "elapsed_s": 14.484588193008676,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/34"
+    },
+    {
+      "completion": "def sort_third(l: list):\n    res = l.copy()\n    indices = list(range(0, len(l), 3))\n    sorted_vals = sorted(l[i] for i in indices)\n    for i, v in zip(indices, sorted_vals):\n        res[i] = v\n    return res",
+      "elapsed_s": 20.572252647951245,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/33"
+    },
+    {
+      "completion": "def max_element(l: list):\n    \"\"\"Return maximum element in the list.\n    >>> max_element([1, 2, 3])\n    3\n    >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    123\n    \"\"\"\n    return max(l)",
+      "elapsed_s": 9.035520370001905,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/35"
+    },
+    {
+      "completion": "def sort_even(l: list):\n    evens = sorted(l[::2])\n    it = iter(evens)\n    return [next(it) if i % 2 == 0 else val for i, val in enumerate(l)]",
+      "elapsed_s": 16.245972380042076,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/37"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 34.33438567002304,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/36"
+    },
+    {
+      "completion": "def decode_cyclic(s: str):\n    groups = [s[(3 * i):min((3 * i + 3), len(s))] for i in range((len(s) + 2) // 3)]\n    groups = [(group[-1] + group[:-1]) if len(group) == 3 else group for group in groups]\n    return \"\".join(groups)",
+      "elapsed_s": 22.713621076080017,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/38"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 34.79209871694911,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/39"
+    },
+    {
+      "completion": "def triples_sum_to_zero(l: list):\n    n = len(l)\n    if n < 3:\n        return False\n    arr = sorted(l)\n    for i in range(n - 2):\n        if i > 0 and arr[i] == arr[i - 1]:\n            continue\n        left, right = i + 1, n - 1\n        while left < right:\n            total = arr[i] + arr[left] + arr[right]\n            if total == 0:\n                return True\n            elif total < 0:\n                left += 1\n            else:\n                right -= 1\n    return False",
+      "elapsed_s": 30.9603684929898,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/40"
+    },
+    {
+      "completion": "def car_race_collision(n: int):\n    return n * n",
+      "elapsed_s": 17.73303716001101,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/41"
+    },
+    {
+      "completion": "def incr_list(l: list):\n    \"\"\"Return list with elements incremented by 1.\n    >>> incr_list([1, 2, 3])\n    [2, 3, 4]\n    >>> incr_list([5, 3, 5, 2, 3, 3, 9, 0, 123])\n    [6, 4, 6, 3, 4, 4, 10, 1, 124]\n    \"\"\"\n    return [x + 1 for x in l]",
+      "elapsed_s": 10.445437810965814,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/42"
+    },
+    {
+      "completion": "def change_base(x: int, base: int):\n    if x == 0:\n        return \"0\"\n    res = []\n    while x > 0:\n        res.append(str(x % base))\n        x //= base\n    return \"\".join(reversed(res))",
+      "elapsed_s": 12.004424627986737,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/44"
+    },
+    {
+      "completion": "def pairs_sum_to_zero(l):\n    seen = set()\n    for x in l:\n        if -x in seen:\n            return True\n        seen.add(x)\n    return False",
+      "elapsed_s": 13.195698456955142,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/43"
+    },
+    {
+      "completion": "def triangle_area(a, h):\n    \"\"\"Given length of a side and high return area for a triangle.\n    >>> triangle_area(5, 3)\n    7.5\n    \"\"\"\n    return a * h / 2",
+      "elapsed_s": 9.77028320892714,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/45"
+    },
+    {
+      "completion": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    s = sorted(l)\n    n = len(s)\n    if n % 2 == 1:\n        return s[n // 2]\n    return (s[n // 2 - 1] + s[n // 2]) / 2",
+      "elapsed_s": 23.874611336970702,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/47"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 38.21115074399859,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/46"
+    },
+    {
+      "completion": "def is_palindrome(text: str):\n    \"\"\"\n    Return True if given string is a palindrome.\n    \"\"\"\n    return text == text[::-1]",
+      "elapsed_s": 10.83320526801981,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/48"
+    },
+    {
+      "completion": "def decode_shift(s: str):\n    \"\"\"\n    takes as input string encoded with encode_shift function. Returns decoded string.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) - 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])",
+      "elapsed_s": 15.691846805042587,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/50"
+    },
+    {
+      "completion": "def modp(n: int, p: int):\n    \"\"\"Return 2^n modulo p (be aware of numerics).\n    >>> modp(3, 5)\n    3\n    >>> modp(1101, 101)\n    2\n    >>> modp(0, 101)\n    1\n    >>> modp(3, 11)\n    8\n    >>> modp(100, 101)\n    1\n    \"\"\"\n    return pow(2, n, p)",
+      "elapsed_s": 22.51456306502223,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/49"
+    },
+    {
+      "completion": "def below_threshold(l: list, t: int):\n    \"\"\"Return True if all numbers in the list l are below threshold t.\n    >>> below_threshold([1, 2, 4, 10], 100)\n    True\n    >>> below_threshold([1, 20, 4, 10], 5)\n    False\n    \"\"\"\n    return all(x < t for x in l)",
+      "elapsed_s": 9.119484632043168,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/52"
+    },
+    {
+      "completion": "def add(x: int, y: int):\n    \"\"\"Add two numbers x and y\n    >>> add(2, 3)\n    5\n    >>> add(5, 7)\n    12\n    \"\"\"\n    return x + y",
+      "elapsed_s": 5.782768424949609,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/53"
+    },
+    {
+      "completion": "def remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string without vowels.\n    >>> remove_vowels('')\n    ''\n    >>> remove_vowels(\"abcdef\\nghijklm\")\n    'bcdf\\nghjklm'\n    >>> remove_vowels('abcdef')\n    'bcdf'\n    >>> remove_vowels('aaaaa')\n    ''\n    >>> remove_vowels('aaBAA')\n    'B'\n    >>> remove_vowels('zbcd')\n    'zbcd'\n    \"\"\"\n    vowels = set('aeiouAEIOU')\n    return ''.join(ch for ch in text if ch not in vowels)",
+      "elapsed_s": 18.191074579022825,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/51"
+    },
+    {
+      "completion": "def fib(n: int) -> int:\n    \"\"\"Return n-th Fibonacci number.\n    >>> fib(10)\n    55\n    >>> fib(1)\n    1\n    >>> fib(8)\n    21\n    \"\"\"\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b",
+      "elapsed_s": 25.091932947048917,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/55"
+    },
+    {
+      "completion": "def same_chars(s0: str, s1: str):\n    \"\"\"\n    Check if two words have the same characters.\n    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddeddabc')\n    True\n    >>> same_chars('abcd', 'dddddddabc')\n    True\n    >>> same_chars('dddddddabc', 'abcd')\n    True\n    >>> same_chars('eabcd', 'dddddddabc')\n    False\n    >>> same_chars('abcd', 'dddddddabce')\n    False\n    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddddabc')",
+      "elapsed_s": 35.40758093295153,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/54"
+    },
+    {
+      "completion": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"<\" and \">\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"<\")\n    False\n    >>> correct_bracketing(\"<>\")\n    True\n    >>> correct_bracketing(\"<<><>>\")\n    True\n    >>> correct_bracketing(\"><<>\")\n    False\n    \"\"\"\n    balance = 0\n    for ch in brackets:\n        if ch == '<':\n            balance += 1\n        elif ch == '>':\n            balance -= 1\n        if balance < 0:\n            return False\n    return balance == 0",
+      "elapsed_s": 21.80047894397285,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/56"
+    },
+    {
+      "completion": "def monotonic(l: list):\n    \"\"\"Return True is list elements are monotonically increasing or decreasing.\n    >>> monotonic([1, 2, 4, 20])\n    True\n    >>> monotonic([1, 20, 4, 10])\n    False\n    >>> monotonic([4, 1, 0, -10])\n    True\n    \"\"\"\n    increasing = all(l[i] <= l[i+1] for i in range(len(l)-1))\n    decreasing = all(l[i] >= l[i+1] for i in range(len(l)-1))\n    return increasing or decreasing",
+      "elapsed_s": 23.559404048952274,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/57"
+    },
+    {
+      "completion": "def common(l1: list, l2: list):\n    \"\"\"Return sorted unique common elements for two lists.\n    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])\n    [1, 5, 653]\n    >>> common([5, 3, 2, 8], [3, 2])\n    [2, 3]\n\n    \"\"\"\n    return sorted(set(l1) & set(l2))",
+      "elapsed_s": 25.893499254016206,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/58"
+    },
+    {
+      "completion": "def sum_to_n(n: int):\n    \"\"\"sum_to_n is a function that sums numbers from 1 to n.\n    >>> sum_to_n(30)\n    465\n    >>> sum_to_n(100)\n    5050\n    >>> sum_to_n(5)\n    15\n    >>> sum_to_n(10)\n    55\n    >>> sum_to_n(1)\n    1\n    \"\"\"\n    return n * (n + 1) // 2",
+      "elapsed_s": 9.172885847976431,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/60"
+    },
+    {
+      "completion": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    largest = -1\n    while n % 2 == 0:\n        largest = 2\n        n //= 2\n    f = 3\n    while f * f <= n:\n        while n % f == 0:\n            largest = f\n            n //= f\n        f += 2\n    if n > 2:\n        largest = n\n    return largest",
+      "elapsed_s": 26.06844937102869,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/59"
+    },
+    {
+      "completion": "def derivative(xs: list):\n    return [xs[i] * i for i in range(1, len(xs))]",
+      "elapsed_s": 8.522572724963538,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/62"
+    },
+    {
+      "completion": "def correct_bracketing(brackets: str):\n    balance = 0\n    for ch in brackets:\n        if ch == \"(\":\n            balance += 1\n        else:\n            balance -= 1\n            if balance < 0:\n                return False\n    return balance == 0",
+      "elapsed_s": 11.154780125943944,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/61"
+    },
+    {
+      "completion": "def fibfib(n: int):\n    if n == 0 or n == 1:\n        return 0\n    if n == 2:\n        return 1\n    a, b, c = 0, 0, 1\n    for _ in range(3, n + 1):\n        d = a + b + c\n        a, b, c = b, c, d\n    return c",
+      "elapsed_s": 29.671443156083114,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/63"
+    },
+    {
+      "completion": "def vowels_count(s):\n    \"\"\"Write a function vowels_count which takes a string representing\n    a word as input and returns the number of vowels in the string.\n    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\n    vowel, but only when it is at the end of the given word.\n\n    Example:\n    >>> vowels_count(\"abcde\")\n    2\n    >>> vowels_count(\"ACEDY\")\n    3\n    >>> vowels_count(\"hello\")\n    2\n    >>> vowels_count(\"sky\")\n    1\n    >>> vowels_count(\"my\")\n    1",
+      "elapsed_s": 34.898887802963145,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/64"
+    },
+    {
+      "completion": "def digitSum(s):\n    return sum(ord(c) for c in s if c.isupper())",
+      "elapsed_s": 17.43191911210306,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/66"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.355766284046695,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/65"
+    },
+    {
+      "completion": "def fruit_distribution(s, n):\n    a = int(s.split(\" apples and \")[0])\n    b = int(s.split(\" apples and \")[1].split(\" oranges\")[0])\n    return n - a - b",
+      "elapsed_s": 15.274917393107899,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/67"
+    },
+    {
+      "completion": "def pluck(arr):\n    best_val = None\n    best_idx = -1\n    for i, v in enumerate(arr):\n        if v % 2 == 0:\n            if best_val is None or v < best_val:\n                best_val = v\n                best_idx = i\n    if best_val is None:\n        return []\n    return [best_val, best_idx]",
+      "elapsed_s": 16.734039792092517,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/68"
+    },
+    {
+      "completion": "def search(lst):\n    from collections import Counter\n    c = Counter(lst)\n    best = -1\n    for k, v in c.items():\n        if k > 0 and v >= k and k > best:\n            best = k\n    return best",
+      "elapsed_s": 12.928345521911979,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/69"
+    },
+    {
+      "completion": "import math\n\ndef triangle_area(a, b, c):\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2.0\n    area = math.sqrt(s * (s - a) * (s - b) * (s - c))\n    return round(area, 2)",
+      "elapsed_s": 34.31965666497126,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/71"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.685017145005986,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/70"
+    },
+    {
+      "completion": "def will_it_fly(q, w):\n    return q == q[::-1] and sum(q) <= w",
+      "elapsed_s": 7.071129463030957,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/72"
+    },
+    {
+      "completion": "def smallest_change(arr):\n    n = len(arr)\n    changes = 0\n    for i in range(n // 2):\n        if arr[i] != arr[n - 1 - i]:\n            changes += 1\n    return changes",
+      "elapsed_s": 15.57942428404931,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/73"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 34.596803311025724,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/74"
+    },
+    {
+      "completion": "def is_multiply_prime(a):\n    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]\n    prime_set = set(primes)\n    for p in primes:\n        if p * p * p > a:\n            break\n        if a % p != 0:\n            continue\n        b = a // p\n        for q in primes:\n            if q * q > b:\n                break\n            if b % q != 0:\n                continue\n            c = b // q\n            if c in prime_set:\n                return True\n    return False",
+      "elapsed_s": 33.05857149406802,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/75"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 33.46489786193706,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/76"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 33.77273873507511,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/77"
+    },
+    {
+      "completion": "def hex_key(num):\n    primes = set('2357BD')\n    return sum(1 for ch in num if ch in primes)",
+      "elapsed_s": 10.126270712004043,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/78"
+    },
+    {
+      "completion": "def decimal_to_binary(decimal):\n    return \"db\" + bin(decimal)[2:] + \"db\"",
+      "elapsed_s": 8.43603012803942,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/79"
+    },
+    {
+      "completion": "def is_happy(s):\n    if len(s) < 3:\n        return False\n    for i in range(len(s) - 2):\n        a, b, c = s[i], s[i+1], s[i+2]\n        if a == b or a == c or b == c:\n            return False\n    return True",
+      "elapsed_s": 16.673114891978912,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/80"
+    },
+    {
+      "completion": "def prime_length(string):\n    n = len(string)\n    if n < 2:\n        return False\n    if n == 2:\n        return True\n    if n % 2 == 0:\n        return False\n    r = int(n ** 0.5)\n    for i in range(3, r + 1, 2):\n        if n % i == 0:\n            return False\n    return True",
+      "elapsed_s": 15.925536664086394,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/82"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 34.40275146497879,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/81"
+    },
+    {
+      "completion": "def solve(N):\n    total = sum(int(d) for d in str(N))\n    return bin(total)[2:]",
+      "elapsed_s": 12.649003991973586,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/84"
+    },
+    {
+      "completion": "def add(lst):\n    return sum(x for i, x in enumerate(lst) if i % 2 == 1 and x % 2 == 0)",
+      "elapsed_s": 14.520467023947276,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/85"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 36.429256545961834,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/83"
+    },
+    {
+      "completion": "def get_row(lst, x):\n    res = []\n    for i, row in enumerate(lst):\n        for j, val in enumerate(row):\n            if val == x:\n                res.append((i, j))\n    res.sort(key=lambda t: (t[0], -t[1]))\n    return res",
+      "elapsed_s": 20.003290383028798,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/87"
+    },
+    {
+      "completion": "def anti_shuffle(s):\n    return ' '.join(''.join(sorted(word)) for word in s.split(' '))",
+      "elapsed_s": 31.3592954169726,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/86"
+    },
+    {
+      "completion": "def sort_array(array):\n    arr = array.copy()\n    if len(arr) <= 1:\n        return arr\n    if (array[0] + array[-1]) % 2 == 1:\n        arr.sort()\n    else:\n        arr.sort(reverse=True)\n    return arr",
+      "elapsed_s": 22.380949405021966,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/88"
+    },
+    {
+      "completion": "def encrypt(s):\n    return ''.join(chr((ord(c) - ord('a') + 4) % 26 + ord('a')) if 'a' <= c <= 'z' else c for c in s)",
+      "elapsed_s": 24.514116436010227,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/89"
+    },
+    {
+      "completion": "def next_smallest(lst):\n    if len(lst) < 2:\n        return None\n    unique_sorted = sorted(set(lst))\n    if len(unique_sorted) < 2:\n        return None\n    return unique_sorted[1]",
+      "elapsed_s": 16.374743113992736,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/90"
+    },
+    {
+      "completion": "def any_int(x, y, z):\n    if not all(isinstance(i, int) and not isinstance(i, bool) for i in (x, y, z)):\n        return False\n    return x + y == z or x + z == y or y + z == x",
+      "elapsed_s": 20.16148372902535,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/92"
+    },
+    {
+      "completion": "import re\n\ndef is_bored(S):\n    sentences = re.split(r'[.?!]+', S)\n    count = 0\n    for s in sentences:\n        words = s.strip().split()\n        if words and words",
+      "elapsed_s": 36.57178167894017,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/91"
+    },
+    {
+      "completion": "def skjkasdkd(lst):\n    def is_prime(n):\n        if n < 2:\n            return False\n        if n % 2 == 0:\n            return n == 2\n        r = int(n**0.5)\n        for i in range(3, r+1, 2):\n            if n % i == 0:\n                return False\n        return True\n\n    primes = [x for x in lst if is_prime(x)]\n    largest = max(primes)\n    return sum(int(d) for d in str(largest))",
+      "elapsed_s": 17.867420073016547,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/94"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.27428486698773,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/93"
+    },
+    {
+      "completion": "def count_up_to(n):\n    res = []\n    for num in range(2, n):\n        is_prime = True\n        for p in res:\n            if p * p > num:\n                break\n            if num % p == 0:\n                is_prime = False\n                break\n        if is_prime:\n            res.append(num)\n    return res",
+      "elapsed_s": 22.377219424932264,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/96"
+    },
+    {
+      "completion": "def check_dict_case(dict):\n    if not dict:\n        return False\n    if not all(isinstance(k, str) for k in dict):\n        return False\n    all_lower = all(k.islower",
+      "elapsed_s": 35.79941053199582,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/95"
+    },
+    {
+      "completion": "def count_upper(s):\n    vowels = set('AEIOU')\n    return sum(1 for i in range(0, len(s), 2) if s[i] in vowels)",
+      "elapsed_s": 11.896081727929413,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/98"
+    },
+    {
+      "completion": "def multiply(a, b):\n    return (a % 10) * (b % 10)",
+      "elapsed_s": 24.15059905301314,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/97"
+    },
+    {
+      "completion": "def make_a_pile(n):\n    return [n + 2 * i for i in range(n)]",
+      "elapsed_s": 13.1923856229987,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/100"
+    },
+    {
+      "completion": "def words_string(s):\n    return s.replace(\",\", \" \").split()",
+      "elapsed_s": 13.990450988058,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/101"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.98362111498136,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/99"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 33.823210250004195,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/102"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 33.569771873997524,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/103"
+    },
+    {
+      "completion": "def unique_digits(x):\n    result = []\n    for n in x:\n        if all(int(d) % 2 == 1 for d in str(n)):\n            result.append(n)\n    result.sort()\n    return result",
+      "elapsed_s": 13.898548330063932,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/104"
+    },
+    {
+      "completion": "def by_length(arr):\n    names = [\"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\"]\n    filtered = [x for x in arr if isinstance(x, int) and 1 <= x <= 9]\n    filtered.sort()\n    filtered.reverse()\n    return [names[x - 1] for x in filtered]",
+      "elapsed_s": 17.622475732001476,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/105"
+    },
+    {
+      "completion": "def even_odd_palindrome(n):\n    even = 0\n    odd = 0\n    for i in range(1, n + 1):\n        s = str(i)\n        if s == s[::-1]:\n            if i % 2 == 0:\n                even += 1\n            else:\n                odd += 1\n    return (even, odd)",
+      "elapsed_s": 9.648340206011198,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/107"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 34.00750693294685,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/106"
+    },
+    {
+      "completion": "def count_nums(arr):\n    def digit_sum(x):\n        s = str(abs(x))\n        first = int(s[0])\n        rest = sum(int(ch) for ch in s[1:])\n        return -first + rest if x < 0 else first + rest\n    return sum(1 for n in arr if digit_sum(n) > 0)",
+      "elapsed_s": 31.185492745018564,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/108"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 36.512361692031845,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/109"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 37.764695397927426,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/110"
+    },
+    {
+      "completion": "def histogram(test):\n    words = test.split()\n    if not words:\n        return {}\n    counts = {}\n    for w in words:\n        counts[w] = counts.get(w, 0) + 1\n    max_count = max(counts.values())\n    return {k: v for k, v in counts.items() if v == max_count}",
+      "elapsed_s": 24.272395701962523,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/111"
+    },
+    {
+      "completion": "def reverse_delete(s, c):\n    remove = set(c)\n    res = ''.join(ch for ch in s if ch not in remove)\n    return (res, res == res[::-1])",
+      "elapsed_s": 14.436462184996344,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/112"
+    },
+    {
+      "completion": "def minSubArraySum(nums):\n    min_ending = min_so_far = nums[0]\n    for x in nums[1:]:\n        min_ending = min(x, min_ending + x)\n        min_so_far = min(min_so_far, min_ending)\n    return min_so_far",
+      "elapsed_s": 12.699890207033604,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/114"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 38.111873660003766,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/113"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 39.70297557406593,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/115"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 39.88386169099249,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/116"
+    },
+    {
+      "completion": "def select_words(s, n):\n    vowels = set(\"aeiouAEIOU\")\n    result = []\n    for word in s.split():\n        if sum(1 for ch in word if ch not in vowels) == n:\n            result.append(word)\n    return result",
+      "elapsed_s": 20.90855101007037,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/117"
+    },
+    {
+      "completion": "def match_parens(lst):\n    def good(s):\n        bal = 0\n        for c in s:\n            bal += 1 if c == '(' else -1\n            if bal < 0:\n                return False\n        return bal == 0\n    a, b = lst\n    return 'Yes' if good(a + b) or good(b + a) else 'No'",
+      "elapsed_s": 25.5662189850118,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/119"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.333109027007595,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/118"
+    },
+    {
+      "completion": "def maximum(arr, k):\n    arr.sort()\n    if k == 0:\n        return []\n    return arr[-k:]",
+      "elapsed_s": 18.26858957693912,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/120"
+    },
+    {
+      "completion": "def add_elements(arr, k):\n    return sum(x for x in arr[:k] if abs(x) < 100)",
+      "elapsed_s": 16.492611594032496,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/122"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.70750410598703,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/121"
+    },
+    {
+      "completion": "def get_odd_collatz(n):\n    odds = []\n    while n != 1:\n        if n % 2 == 1:\n            odds.append(n)\n        n = n // 2 if n % 2 == 0 else 3 * n + 1\n    odds.append(1)\n    return sorted(set(odds))",
+      "elapsed_s": 30.818711139960214,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/123"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 36.223703905940056,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/124"
+    },
+    {
+      "completion": "def split_words(txt):\n    if any(ch.isspace() for ch in txt):\n        return txt.split()\n    if ',' in txt:\n        return txt.split(',')\n    count = 0\n    for ch in txt:\n        if 'a' <= ch <= 'z':\n            if (ord(ch) - ord('a')) % 2 == 1:\n                count += 1\n    return count",
+      "elapsed_s": 36.956517504993826,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/125"
+    },
+    {
+      "completion": "def is_sorted(lst):\n    for i in range(len(lst) - 1):\n        if lst[i] > lst[i + 1]:\n            return False",
+      "elapsed_s": 36.91679203999229,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/126"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.76558024494443,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/127"
+    },
+    {
+      "completion": "def prod_signs(arr):\n    if arr == []:\n        return None\n    magnitude_sum = sum(abs(x) for x in arr)\n    sign_prod = 1\n    for x in arr:\n        if x > 0:\n            sign_prod *= 1\n        elif x < 0:\n            sign_prod *= -1\n        else:\n            sign_prod = 0\n            break\n    return magnitude_sum * sign_prod",
+      "elapsed_s": 36.00113709690049,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/128"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 37.60067248798441,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/129"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 37.77282162604388,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/130"
+    },
+    {
+      "completion": "def digits(n):\n    prod = 1\n    has_odd = False\n    while n > 0:\n        d = n % 10\n        if d % 2 == 1:\n            prod *= d\n            has_odd = True\n        n //= 10\n    return prod if has_odd else 0",
+      "elapsed_s": 16.444794932962395,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/131"
+    },
+    {
+      "completion": "import math\n\ndef sum_squares(lst):\n    return sum(math.ceil(x) ** 2 for x in lst)",
+      "elapsed_s": 16.736058303969912,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/133"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 34.81286381196696,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/132"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.70449738402385,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/134"
+    },
+    {
+      "completion": "def can_arrange(arr):\n    for i in range(len(arr) - 1, 0, -1):\n        if arr[i] < arr[i - 1]:\n            return i\n    return -1",
+      "elapsed_s": 24.35043879598379,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/135"
+    },
+    {
+      "completion": "def largest_smallest_integers(lst):\n    negatives = [x for x in lst if x < 0]\n    positives = [x for x in lst if x > 0]\n    a = max(negatives) if negatives else None\n    b = min(positives) if positives else None\n    return (a, b)",
+      "elapsed_s": 20.0675974029582,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/136"
+    },
+    {
+      "completion": "def is_equal_to_sum_even(n):\n    return isinstance(n, int) and n >= 8 and n % 2 == 0",
+      "elapsed_s": 16.327661773073487,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/138"
+    },
+    {
+      "completion": "def compare_one(a, b):\n    def to_float(x):\n        if isinstance(x, str):\n            return float(x.replace(\",\", \".\"))\n        return float(x)\n    fa, fb = to_float(a), to_float(b)\n    if fa > fb:\n        return a\n    if fb > fa:\n        return b\n    return None",
+      "elapsed_s": 33.97904199408367,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/137"
+    },
+    {
+      "completion": "def special_factorial(n):\n    result = 1\n    fact = 1\n    for i in range(1, n + 1):\n        fact *= i\n        result *= fact\n    return result",
+      "elapsed_s": 17.530969685991295,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/139"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.9741097780643,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/140"
+    },
+    {
+      "completion": "def file_name_check(file_name",
+      "elapsed_s": 35.710985180106945,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/141"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 35.27708535606507,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/142"
+    },
+    {
+      "completion": "def words_in_sentence(sentence):\n    def is_prime(n):\n        if n < 2:\n            return False\n        if n == 2:\n            return True\n        if n % 2 == 0:\n            return False\n        for i in range(3, int(n ** 0.5) + 1, 2):\n            if n % i == 0:\n                return False\n        return True\n\n    return \" \".join([w for w in sentence.split() if is_prime(len(w))])",
+      "elapsed_s": 21.08294467907399,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/143"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 34.889866124955006,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/144"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 34.828380760969594,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/145"
+    },
+    {
+      "completion": "def specialFilter(nums):\n    count = 0\n    for n in nums:\n        if n > 10:\n            s = str(n)\n            if (int(s[0]) % 2 == 1) and (int(s[-1]) % 2 ==",
+      "elapsed_s": 34.76427843794227,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/146"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 34.966280549997464,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/147"
+    },
+    {
+      "completion": "def sorted_list_sum(lst):\n    result = [s for s in lst if len(s) % 2 == 0]\n    result.sort(key=lambda s: (len(s), s))\n    return result",
+      "elapsed_s": 15.092076576082036,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/149"
+    },
+    {
+      "completion": "def bf(planet1, planet2):\n    planets = (\"Mercury\", \"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\", \"Uranus\", \"Neptune\")\n    if planet1 not in planets or planet2 not in planets:\n        return ()\n    i1, i2 = planets.index(planet1), planets.index(planet2)\n    if i1 < i2:\n        return planets[i1+1:i2]\n    else:\n        return planets[i2+1:i1]",
+      "elapsed_s": 19.93530571903102,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/148"
+    },
+    {
+      "completion": "def x_or_y(n, x, y):\n    def is_prime(num):\n        if num < 2:\n            return False\n        if num == 2:\n            return True\n        if num % 2 == 0:\n            return False\n        r = int(num ** 0.5)\n        for i in range(3, r + 1, 2):\n            if num % i == 0:\n                return False\n        return True\n    return x if is_prime(n) else y",
+      "elapsed_s": 18.726666532922536,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/150"
+    },
+    {
+      "completion": "def compare(game, guess):\n    return [abs(a - b) for a, b in zip(game, guess)]",
+      "elapsed_s": 11.660836338996887,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/152"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 36.239636396989226,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/151"
+    },
+    {
+      "completion": "def Strongest_Extension(class_name, extensions):\n    def strength(ext):\n        return sum(1 for ch in ext if ch.isupper()) - sum(1 for ch in ext if ch.islower())\n    best = max(extensions, key=strength)\n    return f\"{class_name}.{best}\"",
+      "elapsed_s": 28.2456555289682,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/153"
+    },
+    {
+      "completion": "def cycpattern_check(a, b):\n    if len(b) > len(a):\n        return False\n    if not b:\n        return True\n    n = len(b)\n    for i in range(n):\n        if b[i:] + b[:i] in a:\n            return True\n    return False",
+      "elapsed_s": 21.96807732700836,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/154"
+    },
+    {
+      "completion": "def even_odd_count(num):\n    s = str(abs(num))\n    even = 0\n    for ch in s:\n        if int(ch) % 2 == 0:\n            even += 1\n    return (even, len(s) - even)",
+      "elapsed_s": 14.306913675973192,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/155"
+    },
+    {
+      "completion": "def int_to_mini_roman(number):\n    val_sym = [\n        (1000, \"m\"), (900, \"cm\"), (500, \"d\"), (400, \"cd\"),\n        (100, \"c\"), (90, \"xc\"), (50, \"l\"), (40, \"xl\"),\n        (10, \"x\"), (9, \"ix\"), (5, \"v\"), (4, \"iv\"), (1, \"i\")\n    ]\n    res = []\n    for v, s in val_sym:\n        while number >= v:\n            res.append(s)\n            number -= v\n    return \"\".join(res)",
+      "elapsed_s": 19.08580904698465,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/156"
+    },
+    {
+      "completion": "def find_max(words):\n    best = \"\"\n    best_unique = -1\n    for w in words:\n        unique = len(set(w))\n        if unique > best_unique or (unique == best_unique and w < best):\n            best_unique = unique\n            best = w\n    return best",
+      "elapsed_s": 21.162984270020388,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/158"
+    },
+    {
+      "completion": "def right_angle_triangle(a, b, c):\n    if a <= 0 or b <= 0 or c <= 0:\n        return False\n    if a + b <= c or a + c <= b or b + c <= a:\n        return False\n    return",
+      "elapsed_s": 34.93663156602997,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/157"
+    },
+    {
+      "completion": "def eat(number, need, remaining):\n    eaten = min(need, remaining)\n    return [number + eaten, remaining - eaten]",
+      "elapsed_s": 10.783757257973775,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/159"
+    },
+    {
+      "completion": "def solve(s):\n    if any(ch.isalpha() for ch in s):\n        return ''.join(ch.swapcase() if ch.isalpha() else ch for ch in s)\n    return s[::-1]",
+      "elapsed_s": 22.709173492039554,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/161"
+    },
+    {
+      "completion": "",
+      "elapsed_s": 36.19412289804313,
+      "http_status": 200,
+      "ok": false,
+      "task_id": "HumanEval/160"
+    },
+    {
+      "completion": "def string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    if text == '':\n        return None\n    return hashlib.md5(text.encode('utf-8')).hexdigest()",
+      "elapsed_s": 10.309364119893871,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/162"
+    },
+    {
+      "completion": "def generate_integers(a, b):\n    evens = [2, 4, 6, 8]\n    lo, hi = (a, b) if a <= b else (b, a)\n    return [x for x in evens if lo <= x <= hi]",
+      "elapsed_s": 21.629932685988024,
+      "http_status": 200,
+      "ok": true,
+      "task_id": "HumanEval/163"
+    }
+  ],
+  "summary": {
+    "concurrency": 2,
+    "data_path": "<LOCAL_PATH>",
+    "eval_error": null,
+    "infra_http_errors": 0,
+    "method": "humaneval_functional_correctness",
+    "n": 164,
+    "pass@1": 0.7134146341463414,
+    "pass_at": {
+      "pass@1": 0.7134146341463414
+    }
+  }
+}

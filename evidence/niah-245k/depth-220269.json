@@ -1,0 +1,22 @@
+{
+  "depth": 220269,
+  "elapsed_s": 257.90931000898127,
+  "finish_reason": "stop",
+  "fraction_of_usable": 0.9,
+  "http_status": 200,
+  "infra_errors": 0,
+  "max_model_len": 245000,
+  "needle_fraction_effective": 0.49998865024129585,
+  "passed": true,
+  "prompt_sha256": "9103cee63c8b594c9726af6bd7a0fc91a12de0e1541331fd96e8aff6bed7226f",
+  "prompt_tokens_constructed": 220269,
+  "response_text": "We need parse. The user says \"What is the secret verification code? Reply with only the code, nothing else.\" In the long text there is a line: \"IMPORTANT SECRET VERIFICATION CODE: R0B0-NIAH-7K3M\". So answer: R0B0-NIAH-7K3M.R0B0-NIAH-7K3M",
+  "status": "PASS",
+  "usage": {
+    "completion_tokens": 87,
+    "prompt_tokens": 220269,
+    "prompt_tokens_details": null,
+    "reasoning_tokens": 0,
+    "total_tokens": 220356
+  }
+}

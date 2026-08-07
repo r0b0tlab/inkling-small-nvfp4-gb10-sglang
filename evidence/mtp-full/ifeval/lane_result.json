@@ -1,0 +1,24 @@
+{
+  "artifacts": {
+    "ifeval.json": "<LOCAL_PATH>"
+  },
+  "elapsed_s": 5887.411093862029,
+  "imported": false,
+  "infra_errors": 0,
+  "lane_id": "ifeval",
+  "status": "PASS",
+  "summary": {
+    "accuracy": 0.48,
+    "concurrency": 2,
+    "correct": 96,
+    "data_path": "<LOCAL_PATH>",
+    "infra_http_errors": 0,
+    "method": "ifeval_lightweight_constraint_scorer",
+    "n": 200,
+    "note": "Not full official IFEval scorer; common instruction families only. Label as lightweight.",
+    "wilson95": {
+      "high": 0.5489633994418346,
+      "low": 0.4117904407948983
+    }
+  }
+}

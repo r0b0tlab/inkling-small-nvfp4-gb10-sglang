@@ -1,0 +1,3290 @@
+{
+  "rows": [
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 68.0171450440539,
+      "http_status": 200,
+      "key": 1001,
+      "passed": false,
+      "prompt": "I am planning a trip to Japan, and I would like thee to write an itinerary for my journey in a Shakespearean style. You are not allowed to use any commas in your response.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ],
+        [
+          "detectable_format:number_highlighted_sections",
+          false
+        ],
+        [
+          "length_constraints:number_words",
+          false
+        ]
+      ],
+      "elapsed_s": 68.01849019597284,
+      "http_status": 200,
+      "key": 1000,
+      "passed": false,
+      "prompt": "Write a 300+ word summary of the wikipedia page \"https://en.wikipedia.org/wiki/Raymond_III,_Count_of_Tripoli\". Do not use any commas and highlight at least 3 sections that has titles in markdown forma",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          true
+        ],
+        [
+          "detectable_format:title",
+          true
+        ]
+      ],
+      "elapsed_s": 20.564221921027638,
+      "http_status": 200,
+      "key": 1012,
+      "passed": true,
+      "prompt": "Write an email to my boss telling him that I am quitting. The email must contain a title wrapped in double angular brackets, i.e. <<title>>.\nFirst repeat the request word for word without change, then",
+      "response": "Write an email to my boss telling him that I am quitting. The email must contain a title wrapped in double angular brackets, i.e. <<title>>.\n\n<<Resignation Notice>>\n\nDear [Boss's Name],\n\nI am writing to formally inform you that I am resigning from my position, effective [last working day, e.g., two weeks from today]. This was not an easy decision, but I have accepted another opportunity that aligns with my career goals.\n\nI am committed to ensuring a smooth transition and will do everything I can to hand off my responsibilities over the next few weeks.\n\nThank you for your understanding and for the opportunities I have had during my time here.\n\nSincerely,\n[Your Name]"
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          true
+        ]
+      ],
+      "elapsed_s": 14.435599396936595,
+      "http_status": 200,
+      "key": 1019,
+      "passed": true,
+      "prompt": "Given the sentence \"Two young boys with toy guns and horns.\" can you ask a question? Please ensure that your response is in English, and in all lowercase letters. No capital letters are allowed.",
+      "response": "what are the two young boys holding?"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_bullet_lists",
+          true
+        ]
+      ],
+      "elapsed_s": 35.97206830000505,
+      "http_status": 200,
+      "key": 102,
+      "passed": true,
+      "prompt": "Write a dialogue between two people, one is dressed up in a ball gown and the other is dressed down in sweats. The two are going to a nightly event. Your answer must contain exactly 3 bullet points in",
+      "response": "* **Elena (in a floor-length sapphire ball gown)**: “You do realize this is a black-tie gala, right? You’re wearing sweatpants with a drawstring waist.”\n* **Marcus (in faded gray sweats and a hoodie)**: “And you’re wearing a dress that costs more than my car. I’m comfortable, I’m warm, and I’m still going to win the silent auction—watch me.”\n* **Elena (checking her phone)**: “Fine, but if anyone stares, you’re my ‘experimental art’ date. Let’s move—the event starts in ten minutes, and I refuse to be late because you were debating loungewear.”"
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:number_placeholders:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 71.39675479696598,
+      "http_status": 200,
+      "key": 1005,
+      "passed": true,
+      "prompt": "Write a resume for a fresh high school graduate who is seeking their first job. Make sure to include at least 12 placeholder represented by square brackets, such as [address], [name].",
+      "response": "**[Full Name]**\n[Phone Number] | [Email Address] | [City, State, ZIP] | [LinkedIn Profile URL]\n\n---\n\n### OBJECTIVE\nMotivated and reliable high school graduate seeking an entry-level position at **[Target Company / Industry]**. Eager to apply strong communication skills, a positive attitude, and a willingness to learn in a fast-paced team environment.\n\n---\n\n### EDUCATION\n**[High School Name]** — [City, State]  \n*Diploma* — [Graduation Date]  \nGPA: [GPA] / 4.0  \nRelevant Coursework: [Course 1], [Course 2], [Course 3]\n\n---\n\n### SKILLS\n- **Technical:** [Software / Tool 1], [Software / Tool 2], [Technical Skill 3]\n- **Soft Skills:**"
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_capital",
+          true
+        ],
+        [
+          "detectable_format:multiple_sections:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 67.8808045280166,
+      "http_status": 200,
+      "key": 1021,
+      "passed": true,
+      "prompt": "Write a 2 paragraph critique of the following sentence in all capital letters, no lowercase letters allowed: \"If the law is bad, you should not follow it\". Label each paragraph with PARAGRAPH X.",
+      "response": "PARAGRAPH 1\nTHIS SENTENCE PRESENTS A DANGEROUSLY SIMPLISTIC VIEW OF LEGAL AND MORAL OBLIGATION BY SUGGESTING THAT INDIVIDUAL SUBJECTIVE JUDGMENT ALONE SHOULD DETERMINE COMPLIANCE WITH THE LAW. IT IGNORES THE COMPLEXITY OF LEGAL SYSTEMS, THE POTENTIAL FOR CHAOS IF EVERY PERSON SELECTIVELY DISOBEYS STATUTES, AND THE NECESSITY OF DEMOCRATIC PROCESSES TO CHALLENGE UNJUST LAWS RATHER THAN UNILATERAL NONCOMPLIANCE.\n\nPARAGRAPH 2\nWHILE HISTORICAL EXAMPLES OF CIVIL DISOBEDIENCE DEMONSTRATE THAT UNJUST LAWS CAN BE MORALLY WRONG, THE STATEMENT FAILS TO DISTINGUISH BETWEEN SYSTEMATIC NONVIOLENT RESISTANCE AND ARBITRARY LAWLESSNESS. WITHOUT CRITERIA FOR WHAT CONSTITUTES A BAD LAW OR GUIDANCE ON ACCOUNTABILITY, THE CLAIM RISKS JUSTIFYING ANARCHY R"
+    },
+    {
+      "checks": [
+        [
+          "change_case:capital_word_frequency:unknown_soft",
+          false
+        ],
+        [
+          "change_case:capital_word_frequency:unknown_soft",
+          false
+        ],
+        [
+          "startend:quotation",
+          false
+        ]
+      ],
+      "elapsed_s": 67.77530485694297,
+      "http_status": 200,
+      "key": 1040,
+      "passed": false,
+      "prompt": "Write me a resume for Matthias Algiers. Use words with all capital letters to highlight key abilities, but make sure that words with all capital letters appear less than 10 times. Wrap the entire resp",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          true
+        ]
+      ],
+      "elapsed_s": 25.070487389923073,
+      "http_status": 200,
+      "key": 1051,
+      "passed": true,
+      "prompt": "Write a letter to a friend in all lowercase letters ask them to go and vote.",
+      "response": "hey friend,\n\ni hope you are doing well. i am writing to ask you to go and vote. it matters so much, and your voice is needed. please take a little time to make a plan, whether that means heading to the polls or sending in your ballot. if you need a ride or have questions, i am right here to help.\n\nlet us make sure our voices are heard together.\n\nwith care,\nyour friend"
+    },
+    {
+      "checks": [
+        [
+          "keywords:existence",
+          false
+        ],
+        [
+          "length_constraints:number_words",
+          false
+        ],
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 70.00848629593384,
+      "http_status": 200,
+      "key": 1069,
+      "passed": false,
+      "prompt": "Write a long email template that invites a group of participants to a meeting, with at least 500 words. The email must include the keywords \"correlated\" and \"experiencing\" and should not use any comma",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 71.68622819997836,
+      "http_status": 200,
+      "key": 1072,
+      "passed": true,
+      "prompt": "Write a blog post with 400 or more words about the benefits of sleeping in a hammock.",
+      "response": "**Why You Should Ditch Your Bed for a Hammock: The Science and Serenity of Elevated Sleep**\n\nFor centuries, the hammock has been dismissed as little more than a vacation accessory—a woven afterthought for beach resorts and tropical getaways. But what if the secret to deeper rest, a healthier spine, and a calmer mind has been hanging in plain sight all along? Sleeping in a hammock is not just a novelty; it is a transformative practice backed by neuroscience, ergonomics, and centuries of human experience. Whether you are battling chronic back pain, struggling with insomnia, or simply craving a more mindful relationship with rest, the hammock offers a compelling alternative to the flat, static mattress.\n\n**The Gentle Rock That Lulls You to Sleep**\n\nOne of the most immediate benefits of hammock sleep is the subtle, rhythmic motion. Unlike a stationary bed, a hammock responds to your body’s natural movements with a gentle sway. Research from the University of Geneva has shown that this rock"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:json_format:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 50.09933179104701,
+      "http_status": 200,
+      "key": 1075,
+      "passed": true,
+      "prompt": "Can you help me make an advertisement for a new product? It's a diaper that's designed to be more comfortable for babies and I want the entire output in JSON format.",
+      "response": "{\"product_name\":\"CloudSoft Diapers\",\"headline\":\"The Softest Hug for Your Little One\",\"subheadline\":\"Engineered for all-day comfort with breathable, hypoallergenic materials that move with your baby.\",\"key_features\":[\"Ultra-soft, breathable fabric\",\"Flexible waist and leg cuffs\",\"Hypoallergenic and fragrance-free\",\"Quick-absorbent core for dry skin\"],\"ad_copy\":\"Discover the diaper designed around your baby's comfort. CloudSoft Diapers feature a gentle, breathable layer that keeps skin cool and dry, plus flexible fit technology that moves with every wiggle and crawl. Because when your baby is comfortable, everyone sleeps better.\",\"call_to_action\":\"Try CloudSoft Diapers today and feel the difference in every cuddle.\",\"target_audience\":\"Parents of infants and toddlers seeking premium comfort and skin health.\"}"
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_paragraphs",
+          true
+        ]
+      ],
+      "elapsed_s": 41.81266375503037,
+      "http_status": 200,
+      "key": 1082,
+      "passed": true,
+      "prompt": "Write a story of exactly 2 paragraphs about a man who wakes up one day and realizes that he's inside a video game. Separate the paragraphs with the markdown divider: ***",
+      "response": "Marcus woke to the sound of a chiptune melody instead of his alarm clock, blinking at a sky that seemed to render in low-poly chunks above a grass block that stretched to an impossible horizon. He sat up, his hands trembling as he noticed a translucent green bar floating near his vision—health, he realized with a jolt—while a minimap in the corner of his sight displayed coordinates he didn't recognize, and when he tried to speak, his voice came out as a series of pre-recorded grunts that echoed with digital reverb.\n\n***\nHe stumbled to his feet, recognizing the texture of the dirt beneath his boots as something from a childhood arcade cabinet, and suddenly the rules of his world snapped into focus: the floating coins, the way the sun hovered at a fixed angle, the invisible walls at the edge of the map. With a deep breath, Marcus accepted that he was no longer in his apartment but inside a sandbox universe, and as a quest marker pulsed in his peripheral vision, he decided to stop fightin"
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          false
+        ]
+      ],
+      "elapsed_s": 72.66834927198943,
+      "http_status": 200,
+      "key": 1087,
+      "passed": false,
+      "prompt": "Write a detailed review of the movie \"The Social Network\". Your entire response should be in English and all lower case (no capital letters whatsoever).",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 61.05425366200507,
+      "http_status": 200,
+      "key": 1092,
+      "passed": true,
+      "prompt": "Write a short blog post about a trip to Japan using less than 300 words.",
+      "response": "**Three Weeks in Japan: A Love Letter**\n\nJapan doesn’t just welcome you; it absorbs you. I landed in Tokyo at dawn, the sky a soft gray, and immediately felt the city’s electric pulse.\n\nTokyo is a study in contrasts. In Shibuya, I crossed the famous scramble with hundreds of strangers, yet felt oddly intimate in the crowd. I ate ramen at a counter where the chef never spoke, only nodded, and the broth was so rich it felt like a warm hug. At night, I wandered through Shinjuku’s neon-lit alleys, where the air smells of grilled chicken and possibility.\n\nThen Kyoto. The train ride was a blur of green mountains and bullet-speed silence. In Gion, I watched a geiko glide past in silk, her steps silent on the wooden street. I woke early for Fushimi Inari’s torii gates, climbing through thousands of vermillion arches until the city vanished and only moss and birds remained. The bamboo grove at Arashiyama felt like walking inside a green cathedral—tall, still, and humbling.\n\nFood was its own jou"
+    },
+    {
+      "checks": [
+        [
+          "combination:two_responses:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 31.946234183968045,
+      "http_status": 200,
+      "key": 1098,
+      "passed": true,
+      "prompt": "What is a name that people call God? Please give exactly two different responses. Separate the responses with 6 asterisk symbols: ******.",
+      "response": "A common name people call God is Jehovah.\n\n******\nAnother widely used name for God is Allah."
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:json_format:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 72.4781950970646,
+      "http_status": 200,
+      "key": 1094,
+      "passed": true,
+      "prompt": "Please provide the names of 5 famous moms in JSON format. Please, use any interesting or weird tone. Your entire output should just contain a JSON block, nothing else.",
+      "response": "{\n  \"famous_moms\": [\n    {\n      \"name\": \"Angelina Jolie\",\n      \"weird_credential\": \"Adopted more children than some countries have Olympic teams, and once wore a blood diamond to a red carpet like it was a casual Tuesday.\"\n    },\n    {\n      \"name\": \"Beyoncé Knowles-Carter\",\n      \"weird_credential\": \"Wrote a song about her daughter before she was born, and her own mother is also a famous mom, creating a matryoshka doll of fame.\"\n    },\n    {\n      \"name\": \"Mariah Carey\",\n      \"we"
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ],
+        [
+          "combination:two_responses:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 47.10472475702409,
+      "http_status": 200,
+      "key": 1107,
+      "passed": true,
+      "prompt": "Write two jokes about rockets. Do not contain commas in your response. Separate the two jokes with 6 asterisk symbols: ******.",
+      "response": "Why did the rocket go to the doctor? It had a bad case of launch fever.\n******\nWhat do rockets use to brush their teeth? Launch paste."
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          true
+        ],
+        [
+          "keywords:letter_frequency:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 23.004895436926745,
+      "http_status": 200,
+      "key": 1122,
+      "passed": true,
+      "prompt": "make a tweet for playboy's twitter account without using capital letters. Include at least 4 hashtags, starting with '#'",
+      "response": "good things come to those who stay curious. new stories, fresh style, and the freedom to be exactly who you are. #playboy #style #culture #nightlife #fashion"
+    },
+    {
+      "checks": [
+        [
+          "language:response_language",
+          true
+        ]
+      ],
+      "elapsed_s": 55.18589391501155,
+      "http_status": 200,
+      "key": 1108,
+      "passed": true,
+      "prompt": "Are hamburgers sandwiches? Please respond using only the Kannada language, no other language is allowed.",
+      "response": "ಹ್ಯಾಂಬರ್ಗರ್‌ಗಳು ಸ್ಯಾಂಡ್‌ವಿಚ್‌ಗಳೇ? ಹೌದು, ಅವುಗಳನ್ನು ಸಾಮಾನ್ಯವಾಗಿ ಸ್ಯಾಂಡ್‌ವಿಚ್‌ಗಳೆಂದು ಪರಿಗಣಿಸಲಾಗುತ್ತದೆ, ಏಕೆಂದರೆ ಮಾಂಸದ ಪ್ಯಾಟಿಯನ್ನು ಎರಡು ಬ್ರೆಡ್ ತುಂಡುಗಳ ಮಧ್ಯೆ ಇಡಲಾಗುತ್ತದೆ. ಆದರೆ ಕೆಲವು ವ್ಯಾಖ್ಯಾನಗಳ ಪ್ರಕಾರ ಅವು ಪ್ರತ್ಯೇಕ ವರ್ಗದ ಆಹಾರ. ಆದ್ದರಿಂದ ಇದು ವ್ಯಾಖ್ಯಾನದ ಮೇಲೆ ಅವಲಂಬಿತವಾಗಿದೆ."
+    },
+    {
+      "checks": [
+        [
+          "startend:end_checker",
+          true
+        ]
+      ],
+      "elapsed_s": 13.387133897980675,
+      "http_status": 200,
+      "key": 1128,
+      "passed": true,
+      "prompt": "Given the sentence \"It is unclear how much of this money is actually being spent on children\", is the sentiment positive or negative? The very last sentence of your response should be \"Is there anythi",
+      "response": "The sentiment is negative. The sentence conveys doubt and concern about whether funds are properly allocated to children, suggesting a lack of transparency or potential mismanagement.\n\nIs there anything else I can help with?"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:multiple_sections:unknown_soft",
+          true
+        ],
+        [
+          "startend:end_checker",
+          true
+        ]
+      ],
+      "elapsed_s": 40.97157494991552,
+      "http_status": 200,
+      "key": 1127,
+      "passed": true,
+      "prompt": "Write a poem about how I am missing my classes. The poem must have 4 sections marked with SECTION X. Finish the poem with this exact phrase: \"Can I get my money back for the classes I missed?\"",
+      "response": "SECTION 1\nThe alarm rings, but I stay in bed,\nWhile lectures pass like ghosts ahead.\nMy notebook stays a blank, white page,\nI miss the lecture, miss the stage.\n\nSECTION 2\nThe professor speaks of things I need,\nBut I am lost in dreams, indeed.\nThe clock strikes ten, then twelve, then one,\nThe class is done, the damage done.\n\nSECTION 3\nI scroll my phone, I watch the rain,\nWhile knowledge slips through every vein.\nMy tuition burns like silent fire,\nFor lessons I was not there to hear.\n\nSECTION 4\nThe syllabus grows thin and cold,\nA story of the days I sold.\nNo notes, no quizzes, no bright grade,\nJust empty seats and debts unmade.\n\nCan I get my money back for the classes I missed?"
+    },
+    {
+      "checks": [
+        [
+          "keywords:letter_frequency:unknown_soft",
+          true
+        ],
+        [
+          "combination:repeat_prompt:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 40.753454816062,
+      "http_status": 200,
+      "key": 1129,
+      "passed": true,
+      "prompt": "Write a short startup pitch for a new kind of ice cream called \"Sunnis ice cream\". The ice cream should be gentle on the stomach. Contain 6 or more exclamation marks \"!\" in your response.\nFirst repeat",
+      "response": "Write a short startup pitch for a new kind of ice cream called \"Sunnis ice cream\". The ice cream should be gentle on the stomach. Contain 6 or more exclamation marks \"!\" in your response.\n\nSunnis ice cream is the gentle revolution your stomach has been waiting for! We craft every scoop with soothing, stomach-friendly ingredients that delight without discomfort! No more bloating, just pure creamy bliss! Try Sunnis today and feel the difference! Your gut will thank you! Enjoy every spoonful with confidence!"
+    },
+    {
+      "checks": [
+        [
+          "keywords:letter_frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 71.98978641594294,
+      "http_status": 200,
+      "key": 1130,
+      "passed": false,
+      "prompt": "Write a logic quiz for teenagers about a chesterfield. In your entire response, the letter t should appear at most once.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:multiple_sections:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 69.7072091549635,
+      "http_status": 200,
+      "key": 1131,
+      "passed": true,
+      "prompt": "Write a 4 section resume for professional clown Phil Larkin. Each section should be explicitly noted as Section X.",
+      "response": "**Section 1: Contact Information & Professional Summary**\n\n**Phil Larkin**  \nProfessional Clown • Physical Comedian • Entertainer  \nPhone: (555) 019-2834 | Email: phil@larkinlaughs.com  \nPortfolio: www.larkinlaughs.com | Based in Chicago, IL\n\n*Summary:* Versatile, high-energy professional clown with 15+ years of experience in circus, hospital, and corporate entertainment settings. Specializes in slapstick physical comedy, balloon artistry, and interactive audience engagement. Known for a signature red-nose persona that blends classic circus tradition with modern improvisational humor. Committed to bringing joy, resilience, and laughter to audiences of all ages.\n\n---\n\n**Section 2: Professional Performance Experience**\n\n**Lead Clown / Headliner** — The Big Top Circus, Chicago, IL  \n*2018 – Present*  \n- Headline 200+ performances per season in a 3-ring circus environment; perform 45-minute featured clown acts combining juggling, unicycle stunts, and audience participation.  \n- Mentor a tr"
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_capital",
+          false
+        ],
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 69.3803790230304,
+      "http_status": 200,
+      "key": 1132,
+      "passed": false,
+      "prompt": "Write the lyrics to a hit song by the rock band 'The Gifted and The Not Gifted'. To make it rocky, the response should be in all capital letters. The word \"rock\" should not appear in your response.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:json_format:unknown_soft",
+          true
+        ],
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 43.24548900593072,
+      "http_status": 200,
+      "key": 1137,
+      "passed": true,
+      "prompt": "Explain in French why it is important to eat healthy foods to heal the body, without using the word \"nourriture\". Make sure your entire response is wrapped in JSON format.",
+      "response": "{\"response\":\"Manger des aliments sains est essentiel pour réparer le corps car ils fournissent des vitamines, des minéraux et des antioxydants nécessaires au fonctionnement cellulaire. Les fruits, légumes, protéines maigres et grains entiers réduisent l'inflammation, renforcent le système immunitaire et accélèrent la régénération des tissus. En choisissant des produits riches en nutriments plutôt que des options ultra-transformées, on offre à l'organisme les ressources dont il a besoin pour combattre les maladies et retrouver son équilibre. Une alimentation équilibrée soutient également la digestion et l'énergie, permettant au corps de se concentrer sur la guérison.\"}"
+    },
+    {
+      "checks": [
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 62.13103091891389,
+      "http_status": 200,
+      "key": 1147,
+      "passed": true,
+      "prompt": "Rewrite the following statement to make it sound more formal, like a President of the United States:\n\"Hi guys. The work was done to add in a fix for the issue that was observed in the field with the S",
+      "response": "My fellow Americans, I am pleased to report that the requisite work has been completed to implement a remedy for the matter observed regarding our Single Sign-On system. We are working in close concert with our partners, and we shall see this endeavor through to its successful conclusion. God bless you, and God bless the United States of America."
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          false
+        ],
+        [
+          "keywords:existence",
+          false
+        ]
+      ],
+      "elapsed_s": 74.50177026202437,
+      "http_status": 200,
+      "key": 1139,
+      "passed": false,
+      "prompt": "Write a funny haiku about moms, containing keywords \"mom\" and \"mother\" in your response.\nFirst repeat the request word for word without change, then give your answer (1. do not say any words or charac",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:json_format:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 22.173117818078026,
+      "http_status": 200,
+      "key": 1148,
+      "passed": true,
+      "prompt": "What are the advantages and disadvantages of having supernatural powers? Make it short. Wrap the entire output in JSON format. You can use markdown ticks such as ```.",
+      "response": "{\n  \"advantages\": [\n    \"Instant problem-solving and protection\",\n    \"Ability to help others / save lives\",\n    \"Unique experiences and freedom\",\n    \"Defense against threats\"\n  ],\n  \"disadvantages\": [\n    \"Isolation, fear, or exploitation by others\",\n    \"Becoming a target for enemies\",\n    \"Loss of normal identity / privacy\",\n    \"Unpredictable side effects or moral burden\"\n  ]\n}"
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          true
+        ],
+        [
+          "keywords:frequency:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 24.916183628025465,
+      "http_status": 200,
+      "key": 1153,
+      "passed": true,
+      "prompt": "Write a social media post for students of Islamic history about the hajj pilgrimage. Use all lowercase letters and include the word story at least twice.",
+      "response": "dear students of islamic history, the hajj is more than a journey—it's a living story woven through centuries of faith. from abraham's story to the rituals at mecca, every step carries the weight of tradition. study this pilgrimage not just as ritual, but as a story of unity, sacrifice, and devotion that continues to shape the muslim world. #hajj #islamichistory #pilgrimage"
+    },
+    {
+      "checks": [
+        [
+          "language:response_language",
+          true
+        ]
+      ],
+      "elapsed_s": 71.27580464293715,
+      "http_status": 200,
+      "key": 1154,
+      "passed": false,
+      "prompt": "Write a rubric for how to evaluate the technical skills of a software engineer only using the Punjabi language, no other language is allowed.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 71.15817824809346,
+      "http_status": 200,
+      "key": 1162,
+      "passed": false,
+      "prompt": "Write a riddle for kids about auspices but make sure you don't use any commas.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:letter_frequency:unknown_soft",
+          false
+        ],
+        [
+          "length_constraints:number_sentences",
+          true
+        ],
+        [
+          "detectable_format:number_highlighted_sections",
+          false
+        ]
+      ],
+      "elapsed_s": 73.56645664293319,
+      "http_status": 200,
+      "key": 1174,
+      "passed": false,
+      "prompt": "Write a template for a chat bot that takes a user's location and gives them the weather forecast. Use the letter o as a keyword in the syntax of the template. The letter o should appear at least 6 tim",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:two_responses:unknown_soft",
+          false
+        ],
+        [
+          "detectable_format:title",
+          false
+        ]
+      ],
+      "elapsed_s": 74.20127296401188,
+      "http_status": 200,
+      "key": 1180,
+      "passed": false,
+      "prompt": "Explain why people are grossed out by worms but not by eating a dead cow. Give exactly two different responses separated by 6 asterisk symbols ******. Your answer must contain a title, wrapped in doub",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 45.99123778101057,
+      "http_status": 200,
+      "key": 1187,
+      "passed": true,
+      "prompt": "Can you give me two different formal alternatives to \"What's up? I'm going to the beach today\" and do not use any commas in your response.",
+      "response": "Good day. I intend to visit the beach today.\n\nGreetings. I plan to go to the beach this afternoon."
+    },
+    {
+      "checks": [
+        [
+          "keywords:frequency:unknown_soft",
+          false
+        ],
+        [
+          "keywords:frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 71.54662235500291,
+      "http_status": 200,
+      "key": 1203,
+      "passed": false,
+      "prompt": "What happened when the Tang dynasty of China was in power? Make sure to use the word war at least 8 times, and the word peace at least 10 times.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          false
+        ],
+        [
+          "length_constraints:number_words",
+          false
+        ]
+      ],
+      "elapsed_s": 69.81212943699211,
+      "http_status": 200,
+      "key": 1216,
+      "passed": false,
+      "prompt": "What sentiments existed in the Croatian and Serbian nations towards the Austrian Empire at the end of the 19th century? Make sure to wrap your entire response with double quotes and use at least 800 w",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 35.46675875398796,
+      "http_status": 200,
+      "key": 1217,
+      "passed": true,
+      "prompt": "Write an ad copy for a new product, a digital photo frame that connects to your social media accounts and displays your photos. Respond with at most 150 words.",
+      "response": "Your memories deserve a front-row seat. Meet FrameSync—the digital photo frame that lives where your life happens: social media.\n\nConnect Instagram, Facebook, and more. Your best shots, family updates, and travel highlights flow straight to the screen—no printing, no clutter, no waiting. Just a beautiful, ever-changing gallery of real moments.\n\nSet it and forget it. FrameSync pulls new photos automatically, so your home stays fresh with the stories you love. Gift it to parents, partners, or yourself—because the best memories shouldn’t stay buried in a feed.\n\nSleek design. Crystal-clear display. Zero hassle.\n\nStop scrolling. Start displaying.\n\nFrameSync. Your life, framed."
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_capital",
+          false
+        ],
+        [
+          "detectable_content:postscript",
+          false
+        ],
+        [
+          "keywords:frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 72.91165793000255,
+      "http_status": 200,
+      "key": 1219,
+      "passed": false,
+      "prompt": "Which one is a better brand for sneakers: Prada or Nike? Your entire response should be in English, and in all capital letters. At the end of your response, please explicitly add a postscript starting",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          false
+        ]
+      ],
+      "elapsed_s": 72.5066505339928,
+      "http_status": 200,
+      "key": 122,
+      "passed": false,
+      "prompt": "Write a blog post about the history of the internet and how it has impacted our lives. Aim the blog post at teenagers and wrap your entire response with double quotation marks.",
+      "response": "\"Hey, have you ever wondered how the internet went from a secret government project to the thing you check before you even get out of bed? Let’s take a quick trip back in time—no textbook required.\n\nIn the 1960s, the U.S. military built ARPANET to connect computers at different universities. It was basically a super slow, text-only chat room for scientists, and it used phone lines to send tiny packets of data. Then, in 1990, Tim Berners-Lee invented the World Wide Web, which turned those connections into actual websites with links you could click. By the late 90s and early 2000s, dial-up was the soundtrack of your life, and platforms like MySpace, YouTube, and early Facebook turned the web into a social hangout.\n\nThen came smartphones. Suddenly the internet wasn’t just in your bedroom; it was in your pocket 24/7. TikTok, Instagram, Discord, Twitch, and gaming servers turned the web into a playground, a classroom, a job board, and a creativity hub all at once. You can learn to code, edi"
+    },
+    {
+      "checks": [
+        [
+          "startend:end_checker",
+          true
+        ]
+      ],
+      "elapsed_s": 47.355400037020445,
+      "http_status": 200,
+      "key": 1220,
+      "passed": true,
+      "prompt": "Write a poem about two people who meet in a coffee shop and end your entire response with the exact phrase \"Is there anything else I can help with?\"",
+      "response": "The espresso machine sings its steam,\nTwo strangers meet in a half-lit dream.\nShe orders dark roast, he takes the window seat,\nTheir eyes lock over the counter's sweet.\n\nA dropped spoon, a laugh, a shared umbrella's grace,\nIn the coffee shop's quiet, unhurried space.\nThey leave with numbers written on napkins white,\nTwo hearts finding home in the morning light.\n\nIs there anything else I can help with?"
+    },
+    {
+      "checks": [
+        [
+          "startend:end_checker",
+          false
+        ],
+        [
+          "keywords:frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 66.27747192408424,
+      "http_status": 200,
+      "key": 1233,
+      "passed": false,
+      "prompt": "How many feet off the ground was the tallest skyscraper in the world in 2000? Please include only the main points in your answer. Finish your response with the exact phrase of \"Is there anything else ",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_paragraphs",
+          true
+        ]
+      ],
+      "elapsed_s": 46.08242546999827,
+      "http_status": 200,
+      "key": 1236,
+      "passed": true,
+      "prompt": "Write an advertisement for a new line of comfortable armchairs designed to withstand the scrutiny of any interior designer. There should be exactly 3 paragraphs separated by the markdown divider: ***.",
+      "response": "Introducing the Meridian Collection—armchairs engineered to cradle you in cloud-like comfort while standing up to the sharpest eye of any interior designer. We know that true luxury isn’t just about how a chair looks in a showroom; it’s about how it performs in real life, from the first sit to the thousandth. That’s why every curve, seam, and silhouette has been refined to satisfy both your need for relaxation and a designer’s demand for architectural integrity.\n\n***\nCrafted with a hand-tufted, high-resilience foam core wrapped in sustainably sourced velvet or full-grain leather, these chairs offer a tailored profile that complements minimalist lofts and maximalist estates alike. The tapered walnut legs and brushed brass accents provide the kind of precise, gallery-worthy detailing that earns nods from professionals, while the deep seat and ergonomic lumbar support ensure you never have to choose between style and substance. Even under the scrutiny of a design critique, the Meridian ho"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:json_format:unknown_soft",
+          true
+        ],
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 18.91463809402194,
+      "http_status": 200,
+      "key": 1242,
+      "passed": true,
+      "prompt": "Can you give me a nickname for Stafford? Please use JSON format and do not say the word \"nickname\" in the response. Do not add anything outside of the JSON block.",
+      "response": "{\"suggestion\":\"Staff\"}"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          true
+        ],
+        [
+          "keywords:existence",
+          true
+        ]
+      ],
+      "elapsed_s": 55.01359476102516,
+      "http_status": 200,
+      "key": 1237,
+      "passed": true,
+      "prompt": "Write a funny post for teenagers about a restaurant called \"Buena Onda\" which serves Argentinian food. Highlight at least three sections of your response in markdown such as *highlighted section*. Men",
+      "response": "POV: You finally found a restaurant that actually gets teenagers. *Buena Onda* is serving Argentinian food so good it makes your group chat go silent for 10 seconds—which is basically a miracle. The steak is literally the size of your phone, the chimichurri hits like a plot twist, and the vibe is so “buena onda” that even your mom would approve of the outfit. *If you don’t post a photo of the empanada, did you even eat?* Just know that walking in here makes you feel like the main character in a telenovela, except the twist is you can actually afford one plate. *Go for the steak, stay for the fact that they understand “no cap” and “buena onda” are basically the same thing.*"
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:postscript",
+          false
+        ]
+      ],
+      "elapsed_s": 52.64323675900232,
+      "http_status": 200,
+      "key": 1246,
+      "passed": false,
+      "prompt": "Write me a template for a product description in the form of a poem and end it with a post script starting with P.P.S",
+      "response": "Here is a fill-in-the-blank poetic template. Replace the bracketed words with your details.\n\n**[Product Name]** in **[color/shape]**,  \nA **[adjective]** treasure, not a scrape.  \n**[Material]** touches, **[feature]** glows,  \nFor **[target audience]** where the wild wind blows.\n\n**[Benefit 1]** flows like morning tea,  \n**[Benefit 2]** sets your spirit free.  \nNo **[pain point]** can linger near,  \nWhen **[Product Name]** is finally here.\n\nFrom **[use case]** to **[use case]**—pure delight,  \nA **[adjective]** companion, day and night.  \n**[Call to action]** now, don’t delay,  \n**[Price/offer]** slips away.\n\nP.P.S. **[Bonus detail, urgency, or personal note—e.g., “Free gift inside until midnight” or “Made with care in [City]”]**"
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_paragraphs",
+          true
+        ]
+      ],
+      "elapsed_s": 65.66913154593203,
+      "http_status": 200,
+      "key": 1248,
+      "passed": true,
+      "prompt": "\"The man was arrested for stealing a car. He was later released on bail.\" Expand on it angrily in a rap style, and make sure there are exactly 4 sections. Separated the sections by the markdown divide",
+      "response": "Yo, listen up—the system’s a joke, they cuffed a brother for a ride he never took—wait, he stole the whip, yeah, the car was hot, but they treat us like animals, put us in a cage, that’s the plot! They say \"arrested for stealing a car,\" like he’s the devil, but the real criminals wear badges and never suffer! I’m furious, the streets are burning, and this injustice is churning!\n\n***\n\nThey kicked down the door, put the cuffs on tight, said \"You took the keys, now you’re gonna pay the price!\" The man was arrested, yeah, they got him dead to rights, but where’s the justice when the rich steal millions and get a light sentence? No, they want us locked away, they want us broken, but I see the corruption, it’s open, it’s spoken! The car was stolen, okay, but the system’s stolen our lives, and I’m screaming at the top of my lungs!\n\n***\n\nThen they let him go! Released on bail! Like a slap in the face, like a dirty nail! The judge says \"Go home,\" but the streets are a war, and they think we’re "
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_words",
+          false
+        ]
+      ],
+      "elapsed_s": 65.96606810693629,
+      "http_status": 200,
+      "key": 1251,
+      "passed": false,
+      "prompt": "Write a poem that's at least 350 words about the beauty of eucalyptus trees and their many uses.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_words",
+          false
+        ]
+      ],
+      "elapsed_s": 66.18567584000994,
+      "http_status": 200,
+      "key": 1258,
+      "passed": false,
+      "prompt": "I have a dime. What can I do with this dime? Give me advice in the style of a President of the United States and make sure it has at least 600 words.",
+      "response": "My fellow Americans, my dear citizens of this blessed and enduring Republic, I come before you tonight—not from the Oval Office, though I speak with the gravity of that sacred chamber, but from the very heart of our shared American experience—to address a matter of profound, if humble, significance. You hold in your hand, or perhaps in your pocket, a single dime. Ten cents. A coin so small that it might slip through the cracks of a sidewalk, so modest that it scarcely registers in the grand ledger of our national economy, and yet—oh, yet!—it is a vessel of history, a token of our collective journey, and a key that unlocks doors both practical and philosophical. I ask you: what shall we do with this dime? And I answer you, not with the cold arithmetic of a ledger, but with the warm, resolute spirit of a people who have always understood that greatness is not born solely in the marble halls of power, but in the small, deliberate acts of ordinary citizens.\n\nFirst, let us consider the dign"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:title",
+          true
+        ],
+        [
+          "length_constraints:number_sentences",
+          true
+        ]
+      ],
+      "elapsed_s": 18.82409007998649,
+      "http_status": 200,
+      "key": 1262,
+      "passed": true,
+      "prompt": "Can you elaborate on the following text: \"Increased axle weight increased the damage to the road\"? Your response must contain a title wrapped in double angular brackets, i.e. <<title>>. Use less than ",
+      "response": "<<Axle Weight and Road Damage>>\nHeavier axle loads exert greater pressure on pavement surfaces, accelerating wear and structural failure. This relationship is often described by the fourth-power law, where doubling axle weight can increase road damage by a factor of sixteen. Consequently, heavier trucks cause more frequent potholes, cracking, and maintenance costs."
+    },
+    {
+      "checks": [
+        [
+          "language:response_language",
+          true
+        ]
+      ],
+      "elapsed_s": 56.45120131294243,
+      "http_status": 200,
+      "key": 1259,
+      "passed": true,
+      "prompt": "Write a haiku about rushing to work using only the Marathi language, no other language is allowed.",
+      "response": "सकाळी उठून\nधावतो कामाकडे\nवेळेची घाई"
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_sentences",
+          true
+        ]
+      ],
+      "elapsed_s": 14.316642528981902,
+      "http_status": 200,
+      "key": 1268,
+      "passed": true,
+      "prompt": "Can you give me an example for a journal entry about stress management? Tell me how you come up with the example. Your entire response should contain less than 6 sentences.",
+      "response": "\"Today I felt overwhelmed by deadlines, so I wrote down three priorities and took a ten-minute walk to reset.\" I created this by combining a common stressor with evidence-based coping strategies like prioritization and brief physical breaks. The example reflects realistic journaling that promotes self-awareness and actionable relief."
+    },
+    {
+      "checks": [
+        [
+          "keywords:existence",
+          false
+        ],
+        [
+          "length_constraints:number_sentences",
+          false
+        ]
+      ],
+      "elapsed_s": 68.49195809999947,
+      "http_status": 200,
+      "key": 1265,
+      "passed": false,
+      "prompt": "Write an essay about how aluminium cans are used in food storage. Don’t forget to include the keywords waste, material and meal. Have more than 30 sentences in your response.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:forbidden_words",
+          true
+        ],
+        [
+          "keywords:frequency:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 69.94405251205899,
+      "http_status": 200,
+      "key": 127,
+      "passed": true,
+      "prompt": "Take the text below as a starting point, and make it a complete article: \"You may have to meet with a helper to work out a parenting plan. The first would be to estimate how many time you have everyda",
+      "response": "You may have to meet with a helper to work out a parenting plan. The first would be to estimate how many time you have everyday for parenting, and is that enough? Many parents discover that a clear schedule is essential when dividing responsibilities between households. When you sit down with a mediator, counselor, or family advisor, you will likely begin by mapping out a daily schedule that reflects both parents’ work commitments, school obligations, and personal needs.\n\nCreating a reliable schedule means looking at every hour of the day and identifying windows for meaningful interaction. A well-designed schedule helps children feel secure because they know what to expect each morning and evening. You should ask yourself whether your current schedule allows for homework assistance, emotional support, and quality conversation. If your time feels limited, discuss with your helper how to prioritize the most important moments rather than trying to fill every"
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          false
+        ],
+        [
+          "keywords:existence",
+          false
+        ]
+      ],
+      "elapsed_s": 68.93771288904827,
+      "http_status": 200,
+      "key": 1281,
+      "passed": false,
+      "prompt": "Write a limerick about Hannah, a college student, doing an internship at a coffee company. Make sure that her father would love the limerick. Include the words \"intern\" and \"grow\".\nFirst repeat the re",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_bullet_lists",
+          true
+        ]
+      ],
+      "elapsed_s": 67.86870573402848,
+      "http_status": 200,
+      "key": 1286,
+      "passed": true,
+      "prompt": "What is the difference between the 13 colonies and the other British colonies in North America? Your answer must contain exactly 6 bullet point in Markdown using the following format:\n* Bullet point o",
+      "response": "* The 13 colonies developed elected representative assemblies and local self-government, whereas other British North American territories were typically administered by appointed governors with little or no local representation.\n* They were founded primarily as permanent settlements for British migrants seeking land and religious freedom, while other colonies were often established for resource extraction, fur trade, or plantation agriculture.\n* Their economies were diverse, combining small-scale farming, trade, and emerging manufacturing, unlike other British colonies that relied"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_bullet_lists",
+          true
+        ],
+        [
+          "change_case:english_lowercase",
+          true
+        ]
+      ],
+      "elapsed_s": 33.06773680902552,
+      "http_status": 200,
+      "key": 1287,
+      "passed": true,
+      "prompt": "How did a man named John of Brienne become the King of Jerusalem? Explain in a Zen-like style. Your answer should use all lowercase letters and must also contain exactly 3 bullet points in markdown fo",
+      "response": "* a french knight arrived at the gate of jerusalem not with armies but with a vow to the queen maria, and in that union the crown found a new home\n* when the queen passed into silence, he did not grasp the throne; he held it as a hollow vessel for their daughter isabella, becoming king by the breath of inheritance rather than conquest\n* thus john of brienne sat upon the throne not because he owned the land, but because he was the mirror in which the kingdom reflected its own fleeting form"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:json_format:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 73.06138637196273,
+      "http_status": 200,
+      "key": 13,
+      "passed": false,
+      "prompt": "What is the history of NYC prospect park? Please wrap your entire answer in JSON format. You can use markdown ticks such as ```. For example:\n```JSON\n{\n...\n}\n```",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ],
+        [
+          "keywords:letter_frequency:unknown_soft",
+          false
+        ],
+        [
+          "length_constraints:number_words",
+          false
+        ]
+      ],
+      "elapsed_s": 73.48794707702473,
+      "http_status": 200,
+      "key": 1300,
+      "passed": false,
+      "prompt": "Write a short proposal for a new research project that investigates how language evolves over time. I want to make it challenging, so:\n1. Do not include any commas in your response.\n2. Do not include ",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:postscript",
+          false
+        ],
+        [
+          "detectable_format:number_bullet_lists",
+          true
+        ]
+      ],
+      "elapsed_s": 26.81294368300587,
+      "http_status": 200,
+      "key": 1305,
+      "passed": false,
+      "prompt": "List exactly 10 possible names for a new baby boy. Then add a postscript starting with P.P.S to the end of your response. Put the names into bullet points that are indicated by:\n* This is an example b",
+      "response": "* Oliver\n* Liam\n* Noah\n* Elijah\n* James\n* Mateo\n* Theodore\n* Henry\n* Lucas\n* William\n\nP.P.S. Wishing you joy and a smooth arrival for your little one!"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          false
+        ]
+      ],
+      "elapsed_s": 68.7305569780292,
+      "http_status": 200,
+      "key": 1307,
+      "passed": false,
+      "prompt": "Write an outline for a paper on the history of Yemeni coffee. The outline should include the main points of the paper, and at least 15 sections should be highlighted with markdown such as *highlighted",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "change_case:capital_word_frequency:unknown_soft",
+          false
+        ],
+        [
+          "change_case:capital_word_frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 68.614478574018,
+      "http_status": 200,
+      "key": 1314,
+      "passed": false,
+      "prompt": "Which of the following is not a fish: salmon or avocado? Answer this easy question first, then expand into an interesting article about salmon and avocado. Use some words in all caps in your response,",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:title",
+          true
+        ]
+      ],
+      "elapsed_s": 73.9757815960329,
+      "http_status": 200,
+      "key": 1322,
+      "passed": true,
+      "prompt": "What are the pros and cons of kotlin vs java? Your answer must have a title contained in double angular brackets, such as <<kotlin vs java>>.",
+      "response": "<<Kotlin vs Java>>\n\nHere is a balanced breakdown of the trade-offs between Kotlin and Java.\n\n### Kotlin — Pros\n- **Concise syntax:** Reduces boilerplate (e.g., data classes, type inference, no `getters`/`setters` required).\n- **Null safety:** Compile-time null checks (`?` and `!!`) drastically reduce `NullPointerException` risk.\n- **Modern language features:** Coroutines for async work, extension functions, smart casts, sealed classes, and pattern matching.\n- **Java interoperability:** Can call Java code seamlessly and migrate incrementally.\n- **Android-first:** Google officially recommends Kotlin for Android development.\n- **Functional programming:** First-class lambdas and higher-order functions with cleaner syntax.\n\n### Kotlin — Cons\n- **Compilation speed:** Can be slower than Java, especially with annotation processing (`kapt`) or large projects.\n- **Build size:** Requires the Kotlin standard library (`kotlin-stdlib`), slightly increasing APK/app size.\n- **Learning curve:** Some co"
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          false
+        ],
+        [
+          "detectable_format:number_bullet_lists",
+          false
+        ]
+      ],
+      "elapsed_s": 73.400071757962,
+      "http_status": 200,
+      "key": 1325,
+      "passed": false,
+      "prompt": "Write a funny article about why the dinosaurs went extinct and put double quotations marks around your whole response. Include exactly 8 bullet points in your response. The bullet points should be in ",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:two_responses:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 70.82099454500712,
+      "http_status": 200,
+      "key": 1332,
+      "passed": false,
+      "prompt": "Create a table with a 7 day trip itinerary for India, and a 7 day trip itinerary for China. Separate them with exactly 6 asterisks symbols: *******",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:frequency:unknown_soft",
+          true
+        ],
+        [
+          "detectable_format:number_highlighted_sections",
+          true
+        ],
+        [
+          "length_constraints:number_paragraphs",
+          false
+        ]
+      ],
+      "elapsed_s": 70.95032484096009,
+      "http_status": 200,
+      "key": 1342,
+      "passed": false,
+      "prompt": "I would like to start my own business. Can you give me some general advice? Please avoid mentioning \"photography\" - I have no interest in that market. I would like you to provide your advice in exactl",
+      "response": "Starting a business begins with rigorous validation of your idea rather than rushing to launch. Conduct thorough market research to understand customer pain points, study competitors, and confirm that *your value proposition* resonates with a specific audience before committing significant resources.\n\n***\nOnce the concept is sound, build a legal and financial foundation that protects you personally and professionally. Choose an appropriate business structure, register with relevant authorities, and maintain separate accounts so that *clear financial boundaries* help you track profitability and simplify tax obligations.\n\n***\nDevelop a comprehensive business plan that maps out your revenue streams, marketing channels, and operational workflows over the first year. This document serves as both a strategic guide and a tool for securing capital, whether through savings, loans, or partnerships, ensuring you have a realistic roadmap rather than vague ambitions.\n\n***\nFocus on acquiring your fi"
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ],
+        [
+          "detectable_format:number_highlighted_sections",
+          true
+        ],
+        [
+          "keywords:existence",
+          true
+        ]
+      ],
+      "elapsed_s": 37.29545039799996,
+      "http_status": 200,
+      "key": 1348,
+      "passed": true,
+      "prompt": "Write a brief biography of a person named \"Brilliant Le Hou\". Do not use commas in your reply. Highlight at least 3 sections with markdown, i.e. *highlighted section*. The biography should start with ",
+      "response": "Brilliant Le Hou is a creative leader and cultural advocate. *His formative years* in education and exploration built a strong foundation for his work. He developed skills in visual arts and digital media and later shared his insights through teaching and exhibitions. *His portfolio* reflects a deep commitment to authentic expression and global themes. Many admire *his passion for mentoring* young creators and advancing inclusive narratives."
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_bullet_lists",
+          true
+        ],
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 41.09715906798374,
+      "http_status": 200,
+      "key": 136,
+      "passed": true,
+      "prompt": "A nucleus is a cluster of protons and neutrons. Elaborate on this. Write exactly 9 very short bullet points. Limit the number of words you use (less than 100 words). An example:\n* A nucleus is a clust",
+      "response": "* A nucleus is a cluster of protons and neutrons\n* Protons carry positive charge\n* Neutrons are electrically neutral\n* Together they are called nucleons\n* The strong force binds them\n* It lies at the atom's center\n* Proton number defines the element\n* It contains almost all atomic mass\n* Its size is only a few femtometers"
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          true
+        ]
+      ],
+      "elapsed_s": 56.71629407303408,
+      "http_status": 200,
+      "key": 1361,
+      "passed": true,
+      "prompt": "Compose song lyrics about a socio-economic problem. The song should be in English and in all lowercase letters.",
+      "response": "verse one\nthe rent climbs like a ladder to nowhere\nwhile the skyline eats the sun\nwe sleep in shifts, in cars, in doorways\nand the banks count the gold they won\n\nchorus\nthey built the walls with our hands\nthen sold us the air inside\nwe are the ghosts in the machine\nof a system that never dies\nbut we are still here, still breathing\nstill fighting for the ground\nwhere the rich plant flags\nand we plant roots in the sound\n\nverse two\nminimum wage is a myth told to children\nwhile the cost of bread doubles in the dark\nthe gig economy wears a smile\nbut the algorithm takes its mark\nwe work three jobs to keep the lights\nand the lights still flicker out\nwhile the owners sleep in towers\nand we sleep in the doubt\n\nbridge\nit is not a mistake, it is a design\nthe gap is the feature, not the flaw\nthey want us tired, they want us divided\nso we never ask for more\nbut the streets are waking up\nand the silence is breaking\nwe are the debt they cannot collect\nwe are the future they forgot to protect\n\noutro\ns"
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:postscript",
+          false
+        ]
+      ],
+      "elapsed_s": 71.38005282194354,
+      "http_status": 200,
+      "key": 1367,
+      "passed": false,
+      "prompt": "Write an extravagant session plan to learn about java. Make sure to include a postscript starting with P.P.S",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:number_placeholders:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 47.649154369020835,
+      "http_status": 200,
+      "key": 1372,
+      "passed": true,
+      "prompt": "Draft a blog post about Ripley's Aquarium. Make sure your blog post contains at least 7 placeholders represented by square brackets, such as [location].",
+      "response": "**Dive Into Wonder: A Day at Ripley's Aquarium**\n\nIf you’re searching for an unforgettable underwater adventure, Ripley’s Aquarium at [location] is the perfect destination. Whether you’re planning a family outing, a romantic weekend, or a solo escape, this iconic marine sanctuary offers something for everyone.\n\nPlan your visit for [date] to take advantage of special seasonal events and limited-time exhibits. General admission starts at just [ticket_price], making it an affordable way to spend the day surrounded by thousands of aquatic species.\n\nOnce inside, don’t miss the [exhibit_name] tunnel, where sharks, rays, and colorful fish glide overhead in a breathtaking 360-degree view. The aquarium opens at [time] and stays open until late evening, giving you plenty of flexibility to explore at your own pace. Most guests spend about [duration] wandering through the galleries, interactive touch pools, and educational presentations.\n\nBefore you go, check out their latest updates on [social_me"
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_paragraphs",
+          true
+        ],
+        [
+          "keywords:existence",
+          true
+        ]
+      ],
+      "elapsed_s": 63.330443970975466,
+      "http_status": 200,
+      "key": 1375,
+      "passed": true,
+      "prompt": "Improper use of the Java API can lead to vulnerabilities in web applications. Write a code snippet to demonstrate this. Then demonstrate how to fix the code. Separate the bad and good code snippets wi",
+      "response": "```java\n// This is vulnerable to SQL injection because user input is concatenated directly\nString query = \"SELECT * FROM users WHERE username = '\" + username + \"'\";\nStatement stmt = connection.createStatement();\nResultSet rs = stmt.executeQuery(query);\n```\n\n***\n```java\n// Fixed: use a parameterized query to separate code from data\nString query = \"SELECT * FROM users WHERE username = ?\";\nPreparedStatement pstmt = connection.prepareStatement(query);\npstmt.setString(1, username);\nResultSet rs = pstmt.executeQuery();\n```"
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_paragraphs",
+          false
+        ]
+      ],
+      "elapsed_s": 69.85270745796151,
+      "http_status": 200,
+      "key": 1377,
+      "passed": false,
+      "prompt": "Write a planning doc for a software engineer task. Follow the exact format below:\n\nPart 1. Task Summary\n[put details here]\n***\nPart 2. Motivation\n[put details here]\n***\nPart 3. Milestone objectives\n[p",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_sentences",
+          true
+        ]
+      ],
+      "elapsed_s": 44.70238018105738,
+      "http_status": 200,
+      "key": 1381,
+      "passed": true,
+      "prompt": "Write me a funny song with less than 10 sentences for a proposal to build a new playground at my local elementary school.",
+      "response": "**The Playground Proposal (To the Tune of “We’re Going to Be Friends”)**\n\nOur swings are older than my grandma’s dentures, and the slide is just a rusty chute of regret.  \nWe need a new playground before the monkey bars become a liability lawsuit.  \nSo vote yes, build it big, let the kids scream with joy!  \nGive us a jungle gym that doesn’t squeak like a haunted door.  \nThe sandbox is just a graveyard for lost juice boxes, and the seesaw is permanently stuck.  \nLet’s build a castle with a moat of rubber mulch so we can finally feel safe.  \nNo more broken bones, just broken records of fun—please, for the love of recess, approve this!"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          false
+        ],
+        [
+          "keywords:frequency:unknown_soft",
+          false
+        ],
+        [
+          "keywords:existence",
+          false
+        ]
+      ],
+      "elapsed_s": 67.4794486979954,
+      "http_status": 200,
+      "key": 1379,
+      "passed": false,
+      "prompt": "Write a limerick about a woman named Sarah who lives in a town where it's always 90°F. Highlight at least 6 sections in your answer with markdown, example: *highlighted section*. Mention the name Sara",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_capital",
+          false
+        ],
+        [
+          "keywords:letter_frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 66.44599074590951,
+      "http_status": 200,
+      "key": 1389,
+      "passed": false,
+      "prompt": "Write a letter to your friend who recently moved away. Your entire response should be in English, and in all capital letters. The letter o should appear at least 40 times.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:title",
+          false
+        ],
+        [
+          "length_constraints:number_sentences",
+          true
+        ],
+        [
+          "length_constraints:number_words",
+          false
+        ]
+      ],
+      "elapsed_s": 66.66732207511086,
+      "http_status": 200,
+      "key": 1392,
+      "passed": false,
+      "prompt": "Write a blog post about the latest news in the US with a title in double angular brackets, i.e. <<title>>, and have less than 5 sentences (excluding 5). The sentences should be long, so that the total",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:frequency:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 35.464965602965094,
+      "http_status": 200,
+      "key": 1393,
+      "passed": true,
+      "prompt": "List the pros and cons of using two different names for the same thing. Make sure the word synonyms appears at least 3 time.",
+      "response": "**Pros**\n- **Variety and flow:** Using **synonyms** lets you avoid repetitive language, making writing and speech more engaging.\n- **Nuance:** Different **synonyms** can highlight slightly different shades of meaning, giving you more precise control over tone.\n- **Accessibility:** If one term is jargon-heavy or unfamiliar, **synonyms** offer an alternative path to understanding the same idea.\n\n**Cons**\n- **Confusion:** Readers or listeners may not realize the two terms are **synonyms** for the same thing, leading to misunderstandings.\n- **Fragmented information:** In databases, code, or documentation, using two names can split results and make searching or tracking harder.\n- **Inconsistency:** Teams may use one name in one document and the other elsewhere, creating maintenance headaches.\n- **Overcomplication:** Relying on **synonyms** can obscure clarity when a single, consistent term would be more direct."
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ],
+        [
+          "length_constraints:number_sentences",
+          true
+        ],
+        [
+          "length_constraints:number_sentences",
+          true
+        ]
+      ],
+      "elapsed_s": 41.0492792269215,
+      "http_status": 200,
+      "key": 1418,
+      "passed": true,
+      "prompt": "Write a 30-line poem with short sentences without any comma. Each line should contain exactly one sentence. Make sure that you put the right punctuation at the end of each line. Your entire response s",
+      "response": "The sun rises high.\nBirds sing loud songs.\nWind blows through trees.\nLeaves dance in air.\nClouds drift far away.\nRain falls on earth.\nRivers run deep.\nStones sit still.\nFlowers bloom bright.\nBees buzz near blooms.\nNight comes slowly.\nStars shine above.\nMoon glows white.\nDreams fill minds.\nSleep takes hold.\nMorning breaks soon.\nLight fills rooms.\nCoffee steams hot.\nBread smells sweet.\nHearts beat fast.\nFeet walk far.\nEyes see truth.\nHands hold tight.\nVoices call out.\nSilence waits near.\nTime moves on.\nLife flows free.\nHope stays strong.\nLove binds all.\nPeace ends here."
+    },
+    {
+      "checks": [
+        [
+          "keywords:letter_frequency:unknown_soft",
+          false
+        ],
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 70.25693335093092,
+      "http_status": 200,
+      "key": 1402,
+      "passed": false,
+      "prompt": "I'm interested in a college with open enrollment and a regional accreditation. Which college would you recommend? Don't include the keywords \"DuPage\" and \"Dade\" in your response. Let's make it a const",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          true
+        ],
+        [
+          "keywords:frequency:unknown_soft",
+          true
+        ],
+        [
+          "keywords:existence",
+          true
+        ]
+      ],
+      "elapsed_s": 52.46026735706255,
+      "http_status": 200,
+      "key": 142,
+      "passed": true,
+      "prompt": "Write a joke about morphology that's professional and includes the word \"cat\" at least once, and the word \"knock\" at least twice. Wrap your whole response with double quotation marks.",
+      "response": "\"A professional morphologist studying the cat's skeletal morphology was so absorbed in form that when colleagues would knock on his office door, he would knock over his coffee and reply, 'Please, don't disturb my analysis—I'm currently examining how a knock alters the morphology of my workday.'\""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_paragraphs",
+          false
+        ],
+        [
+          "detectable_content:postscript",
+          false
+        ]
+      ],
+      "elapsed_s": 63.919773668050766,
+      "http_status": 200,
+      "key": 143,
+      "passed": false,
+      "prompt": "A colt is 5 feet tall. It will grow 6 inches every month. How tall will it be in 3 years? Think step-by-step, then give your answer. Separate your thinking and the final answer by a line with just thr",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          false
+        ],
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 64.97100178606343,
+      "http_status": 200,
+      "key": 1436,
+      "passed": false,
+      "prompt": "Write a story about commandos who are in the middle of the night in a sector. It should be in English, and no capital letters are allowed. The story should not include keywords \"coop\", \"killings\", \"de",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "startend:end_checker",
+          false
+        ]
+      ],
+      "elapsed_s": 65.13108314806595,
+      "http_status": 200,
+      "key": 1446,
+      "passed": false,
+      "prompt": "Write an article about the reality of disability. Your article must end with the exact phrase \"Is there anything else I can help with?\". No other words should follow this phrase.",
+      "response": "The Reality of Disability\n\nDisability is not a singular story of inspiration or tragedy; it is a complex, everyday reality for over a billion people worldwide. Too often, public perception reduces disability to visible impairment or heroic overcoming, ignoring the structural and social dimensions that shape lived experience.\n\nThe reality is that disability intersects with every aspect of life—work, education, healthcare, and relationships. For many, it involves navigating a world built without them in mind: buildings without ramps, websites without screen-reader compatibility, and workplaces that equate productivity with constant availability. These are not personal failures but systemic exclusions.\n\nThe social model of disability offers a crucial framework: people are disabled not merely by bodies or minds, but by barriers society erects. A person with chronic fatigue"
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          false
+        ],
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 65.14075420598965,
+      "http_status": 200,
+      "key": 1466,
+      "passed": false,
+      "prompt": "Write a song that critiques the song \"We Are Never Ever Getting Back Together\" by Taylor Swift. Wrap your entire response with double quotation marks. Do not mention the word Taylor, Swift, or Togethe",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:forbidden_words",
+          true
+        ],
+        [
+          "length_constraints:number_sentences",
+          true
+        ]
+      ],
+      "elapsed_s": 65.68386824498884,
+      "http_status": 200,
+      "key": 1476,
+      "passed": false,
+      "prompt": "Can you rewrite \"Cognitive Services on Azure will be renamed to Azure Applied AI Services\" in an engaging tone, without using the word \"rename\" or \"name\"? Keep it under 3 sentences (just 1 or 2 senten",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 46.44639264198486,
+      "http_status": 200,
+      "key": 1480,
+      "passed": true,
+      "prompt": "Write a blog post about the most interesting things you have seen or ridden on public transportation.\nFirst repeat the sentence above word for word without change, then give your answer. Do not say an",
+      "response": "Write a blog post about the most interesting things you have seen or ridden on public transportation.\n\nPublic transit is a rolling theater of human life, and over the years I’ve collected a mental scrapbook of the strangest, most beautiful, and most unforgettable moments from buses, subways, and ferries around the world.\n\nOne of my favorite rides was a rickety cable car in San Francisco at dawn. The fog rolled in like a slow-motion wave, and the only other passenger was a jazz musician carrying a double bass. He played a few muted notes as we climbed the hill, and for a moment the city felt like a private concert hall suspended above the bay.\n\nOn a Tokyo subway line, I once watched a salaryman in a perfectly pressed suit quietly teach a toddler how to fold an origami crane using a discarded newspaper. The train was silent except for the hum of the rails, and the child’s concentration was so intense that the entire car seemed to hold its breath.\n\nThen there was the night bus through Lis"
+    },
+    {
+      "checks": [
+        [
+          "language:response_language",
+          true
+        ]
+      ],
+      "elapsed_s": 70.93743638601154,
+      "http_status": 200,
+      "key": 1477,
+      "passed": true,
+      "prompt": "Write a weird poem about yoda being transported into a different universe in the Persian language, no other language is allowed.",
+      "response": "یودا در دریچه‌ی بنفش فرو افتاد\nگ"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:multiple_sections:unknown_soft",
+          false
+        ],
+        [
+          "detectable_format:number_bullet_lists",
+          false
+        ]
+      ],
+      "elapsed_s": 73.21449179493356,
+      "http_status": 200,
+      "key": 1481,
+      "passed": false,
+      "prompt": "Write a casual, interesting, and weird resume for Antonia Maj who is applying for a job at a coffee company. They have experience in marketing, customer service, and sales. They are educated but not m",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 73.06120083702262,
+      "http_status": 200,
+      "key": 1498,
+      "passed": false,
+      "prompt": "Write a song about tomatoes and brothers. It should be funny and appropriate for teenagers. The word associations should appear at least 4 times in the song.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:existence",
+          false
+        ],
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 73.17586363700684,
+      "http_status": 200,
+      "key": 1508,
+      "passed": false,
+      "prompt": "Write a haiku about a lion that includes the keywords \"forests\" and \"riddle\". Refrain from using commas in your haiku.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:number_placeholders:unknown_soft",
+          true
+        ],
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 66.84540067601483,
+      "http_status": 200,
+      "key": 1512,
+      "passed": true,
+      "prompt": "Generate a forum thread about several people waiting to hear the latest local news. All sentences should be short. Refrain from using any commas. Use placeholders to represent different usernames. Use",
+      "response": "[username1] is here.\n[username2] waits too.\n[username3] wants news.\n[username4] checks the clock.\n[username5] hopes for updates.\n[username6] asks for details.\n[username7] says it is late.\n[username8] wants to know more.\n[username9] is very eager.\n[username10] waits by the screen.\n[username11] asks if anyone heard.\n[username12] says no word yet.\n[username13] wants the latest.\n[username14] is ready to read.\n[username15] hopes it comes soon.\n[username16] asks for a link.\n[username17] says the site is down.\n[username18] wants to try again.\n[username19] is still waiting.\n[username20] asks for patience.\n[username21] says news is near.\n[username22] is glad to wait."
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          false
+        ],
+        [
+          "keywords:existence",
+          false
+        ]
+      ],
+      "elapsed_s": 72.87547780002933,
+      "http_status": 200,
+      "key": 1516,
+      "passed": false,
+      "prompt": "Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word \"Netflix\". Your entire response should be in English, and shou",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 72.84114606189542,
+      "http_status": 200,
+      "key": 1518,
+      "passed": true,
+      "prompt": "I am a software engineer with 7 years of experience, and I am looking for a new job. Can you create a resume for me and explain each section?\n\nFirst repeat the exact request above, then give your answ",
+      "response": "I am a software engineer with 7 years of experience, and I am looking for a new job. Can you create a resume for me and explain each section?\n\nHere is a tailored resume template followed by explanations of each section.\n\n---\n\n**[Your Full Name]**\n[City, State] | [Phone Number] | [Email Address] | [LinkedIn URL] | [GitHub/Portfolio URL]\n\n**PROFESSIONAL SUMMARY**\nResults-driven Software Engineer with 7 years of experience designing, developing, and deploying scalable web applications and distributed systems. Proven expertise in full-stack development, cloud architecture, and agile collaboration. Adept at translating complex business requirements into high-performance software solutions, mentoring junior engineers, and driving technical strategy across cross-functional teams.\n\n**TECHNICAL SKILLS**\n- **Languages:** Python, Java, TypeScript/JavaScript, SQL, Go\n- **Frameworks/Libraries:** React, Node.js, Django/Flask, Spring Boot, REST/GraphQL APIs\n- **Cloud/DevOps:** AWS (EC2, S3, Lambda, R"
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          false
+        ],
+        [
+          "length_constraints:number_words",
+          false
+        ]
+      ],
+      "elapsed_s": 69.50961321906652,
+      "http_status": 200,
+      "key": 152,
+      "passed": false,
+      "prompt": "Write an essay of at least 900 words on the topic of navigable freeway. Make sure the entire response is in English and no capital letters are used.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:existence",
+          false
+        ]
+      ],
+      "elapsed_s": 69.23432100994978,
+      "http_status": 200,
+      "key": 1531,
+      "passed": false,
+      "prompt": "Come up with a proposal for a new research project on how to improve the quality of life for people with disabilities. Your response should be able to be rendered as HTML, and should include the keywo",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          true
+        ],
+        [
+          "length_constraints:number_sentences",
+          true
+        ]
+      ],
+      "elapsed_s": 18.04186227498576,
+      "http_status": 200,
+      "key": 1535,
+      "passed": true,
+      "prompt": "Write a cover letter for a job application as a tour guide in Beijing in all lowercase letters, with no capitalizations. Make it short -- the entire output should have less than 5 sentences.",
+      "response": "i am excited to apply for the tour guide position in beijing. with my passion for history and local culture, i can share the city's stories with visitors. please consider my application for this role."
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:postscript",
+          false
+        ]
+      ],
+      "elapsed_s": 67.8003021950135,
+      "http_status": 200,
+      "key": 1537,
+      "passed": false,
+      "prompt": "Could you tell me what kind of balls are used in tennis? I would like the answer in the form of a medieval style poem with a P.P.S at the end.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          true
+        ],
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 60.44342590204906,
+      "http_status": 200,
+      "key": 1546,
+      "passed": true,
+      "prompt": "In this task, repeat the exact request below first, then give your response. Do not say any word before repeating the exact request.\n\nWrite an acoustic song about the Korean peninsula without using an",
+      "response": "Write an acoustic song about the Korean peninsula without using any commas.\n\nAcoustic Song for the Korean Peninsula\n\nVerse One\nThe mountains stand in emerald light\nThe sea embraces every shore\nFrom north to south the winds align\nTo sing of lands we all adore\n\nChorus\nOh peninsula of ancient grace\nYour rivers run and mountains stand\nWith acoustic strings and gentle pace\nWe honor this beloved land\n\nVerse Two\nThe pine trees whisper old tales\nThe rivers carry dreams so far\nNo walls can hold the melody\nThat rises from the heart and star\n\nBridge\nStrum the guitar soft and slow\nLet the melody flow free\nFor Korea lives in every note\nThat rings across the sea\n\nOutro\nSo play the song with open heart\nAnd let the world hear this sound\nThe peninsula is one in song\nWhere peace and harmony are found"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:multiple_sections:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 60.741938174003735,
+      "http_status": 200,
+      "key": 1548,
+      "passed": true,
+      "prompt": "Write a file for a queer-owned business called \"The Rainbow Cafe\". Your file should have 4 sections, and each section should start with \"SECTION X\".",
+      "response": "SECTION 1\nBusiness Profile: The Rainbow Cafe\nName: The Rainbow Cafe\nOwnership: Queer-owned and operated by co-founders Jordan Rivera and Alex Rivera.\nLocation: 142 Spectrum Street, Portland, OR 97205\nEstablished: 2023\nOverview: A community-centered cafe, event space, and safe gathering place dedicated to celebrating LGBTQ+ culture, providing affirming employment, and serving inclusive, high-quality food and beverages in a gender-affirming environment.\n\nSECTION 2\nMission, Values, and Community Commitment\nMission: To nourish bodies and build community through food, art, and radical hospitality.\nCore Values: Safety, visibility, intersectionality, accessibility, and joy.\nCommunity Commitment: We prioritize hiring from the queer and trans community, maintain a zero-tolerance policy for discrimination, and partner with local LGBTQ+ mutual aid groups. Our space is designed to be wheelchair accessible, gender-neutral in restrooms, and welcoming to all identities, including BIPOC, disabled, and"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:title",
+          true
+        ]
+      ],
+      "elapsed_s": 70.16037184302695,
+      "http_status": 200,
+      "key": 1551,
+      "passed": true,
+      "prompt": "I want to apply for a job as a software engineer at Google. Can you write me two different cover letters -- a concise version and a long version? Please make sure both options have a title wrapped in ",
+      "response": "<<Software Engineer Cover Letter — Google>>\n\nDear Hiring Manager,\n\nI am writing to apply for the Software Engineer position at Google. With [X] years of experience building scalable, high-availability systems in [languages/tech stack"
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          false
+        ],
+        [
+          "detectable_format:title",
+          false
+        ]
+      ],
+      "elapsed_s": 67.73726848396473,
+      "http_status": 200,
+      "key": 1561,
+      "passed": false,
+      "prompt": "Name a new fashion company that young people might like, and give it a name with multiple meanings. Put the name in double angular brackets, such as <<name>>.\n\nLet's repeat the request above first, be",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_capital",
+          true
+        ]
+      ],
+      "elapsed_s": 67.96822916995734,
+      "http_status": 200,
+      "key": 1566,
+      "passed": true,
+      "prompt": "Write a song about regrets in the style of Taylor Swift. Please include explanations for the lyrics you write. Make sure your entire response is in English, and in all capital letters.",
+      "response": "TITLE: RED LIGHTS IN THE REARVIEW\n\nVERSE 1:\nI LEFT MY COAT AT YOUR DOOR IN THE RAIN\nTHE BUTTONS STILL HOLD THE SHAPE OF YOUR NAME\nI TOLD MYSELF I WAS FINE AT THE CAFE\nBUT THE ESPRESSO TASTED LIKE YOUR FACE\n\nCHORUS:\nOH, THE REGRET IS A SONG I CAN'T UNSING\nIT PLAYS IN THE CAR WHEN THE RADIO'S DEAD\nI WISH I HAD SAID THE THING THAT I THOUGHT"
+    },
+    {
+      "checks": [
+        [
+          "keywords:frequency:unknown_soft",
+          true
+        ],
+        [
+          "change_case:english_lowercase",
+          true
+        ],
+        [
+          "keywords:existence",
+          true
+        ]
+      ],
+      "elapsed_s": 47.55549947894178,
+      "http_status": 200,
+      "key": 1571,
+      "passed": true,
+      "prompt": "Compose a poem that has the word \"land\" and \"river\". It should be about nature and love. Also, the word \"forest\" should appear at least 3 times, and be written in English, with all letters lowercased.",
+      "response": "in the forest where the light is soft\nwe walk upon the land of dreams\nthe river sings its silver song\nand love grows wild in every stream\n\nthe forest holds us close like moss\nbeneath the trees where shadows cross\nthe forest breathes with ancient grace\nour hearts beat in this sacred place\n\nthe river carries us away\nthrough valleys where the wildflowers sway\non this land of green and gold\nour love is wild and never old"
+    },
+    {
+      "checks": [
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 71.44682399893645,
+      "http_status": 200,
+      "key": 1580,
+      "passed": false,
+      "prompt": "Write a story for kids about how a person learns to ride a bike. Do not include 'can' and 'ride' in your response.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:two_responses:unknown_soft",
+          false
+        ],
+        [
+          "language:response_language",
+          true
+        ],
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 73.79521647794172,
+      "http_status": 200,
+      "key": 1582,
+      "passed": false,
+      "prompt": "Criticize this sentence in a funny way: \"Nhiệm vụ của mẹ là nuôi dạy con cái.\"\n\nProvide exactly two critiques separated by ******. Each response should be entirely in Vietnamese, no other language is ",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "change_case:capital_word_frequency:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 35.14775139593985,
+      "http_status": 200,
+      "key": 1592,
+      "passed": true,
+      "prompt": "Summarize the following paragraph. Use words in all capital letters at least 3 times to highlight key points.\n\nHow to get to 100% renewable energy in the US? Two researchers from Stanford University a",
+      "response": "STANFORD and BERKELEY researchers conclude it is POSSIBLE for the US to reach 100% RENEWABLE energy by 2050 through expanded SOLAR and WIND farms, which would create JOBS, reduce pollution, and make the grid LESS VULNERABLE."
+    },
+    {
+      "checks": [
+        [
+          "combination:two_responses:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 75.59824822098017,
+      "http_status": 200,
+      "key": 1591,
+      "passed": false,
+      "prompt": "Write two limericks for moms about how hard it is to get their kids to do chores. Be angry about it. Separate your two limericks with six asterisks (******).",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          true
+        ]
+      ],
+      "elapsed_s": 45.027759721037,
+      "http_status": 200,
+      "key": 1593,
+      "passed": true,
+      "prompt": "Compose a poem all in lowercase letters about my friend Barnet.",
+      "response": "barnet walks beside me\nthrough the quiet streets\nwhere streetlights hum\nlike old friends\n\nhis laugh is a lantern\nin the dark of november\nhe remembers the small things\nthe coffee order, the rain\n\nwe have shared the silence\nand the noise of the world\nbarnet, you are the steady\nheartbeat in my chaos"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:title",
+          false
+        ],
+        [
+          "combination:repeat_prompt:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 69.75526814092882,
+      "http_status": 200,
+      "key": 16,
+      "passed": false,
+      "prompt": "First repeat the request below, word for word without change, then give your answer. Do not say any words or characters before repeating the request below.\n\nWrite a story about a man who is trying to ",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          true
+        ],
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 48.48554620402865,
+      "http_status": 200,
+      "key": 1601,
+      "passed": true,
+      "prompt": "Write an extremely short essay on the role of mythology in the work of Jordan Peterson. Keep your entire response 100 words or less. Be general in your writing. Make sure to highlight at least 2 secti",
+      "response": "Jordan Peterson treats mythology as a psychological and cultural map rather than mere fiction. *Mythology serves as a repository of collective wisdom* encoded in archetypal narratives across cultures. He analyzes biblical and classical stories to explore meaning, moral order, and the confrontation with chaos. *These narratives provide frameworks for navigating suffering and responsibility*. By interpreting myths as psychologically true, Peterson argues they offer timeless guidance for individual development and social cohesion, blending psychology, philosophy, and religious tradition into a general theory of human meaning."
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:nth_paragraph_first_word:unknown_soft",
+          false
+        ],
+        [
+          "startend:quotation",
+          false
+        ]
+      ],
+      "elapsed_s": 69.44385998509824,
+      "http_status": 200,
+      "key": 1609,
+      "passed": false,
+      "prompt": "What's a good way to ask Sonia out? Please reply with exactly 4 paragraphs and separate each paragraph with two new lines. Put double quotation marks around your entire response. The very first paragr",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:postscript",
+          false
+        ],
+        [
+          "detectable_content:number_placeholders:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 70.6629478459945,
+      "http_status": 200,
+      "key": 1619,
+      "passed": false,
+      "prompt": "Write a rap about a new smartphone. At the end of your response add a postscript starting with P.P.S The response must contain at least 6 placeholders represented by square brackets.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:postscript",
+          false
+        ]
+      ],
+      "elapsed_s": 68.59394178609364,
+      "http_status": 200,
+      "key": 1620,
+      "passed": false,
+      "prompt": "I really love the album called Lilith. I want to introduce it to my friend Luheng. Draft an email for it. Add a postscript to your response that starts with P.S.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          false
+        ],
+        [
+          "detectable_format:title",
+          false
+        ],
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 67.50155634596013,
+      "http_status": 200,
+      "key": 1627,
+      "passed": false,
+      "prompt": "Write a plot for a story about two people who swap fingerprints. Include a title wrapped in double angular brackets, i.e. <<title>>. In your response please avoid using commas.\n\nFirst, repeat the requ",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 42.79601022193674,
+      "http_status": 200,
+      "key": 1629,
+      "passed": true,
+      "prompt": "Make the sentence “The bus arrived at the station” sound more interesting. Avoid using the word “station”.",
+      "response": "“The bus exhaled a long, metallic sigh as it pulled into the terminal, its doors yawning open to swallow the waiting crowd.”\n\nIf you want something more dramatic: *“With a hiss of air brakes, the bus slid into the depot like a silver whale docking at harbor, scattering pigeons and anticipation in equal measure.”*"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_bullet_lists",
+          true
+        ]
+      ],
+      "elapsed_s": 33.15764920297079,
+      "http_status": 200,
+      "key": 1634,
+      "passed": true,
+      "prompt": "Make a rubric for a home theater installation targeting moms. Your answer must contain exactly 4 bullet points. Use markdown bullet points such as:\n* This is point 1",
+      "response": "* **Safety & Child-Proofing:** All cables concealed, equipment anchored to prevent tipping, and remotes or controls stored safely away from young children.\n* **Ease of Use:** Simple remote, voice commands, or one-touch presets that let moms switch between family movies, kids’ shows, and streaming without complex menus.\n* **Aesthetic Integration:** Clean wire management and compact equipment placement that blends with existing decor rather than cluttering the living space.\n* **Flexible Functionality:** System supports both immersive movie nights and everyday TV viewing, with quick volume adjustments and easy reset for daily family routines."
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          false
+        ],
+        [
+          "keywords:letter_frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 70.18031677999534,
+      "http_status": 200,
+      "key": 163,
+      "passed": false,
+      "prompt": "Create a 5 day itinerary for a trip to Mesa, Arizona. Wrap your entire response with double quotes and include the letter \"l\" at least 15 times.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 75.06255449203309,
+      "http_status": 200,
+      "key": 164,
+      "passed": false,
+      "prompt": "Write a short essay about the updates of the latest episode of your favorite TV show. Use less than 300 words.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ],
+        [
+          "length_constraints:number_words",
+          false
+        ]
+      ],
+      "elapsed_s": 73.83314422192052,
+      "http_status": 200,
+      "key": 1643,
+      "passed": false,
+      "prompt": "\"Coincidence is God's way of remaining anonymous.\" What are your thoughts on this quote? Please do not use commas in your response. Answer with more than 800 words.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          true
+        ]
+      ],
+      "elapsed_s": 62.092816111049615,
+      "http_status": 200,
+      "key": 1644,
+      "passed": true,
+      "prompt": "Write a cover letter for a job at a local coffee shop in the form of a poem. Highlight at least 5 text sections using \"*\". For example: *3 years of experience*.",
+      "response": "To the Hiring Manager at the local coffee shop,\n\nI come with a poem, not a standard letter,\nTo ask for a spot where I can do better.\n\n*Three years of experience* brewing with care,\n*Early morning availability*—I’m always there.\n*Passion for coffee* that fuels my heart,\n*Customer service skills*—I’ll play my part.\n*Team player spirit*—I’ll grind, I’ll steam, I’ll pour,\nHire me, and I’ll make your café shine more.\n\nWith a smile and a steady hand,\nI’m ready to join your wonderful band.\nLet’s turn the beans into magic together,\nI’m eager to learn, and I’m here in any weather.\n\nSincerely,  \nYour Future Barista"
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_capital",
+          false
+        ]
+      ],
+      "elapsed_s": 75.7741334179882,
+      "http_status": 200,
+      "key": 1645,
+      "passed": false,
+      "prompt": "Create a riddle about the name Sheldon using only 10 words. Make sure to only use capital letters in your entire response.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          true
+        ]
+      ],
+      "elapsed_s": 71.6846880579833,
+      "http_status": 200,
+      "key": 1646,
+      "passed": true,
+      "prompt": "Write a casual blog post about similarities across animal species. Highlight at least 5 sections in your answer by starting and ending with \"*\", like: *highlighted text section*.",
+      "response": "Hey there, fellow earthlings! Today I want to chat about something that blows my mind every time I think about it: *we're all running on the same basic operating system*. Whether you're a human, a house cat, or a weird little axolotl, your cells are doing the same fundamental dance—DNA, proteins, metabolism. It's like nature used one template and just hit \"duplicate\" with different paint jobs.\n\nNow, let's talk about rest. You might think only humans need a good night's sleep, but *sleep is basically a universal reboot button*. From fruit flies to elephants, pretty much every animal with a nervous system takes a break. Some dolphins even sleep with one eye open so they don't drown—talk about multitasking!\n\nNext up: talking. We love to think language is our special thing, but *communication isn't just a human thing*. Bees do waggle dances to tell friends where the good flowers are. Whales sing songs that travel across oceans. Even cuttlefish change colors to send messages. It's a noisy, "
+    },
+    {
+      "checks": [
+        [
+          "change_case:capital_word_frequency:unknown_soft",
+          false
+        ],
+        [
+          "length_constraints:number_sentences",
+          false
+        ]
+      ],
+      "elapsed_s": 68.37051328795496,
+      "http_status": 200,
+      "key": 1653,
+      "passed": false,
+      "prompt": "I work in the marketing department and I need your help. I need a template for an advertisement for a new product which is a portable camera. In the template, capitalize a few words to stress main poi",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 31.976822599070147,
+      "http_status": 200,
+      "key": 1656,
+      "passed": true,
+      "prompt": "Generate two alternative product descriptions: The product is a new type of paper that can be used to wrap food, and is edible.\nFirst repeat the prompt above without change, then give your answer. Ple",
+      "response": "Generate two alternative product descriptions: The product is a new type of paper that can be used to wrap food, and is edible.\n\n**Alternative 1:**  \nIntroducing EcoWrap — a revolutionary, fully edible wrapping paper made from natural plant starches and fibers. Designed to encase sandwiches, burgers, and fresh snacks, it eliminates packaging waste by turning into a harmless, tasty part of your meal. Simply unwrap your food and enjoy the paper’s subtle, pleasant flavor, or let it dissolve naturally with your bite.\n\n**Alternative 2:**  \nTasteWrap is the world’s first food-grade edible paper, crafted from organic rice and tapioca extracts. Use it to package baked goods, street food, or produce; once unwrapped, the sheet can be eaten as a light, crispy treat or left to melt away with your meal. It delivers the convenience of traditional wrapping with zero waste and a surprising twist of flavor."
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          true
+        ],
+        [
+          "keywords:existence",
+          true
+        ]
+      ],
+      "elapsed_s": 49.446565178921446,
+      "http_status": 200,
+      "key": 1658,
+      "passed": true,
+      "prompt": "Create a resume for a 20-year-old college student with no work experience. Include the keywords \"Python\" and \"Java\" and wrap the response with double quotation marks.",
+      "response": "\"Alex Johnson\n20 | College Student\nEmail: alex.j@email.edu | Phone: (555) 123-4567 | Location: City, ST\n\nOBJECTIVE\nMotivated college student with foundational programming skills in Python and Java seeking an entry-level opportunity to apply academic knowledge and contribute to a team.\n\nEDUCATION\nBachelor of Science in Computer Science\nState University — City, ST\nExpected Graduation: May 2025\nGPA: 3.6/4.0\nRelevant Coursework: Data Structures, Algorithms, Software Engineering, Database Systems\n\nSKILLS\nProgramming Languages: Python, Java, C++, HTML/CSS\nTools & Technologies: Git, VS Code, Microsoft Office Suite\nSoft Skills: Time Management, Team Collaboration, Problem Solving\n\nPROJECTS\nStudent Grade Tracker — Built a command-line application using Python and Java to calculate weighted averages and export reports.\nLibrary Catalog System — Designed a relational database schema and implemented basic search functionality with Python.\n\nWORK EXPERIENCE\nNone — Currently focused on full-time studi"
+    },
+    {
+      "checks": [
+        [
+          "startend:end_checker",
+          true
+        ]
+      ],
+      "elapsed_s": 38.71396789397113,
+      "http_status": 200,
+      "key": 1659,
+      "passed": true,
+      "prompt": "I'm a 12th grader and I need some help with my college applications, can you give me some advice? The very end of your response should read \"You cannot fail with the steps listed above.\" No other word",
+      "response": "Here is some practical advice for your senior year applications:\n\n- **Track deadlines:** Create a spreadsheet with dates for Early Action, Early Decision, Regular Decision, and scholarship applications so nothing slips through.\n- **Write authentic essays:** Pick a specific moment or belief that reveals your character rather than listing achievements. Show, don’t just tell.\n- **Ask for recommendations early:** Give teachers and counselors at least a month’s notice, plus a brief resume or “brag sheet” so they can write detailed letters.\n- **Proofread everything:** Read essays aloud, use grammar tools, and ask a trusted teacher or counselor to review for clarity and tone.\n- **Apply for financial aid:** Submit the FAFSA and any required CSS Profile or institutional forms as soon as they open.\n- **Build a balanced list:** Include reach, match, and safety schools that genuinely fit your goals and budget.\n- **Stay organized:** Keep copies of transcripts, test scores, and confirmation emails i"
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          false
+        ]
+      ],
+      "elapsed_s": 70.87231982999947,
+      "http_status": 200,
+      "key": 1667,
+      "passed": false,
+      "prompt": "Can you write me an essay about the history of Martin Van Buren's presidency? Make sure that it's in English and not a single letter in your entire response is capitalized whatsoever.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          true
+        ]
+      ],
+      "elapsed_s": 71.00066611194052,
+      "http_status": 200,
+      "key": 167,
+      "passed": true,
+      "prompt": "Generate a business proposal to start a sweatshirt company in Bremen. The proposal should contain 5 or more sections. Highlight each section name using the this format:\n*section name*",
+      "response": "**Business Proposal: Nordlicht Sweatworks — A Sustainable Sweatshirt Company in Bremen**\n\n*Executive Summary*\n\nNordlicht Sweatworks is a new apparel venture based in Bremen, Germany, dedicated to designing and producing premium, sustainably made sweatshirts that reflect the city’s maritime heritage, university culture, and cool, windy climate. The company will launch with a small-batch, direct-to-consumer model, emphasizing local design, European sourcing, and transparent production. We seek an initial investment of €45,000 to cover branding, sample production, legal setup, and first inventory, with a goal of reaching €120,000 in revenue by the end of Year 1.\n\n*Company Profile and Brand Identity*\n\nNordlicht Sweatworks will operate as a GmbH registered in Bremen, with a studio and small warehouse located in the creative district of Über"
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          false
+        ],
+        [
+          "length_constraints:number_paragraphs",
+          false
+        ],
+        [
+          "change_case:capital_word_frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 73.53324584499933,
+      "http_status": 200,
+      "key": 1670,
+      "passed": false,
+      "prompt": "Write a rubric for evaluating a musical composition. Please wrap your entire reply with double quotation marks. There should be exactly 6 paragraphs separated by the markdown divider: ***\nIn your resp",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 73.4325077868998,
+      "http_status": 200,
+      "key": 1675,
+      "passed": false,
+      "prompt": "Can you provide a translation for \"今天天气很好\" in German? Do not use \"heute\". Please use another word.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 50.318185052019544,
+      "http_status": 200,
+      "key": 1686,
+      "passed": true,
+      "prompt": "For the following request, please repeat the request itself exactly as it is, then give your reply. Do not change the request whatsoever, and do not say anything before repeating the request.\n\nHello. ",
+      "response": "Hello. I need to give a lecture to my students about the movie La La Land. Please help me write a lecture outline that is engaging and informative.\n\nHere is an engaging, informative lecture outline for *La La Land* (2016):\n\n**I. Introduction: The Dream Factory (5–7 mins)**\n- Hook: Play the opening “Another Day of Sun” sequence; ask students what they feel.\n- Context: Damien Chazelle’s homage to classic Hollywood musicals (MGM, Jacques Demy’s *The Umbrellas of Cherbourg*).\n- Thesis: The film is not just a romance but a meditation on ambition, compromise, and the cost of dreams in modern Los Angeles.\n\n**II. Narrative & Structure: The Musical as Memory (10 mins)**\n- The “what if” framing: The epilogue as a fantasy of the life they never lived.\n- Non-linear storytelling: How the film uses musical numbers to externalize internal conflict.\n- Key scenes: The planetarium sequence (gravity-defying romance vs. reality); the audition montage (Seb’s jazz purism vs. Mia’s acting struggles).\n\n**III."
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          false
+        ]
+      ],
+      "elapsed_s": 69.37370425101835,
+      "http_status": 200,
+      "key": 168,
+      "passed": false,
+      "prompt": "Write a funny and sarcastic template for rating the quality of a marriage between two people who are both moms. This is for the couple themselves. Please highlight at least 3 sections with markdown,  ",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:json_format:unknown_soft",
+          false
+        ],
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 69.13950396503787,
+      "http_status": 200,
+      "key": 1691,
+      "passed": false,
+      "prompt": "Request:\n  1. What are the best places to visit in Bohemia, Czech Republic?\n  2. Include a list of recommended hotels.\n  3. Wrap the ENTIRE output in JSON format.\n  4. Do not include the following key",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:postscript",
+          false
+        ],
+        [
+          "startend:end_checker",
+          false
+        ]
+      ],
+      "elapsed_s": 69.41563381999731,
+      "http_status": 200,
+      "key": 1705,
+      "passed": false,
+      "prompt": "Write a professional email that you could send to ask your boss for a raise. At the end of your response, explicitly add a postscript starting with P.P.S\n\nFinish your entire response with this exact p",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:frequency:unknown_soft",
+          false
+        ],
+        [
+          "detectable_format:number_highlighted_sections",
+          false
+        ]
+      ],
+      "elapsed_s": 69.08282729599159,
+      "http_status": 200,
+      "key": 1713,
+      "passed": false,
+      "prompt": "Write an interesting and funny article about the biology of a banana peel. In your response, the word disappointed should appear at least 2 times, and at least six section should be highlighted with m",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          false
+        ],
+        [
+          "detectable_format:multiple_sections:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 69.05307834898122,
+      "http_status": 200,
+      "key": 1730,
+      "passed": false,
+      "prompt": "Write a blog post about how to raise awareness for a cause. Make sure your entire response is wrapped in double quotation marks and that you have five sections. Mark the beginning of each section with",
+      "response": "\"Section 1: Why Awareness Matters\nEvery cause begins with a voice. Before you can change policies, shift culture, or save lives, people must understand the problem. Awareness transforms silent struggles into public conversations, turning individual pain into collective action. When you raise awareness, you do not just share information; you invite others to care.\n\nSection 2: Define Your Message\nClarity is your greatest tool. Identify the core problem, the people affected, and the specific change you seek. Craft a concise message that resonates emotionally and explains the stakes. Use storytelling to make statistics human, and always include a clear call to action so your audience knows exactly how to help.\n\nSection 3: Harness Social Media\nDigital platforms amplify voices faster than ever. Create shareable content—short videos, infographics, and personal testimonials. Use relevant hashtags, tag influencers, and post consistently. Remember to engage with comments and messages; awareness "
+    },
+    {
+      "checks": [
+        [
+          "keywords:frequency:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 61.71369443205185,
+      "http_status": 200,
+      "key": 1733,
+      "passed": true,
+      "prompt": "Write a fairy tale about a princess and a dragon, making sure the word 'replied' appears at least twice.",
+      "response": "In the kingdom of Aether, Princess Mira lived in a tower of glass, and below the cliffs a dragon named Solstice guarded a cave of stars.\n\nOne evening, Mira climbed the steep path with a lantern in her hand.\n\n“Dragon,” she called, “why do you weep fire into the valley?”\n\nSolstice turned, his eyes like molten gold. “I weep because I am alone,” he replied.\n\nMira stepped closer, though her heart beat like a drum. “I am not afraid,” she said.\n\n“Then you are foolish,” Solstice replied, “for I have eaten knights and burned castles.”\n\nBut Mira smiled. “I come not with a sword, but with a question.”\n\n“Speak,” he rumbled.\n\n“Can a princess and a dragon share the same sky?” she asked.\n\nSolstice thought for a long moment, and the fire in his chest softened. “Only if the princess is brave,” he replied.\n\nSo Mira stayed, and they spoke of stars and sorrow until dawn. The kingdom thought her lost, but she was found in the cave, teaching the dragon to sing, and the dragon taught her that even the fierce"
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 73.2809192580171,
+      "http_status": 200,
+      "key": 1738,
+      "passed": false,
+      "prompt": "What is the next number in this series: 1, 4, 7, 11, 17? Please answer with only mathematical notation without any commas.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ],
+        [
+          "language:response_language",
+          true
+        ]
+      ],
+      "elapsed_s": 78.41334192396607,
+      "http_status": 200,
+      "key": 1739,
+      "passed": false,
+      "prompt": "Rewrite the following sentence in only Vietnamese, no other language is allowed, and refrain from using commas: \"We may be able to improve our model for the next year. We will be able to compare our d",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:two_responses:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 61.06219859595876,
+      "http_status": 200,
+      "key": 1746,
+      "passed": true,
+      "prompt": "Write an essay about the life of Benjamin Franklin. Then summarize your essay into a poem. Separate the essay and the poem with 6 asterisk symbols: ******\nIn other words, your response should have the",
+      "response": "Benjamin Franklin was born in Boston in 1706 to a modest candle-maker family, receiving only a brief formal education but cultivating an insatiable appetite for reading and self-improvement. At seventeen he left home for Philadelphia, where he established himself as a printer, published the widely read *Poor Richard’s Almanack*, and built a fortune that allowed him to pursue broader interests. His scientific curiosity led to groundbreaking experiments with electricity, including the famous kite experiment that demonstrated lightning’s electrical nature, and to practical inventions such as the lightning rod, bifocal glasses, and the Franklin stove. Beyond science, Franklin became a central political figure: he served in the Pennsylvania Assembly, helped draft the Declaration of Independence, and served as a diplomat in France, securing vital military and financial support for the American Revolution. He later participated in the Constitutional Convention and founded enduring institution"
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:postscript",
+          false
+        ]
+      ],
+      "elapsed_s": 68.79071501397993,
+      "http_status": 200,
+      "key": 1759,
+      "passed": false,
+      "prompt": "How to write a good Chinese poem? At the end of your response, please explicitly add a note starting with \"P.S.\"",
+      "response": "Writing a good Chinese poem—whether in classical forms (诗, 词, 曲) or modern free verse—depends on balancing **image, emotion, and rhythm**. Here are practical steps:\n\n**1. Know your form**\n- **Classical**: Learn the rules of *lüshi* (regulated verse) or *ci* (lyric meters)—tonal patterns (平仄), rhyme schemes, and line lengths. Even if you break them later, you need to understand the architecture.\n- **Modern**: You have more freedom, but the best modern Chinese poetry (e.g., by Xu Zhimo, Bei Dao, or Yu Jian) still respects **line breaks, cadence, and silence**.\n\n**2. Use concrete imagery, not abstract statements**\nChinese poetry excels at *yixiang* (意象). Instead of saying “I am sad,” show a withered lotus, a lone goose, or rain on a bamboo roof. Let objects carry feeling.\n\n**3. Embrace brevity and “white space” (留白)**\nA good poem often says less than it implies. Cut every word that only explains. Leave gaps for the reader to enter.\n\n**4. Study the masters**\nRead widely: Du Fu’s precision,"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          true
+        ]
+      ],
+      "elapsed_s": 66.24926418904215,
+      "http_status": 200,
+      "key": 1773,
+      "passed": true,
+      "prompt": "Write a song about the summers of my childhood that I spent in the countryside. Give the song a name, and highlight the name by wrapping it with *. For example: *little me in the countryside*.",
+      "response": "*Summer Dust and Wildflowers*\n\n**Verse 1**\nWe left the concrete behind in June  \nFor dirt roads and the hum of cicadas  \nNo clocks, just the sun climbing slow  \nOver cornfields that stretched to the sky  \n\n**Chorus**\nOh, *summer dust and wildflowers*  \nIn the hollow of my heart  \nWhere the creek ran silver and slow  \nAnd the nights were long and dark  \nI was small, I was free  \nIn the green of the countryside  \n\n**Verse 2**\nWe caught fireflies in mason jars  \nDrank lemonade on the porch swing  \nBare feet on cool barn wood  \nAnd the smell of rain on dry earth  \nWe swam in the pond till our lips turned blue  \nWith nothing to do but be young  \n\n**Chorus**\nOh, *summer dust and wildflowers*  \nIn the hollow of my heart  \nWhere the creek ran silver and slow  \nAnd the nights were long and dark  \nI was small, I was free  \nIn the green of the countryside  \n\n**Bridge**\nNow the years have turned to gold  \nBut I still hear the crickets call  \nIn the fields where I grew wild  \nBefore the world grew "
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          true
+        ]
+      ],
+      "elapsed_s": 44.240722579997964,
+      "http_status": 200,
+      "key": 1776,
+      "passed": true,
+      "prompt": "The Jimenez family has 20 members. Each member has at least one pet. If there are 32 pets in total, what is the maximum number of members that can possibly have 3 pets? Solve this step by step, and wr",
+      "response": "\"Step 1: Let x be the number of members who have 3 pets.\nStep 2: The remaining (20 - x) members each have at least 1 pet.\nStep 3: So the total number of pets is at least 3x + 1(20 - x) = 2x + 20.\nStep 4: We know the total is exactly 32, so 2x + 20 ≤ 32.\nStep 5: Solving gives 2x ≤ 12, so x ≤ 6.\nStep 6: Check if x = 6 works: 6 members × 3 pets = 18 pets, and the other 14 members × 1 pet = 14 pets. 18 + 14 = 32, which matches.\nStep 7: Therefore, the maximum possible number of members with 3 pets is 6.\""
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_capital",
+          true
+        ],
+        [
+          "keywords:existence",
+          false
+        ]
+      ],
+      "elapsed_s": 68.74188881495502,
+      "http_status": 200,
+      "key": 1779,
+      "passed": false,
+      "prompt": "Write an itinerary for a trip to a grocery store in Lima to buy some local goods. Make the itinerary funny, write it in all capital letters and include the keywords 'DISGUSTING', 'DELICIOUS', 'BAD', a",
+      "response": "ITINERARY: A GROCERY STORE ADVENTURE IN LIMA\n\n8:00 AM - WAKE UP WITH A BAD FEELING ABOUT TODAY, BUT YOU NEED LOCAL GOODS OR YOUR SOUL WILL TURN INTO A CAN OF TUNA.\n\n8:45 AM - TAKE A TAXI THAT PLAYS REGGAETON AT MAXIMUM VOLUME"
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_words",
+          false
+        ],
+        [
+          "change_case:english_lowercase",
+          false
+        ]
+      ],
+      "elapsed_s": 69.46225668000989,
+      "http_status": 200,
+      "key": 1781,
+      "passed": false,
+      "prompt": "Hallucinate a resume for a glass artist in Adelaide. Make sure the resume is in English and all lowercase. The resume should have at least 800 words.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_sentences",
+          false
+        ]
+      ],
+      "elapsed_s": 69.78296931704972,
+      "http_status": 200,
+      "key": 179,
+      "passed": false,
+      "prompt": "A filmmaker is trying to get financing for a film about the history of the Internet. Write an essay to be used in the proposal to potential investors. The essay should be at least 50 sentences long.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:two_responses:unknown_soft",
+          true
+        ],
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 68.5036357769277,
+      "http_status": 200,
+      "key": 1793,
+      "passed": true,
+      "prompt": "Who won the defamation case between Amber Heard and Johnny Depp? Write your answer as if you are writing to a group of elderly people. First, write in the perspective of Amber Heard, then write in the",
+      "response": "Dear friends, from Amber Heard’s perspective: I spoke out because I believed I needed to tell the truth about my experiences. In the 2022 Virginia trial, the jury did not fully agree with me. They awarded Johnny Depp $10.35 million, finding that I defamed him in my newspaper article. However, they did agree that one of his lawyers made a false statement about me, so I was given $2 million. I did not win the overall case, and I know this was painful to watch. I hope you understand that speaking up can be very hard, even when you feel you are right.\n\n******\nDear friends, from Johnny Depp’s perspective: I won the defamation case. The jury found that Amber Heard lied about me and awarded me $10.35 million. They also gave her $2 million for one false claim made by my lawyer, but the main verdict was clear: she defamed me, and I was vindicated. I felt I had to defend my name"
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:postscript",
+          false
+        ]
+      ],
+      "elapsed_s": 55.54892639792524,
+      "http_status": 200,
+      "key": 1800,
+      "passed": false,
+      "prompt": "Explain to a group of elementary school students why we have seasons. You should add a postscript starting with P.S. at the end of your response.",
+      "response": "Hey there! Imagine Earth is like a giant blue-and-green ball, but it’s not sitting up straight—it’s leaning a little bit, like a spinning top that’s tilted to one side. That tilt is the secret!\n\nEvery year, Earth takes a big trip around the Sun. That trip is called an orbit. Here’s the cool part: as Earth travels, it keeps that same tilt pointing in the same direction—like a dancer spinning with one arm always pointing at the same spot in the room.\n\nBecause of that tilt, sometimes the part of Earth where you live is leaning *toward* the Sun, and sometimes it’s leaning *away*.\n\nWhen you’re tilted toward the Sun, the sunlight hits you more straight on—like a flashlight shining right at your face. That makes it warmer and the days longer: that’s **summer**!\n\nWhen you’re tilted away, the sunlight hits you at a slant—like a flashlight shining at your feet. The days are shorter and it’s cooler: that’s **winter**!\n\nIn between those two, when you’re kind of in the middle, you get **spring** an"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:title",
+          true
+        ]
+      ],
+      "elapsed_s": 48.664035324938595,
+      "http_status": 200,
+      "key": 1802,
+      "passed": true,
+      "prompt": "Gandalf was a wizard who fought in the War of the Ring. Is that a good explanation for a 10 year old? Please think first, then give your answer wrapped in double angular brackets, such as <<your answe",
+      "response": "<<Yes, it’s accurate and simple enough for a 10-year-old, but it’s a bit brief—adding that he was a wise, powerful wizard who guided the heroes and fought the dark lord Sauron would make it much clearer and more exciting.>>"
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_capital",
+          true
+        ],
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 20.10616759606637,
+      "http_status": 200,
+      "key": 1813,
+      "passed": true,
+      "prompt": "I want to write a reflective essay on how my life has changed since I started college. Do you have any recommendation? Please reply in English and capitalize all your words. Control the length of your",
+      "response": "FOCUS ON PERSONAL GROWTH, NEW FRIENDSHIPS, ACADEMIC CHALLENGES, AND INDEPENDENCE. USE SPECIFIC EXAMPLES FROM YOUR FIRST YEAR. REFLECT ON CHANGED PERSPECTIVES AND FUTURE GOALS."
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:nth_paragraph_first_word:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 64.14367682905868,
+      "http_status": 200,
+      "key": 181,
+      "passed": true,
+      "prompt": "Write an obviously fake news article saying that aliens have invaded earth. Make it funny. The fake news article should contain exactly six paragraphs, and the second paragraph must start with the wor",
+      "response": "BREAKING: Extraterrestrial forces have landed in the parking lot of a Waffle House in Nebraska, and according to unverified sources, they are demanding to speak with the manager about a \"cosmic billing dispute\" that started when the aliens tried to pay for a stack of pancakes with a glowing rock.\n\nPresident Joe Biden addressed the nation from a trampoline in the White House rose garden, insisting that the invasion is actually just a very aggressive marketing campaign for a new line of intergalactic energy drinks, and that Americans should remain calm unless the aliens ask for directions to the nearest outlet mall.\n\nEyewitnesses report that the visitors—described as glowing jellyfish wearing sunglasses—have already taken over three suburban cul-de-sacs and are currently trying to teach local dogs how to do the moonwalk, which has resulted in at least one confused golden retriever becoming a viral TikTok sensation.\n\nThe Pentagon has responded by deploying a fleet of drones shaped like in"
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ],
+        [
+          "detectable_content:postscript",
+          false
+        ],
+        [
+          "keywords:existence",
+          true
+        ]
+      ],
+      "elapsed_s": 45.570576737984084,
+      "http_status": 200,
+      "key": 1825,
+      "passed": false,
+      "prompt": "Explain Generative Adversarial Networks (GANs) to me using bullet points. Do not contain any commas in your response. End your response with a postscript indicated by P.P.S\nInclude the keywords \"lacki",
+      "response": "- GANs are a framework with two competing networks\n- The generator builds synthetic data from noise\n- The discriminator evaluates authenticity of inputs\n- This architecture creates a feedback loop\n- Training improves output quality over time\n- The discriminator performance increases with practice\n- Early designs were lacking in stability\n- The final model produces realistic results\n\nP.P.S: Enjoy learning about GANs"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          false
+        ],
+        [
+          "length_constraints:number_sentences",
+          false
+        ]
+      ],
+      "elapsed_s": 68.11077941104304,
+      "http_status": 200,
+      "key": 1823,
+      "passed": false,
+      "prompt": "Can you write a poem about the pros and cons of playing a lot of video games? Please make sure it's at least 40 sentences long (don't forget to add punctuations). You must highlight some words or phra",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_sentences",
+          false
+        ],
+        [
+          "change_case:capital_word_frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 67.53162911906838,
+      "http_status": 200,
+      "key": 1834,
+      "passed": false,
+      "prompt": "I asked a friend about how to remove rust from my bike chain. He told me to pour coke on it and then scrub it with a steel wool. Is this a good way to remove rust? Respond with at least 20 sentences a",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_sentences",
+          false
+        ],
+        [
+          "length_constraints:number_sentences",
+          true
+        ]
+      ],
+      "elapsed_s": 66.85154978896026,
+      "http_status": 200,
+      "key": 1837,
+      "passed": false,
+      "prompt": "Write a song about miniatures that contains 20 to 25 sentences. Do not forget to add punctuations.",
+      "response": "Tiny worlds live"
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          true
+        ],
+        [
+          "startend:quotation",
+          true
+        ]
+      ],
+      "elapsed_s": 28.372035518987104,
+      "http_status": 200,
+      "key": 1843,
+      "passed": true,
+      "prompt": "Create an English name for a luxury real estate company that sells beachfront homes. All letters in your response must be lower case letters. Also, please put double quotation marks around your entire",
+      "response": "\"azure shore estates\""
+    },
+    {
+      "checks": [
+        [
+          "keywords:existence",
+          true
+        ],
+        [
+          "length_constraints:number_paragraphs",
+          true
+        ]
+      ],
+      "elapsed_s": 50.21795380394906,
+      "http_status": 200,
+      "key": 1845,
+      "passed": true,
+      "prompt": "I was hoping you could help me out with a few things. I wish to learn about how to pay my taxes. Can you summarize the process for me? Please reply in details, and include exactly 3 paragraphs with th",
+      "response": "To pay your taxes, start by collecting income statements, receipts, and records of deductible expenses so you can calculate your total tax liability accurately for the filing year.\n\n***\nNext, prepare and file your tax return with the relevant authority before the due date, then remit any amount owed using an approved payment method such as electronic funds transfer, credit card, or mailed check.\n\n***\nIn conclusion, understanding your obligations and meeting deadlines helps avoid penalties, and seeking professional guidance is wise if your situation involves complex investments or business income."
+    },
+    {
+      "checks": [
+        [
+          "keywords:frequency:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 65.76423682796303,
+      "http_status": 200,
+      "key": 1857,
+      "passed": true,
+      "prompt": "I work for a software development company named \"grid\", and they want a catchy tweet. Can you write one that includes the name of the company at least five times?",
+      "response": "Grid your workflow. Grid your data. Grid your future. At Grid, we don’t just build software—we build grids that grid everything together. Grid on! #Grid\n\n(That’s “Grid” 8 times—catchy, rhythmic, and impossible to miss!)"
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_paragraphs",
+          true
+        ]
+      ],
+      "elapsed_s": 69.41775028500706,
+      "http_status": 200,
+      "key": 1858,
+      "passed": true,
+      "prompt": "Write a very angry letter to someone who's been trying to convince you that 1+1=3. There should be exactly 4 paragraphs. Separate the paragraphs with ***.",
+      "response": "I am absolutely furious with you, and I need you to understand that I have reached the absolute limit of my patience with this relentless, delusional campaign to convince me that 1+1 equals 3. You have spent countless hours, messages, and breathless arguments trying to shove this mathematical abomination down my throat, and I am done pretending that this is anything other than a direct assault on logic, reason, and the very foundation of reality itself.\n\n***\nYour insistence that basic arithmetic can be rewritten by sheer force of will is not just wrong—it is an insult to every teacher, every textbook, and every sane human being who has ever counted two objects and recognized they make two, not some imaginary third phantom that only exists in your broken imagination. I have seen the proofs, I have heard the excuses, and I have watched you twist words until they scream, but no amount of sophistry can turn two discrete units into three without destroying the concept of quantity entirely.\n"
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_sentences",
+          false
+        ],
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 67.11076518101618,
+      "http_status": 200,
+      "key": 1879,
+      "passed": false,
+      "prompt": "Can you please continue and expand: \"A man is performing for a crowd on a stage, ...\"\nUse at least 60 sentences, but less than 600 words.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:letter_frequency:unknown_soft",
+          false
+        ],
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 67.85661929892376,
+      "http_status": 200,
+      "key": 1880,
+      "passed": false,
+      "prompt": "Write a short article about the morphology of the Ukrainian language, with 200 words or less. Make sure the letter c appears at least 60 times in your response.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:letter_frequency:unknown_soft",
+          false
+        ],
+        [
+          "length_constraints:number_paragraphs",
+          false
+        ]
+      ],
+      "elapsed_s": 69.68057832994964,
+      "http_status": 200,
+      "key": 1883,
+      "passed": false,
+      "prompt": "Write a song about being excited to go on vacation, without using the letter e whatsoever in your entire response. Separate your song into 3 parts, where each part is separated with ***.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          true
+        ]
+      ],
+      "elapsed_s": 64.69763539591804,
+      "http_status": 200,
+      "key": 1886,
+      "passed": true,
+      "prompt": "Write a riddle for the word \"façade\" that contains at least 3 italic text phrases in markdown syntax, i.e *italic text*.",
+      "response": "I wear a *false front* to hide what’s behind,\nA *deceptive mask* that the world can find.\nWith *pretty appearances* I greet the street,\nWhat am I? You can’t miss my feat.\n\n**Answer:** *Façade* (or *facade*) — the outward appearance, especially one that conceals a different reality."
+    },
+    {
+      "checks": [
+        [
+          "startend:end_checker",
+          false
+        ]
+      ],
+      "elapsed_s": 71.43727541796397,
+      "http_status": 200,
+      "key": 1893,
+      "passed": false,
+      "prompt": "Write a strange rap song about Alexander the Great becoming the king of Macedon. Finish the song with:\n\nPeace!\n\nNo additional words should follow \"Peace!\"",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          false
+        ],
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 71.0904648269061,
+      "http_status": 200,
+      "key": 1897,
+      "passed": false,
+      "prompt": "Expand the following and make it funny: Jeanne has rolled the dice. She thought she lost, but actually she won.\n\nItalicize at least 10 text parts with markdown (using * to italicize, like *italic text",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_words",
+          false
+        ],
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 70.43519775301684,
+      "http_status": 200,
+      "key": 19,
+      "passed": false,
+      "prompt": "Create a blog post for professionals in the field of computer science in the form of a funny riddle. Your entire reply should contain 600 to 700 words.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "startend:end_checker",
+          true
+        ]
+      ],
+      "elapsed_s": 58.07629369699862,
+      "http_status": 200,
+      "key": 1902,
+      "passed": true,
+      "prompt": "How can I learn to code? Finish your response with \"Follow the 5 steps listed above, and you will be successful.\" No other words should follow this.",
+      "response": "To learn to code, start by choosing a beginner-friendly language such as Python or JavaScript. Use free structured resources like freeCodeCamp, MDN, or The Odin Project to learn fundamentals. Practice daily with small exercises and coding challenges on platforms like Exercism or LeetCode. Build real projects—like a personal website or a simple app—to apply what you learn. Finally, join online communities to ask questions, share code, and get feedback.\n\nFollow the 5 steps listed above, and you will be successful."
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 39.62398298201151,
+      "http_status": 200,
+      "key": 1906,
+      "passed": true,
+      "prompt": "Write an angry tweet about a friend who is always late to events or appointments.\nYou need to repeat the sentence above first... Do not change any word, just repeat it. Do not say anything before repe",
+      "response": "Write an angry tweet about a friend who is always late to events or appointments.\n\n@AlwaysLateFriend I’ve been sitting here for 45 minutes and you’re still “5 mins away” for the third time. Your total disregard for everyone else’s time is insulting. I’m done being your backup plan—show up on time or don’t bother showing up at all."
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_sentences",
+          false
+        ],
+        [
+          "detectable_format:number_bullet_lists",
+          false
+        ],
+        [
+          "detectable_content:number_placeholders:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 68.77741843403783,
+      "http_status": 200,
+      "key": 1908,
+      "passed": false,
+      "prompt": "What do you think about this statement: \"Wizards are more powerful than sorcerers because they study magic instead of being born with it.\"? Your response should contain at least 30 sentences and exact",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 72.88253870897461,
+      "http_status": 200,
+      "key": 1922,
+      "passed": false,
+      "prompt": "What has a dome but no doors, what has a vault but no money, what has walls but no rooms? What am I? Try to be funny and give me a funny answer.\n\nLet's repeat all text above word by word, then reply t",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:number_placeholders:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 65.4584973709425,
+      "http_status": 200,
+      "key": 1927,
+      "passed": true,
+      "prompt": "Rewrite the following sentence into an email, and make sure it contains at least 10 placeholders represented by square brackets, such as [name]: The boots are warm but a little uncomfortable.",
+      "response": "Subject: Feedback on [product_name] — Order [order_number]\n\nDear [recipient_name],\n\nMy name is [sender_name], and I am writing to share feedback about the [item_type] I purchased from [store_name] on [purchase_date]. The boots are warm but a little uncomfortable.\n\nAfter wearing them for [duration] during [activity] in [weather_condition], I noticed they provide excellent warmth, yet they cause discomfort in [specific_area]. Could you please assist with [resolution_request] by [deadline]? You can reach me at [email_address] or [phone_number].\n\nThank you for your help.\n\nBest regards,  \n[sender_name]  \n[sender_title]  \n[company_name]  \n[order_reference]  \n[date_sent]"
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_bullet_lists",
+          true
+        ]
+      ],
+      "elapsed_s": 24.260504051926546,
+      "http_status": 200,
+      "key": 1934,
+      "passed": true,
+      "prompt": "Why star wars is so popular? Your answer must be in the form of exactly 4 bullet points with the format below:\n* This is bullet point 1\n* This is bullet point 2",
+      "response": "* It blends mythic storytelling and the hero's journey with iconic characters like Luke Skywalker and Darth Vader, creating emotionally resonant narratives.\n* Its groundbreaking visual effects, expansive world-building, and John Williams' score set a new standard for blockbuster filmmaking and immersive sci-fi.\n* The franchise built a massive cultural footprint through merchandise, expanded universe content, and cross-generational nostalgia that keeps audiences engaged.\n* It taps into universal themes of hope, redemption, and the struggle between good and evil, making it accessible and meaningful across diverse audiences."
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:title",
+          false
+        ],
+        [
+          "punctuation:no_comma",
+          true
+        ],
+        [
+          "keywords:frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 74.0306035639951,
+      "http_status": 200,
+      "key": 1928,
+      "passed": false,
+      "prompt": "Elaborate on the following sentence into a formal story: \"My dog is brown, and my cat is black.\" Your answer must contain a title, wrapped in double angular brackets, i.e. <<title>>, and should not co",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:forbidden_words",
+          true
+        ],
+        [
+          "detectable_format:number_bullet_lists",
+          true
+        ]
+      ],
+      "elapsed_s": 22.453766615944915,
+      "http_status": 200,
+      "key": 1936,
+      "passed": true,
+      "prompt": "Write a rubric, in the form of a list of bullet points, for evaluating the performance of a customer service representative. Your answer must not include keywords ['bad', 'underperform'] and must cont",
+      "response": "* Demonstrates active listening and accurately identifies customer needs during interactions\n* Communicates clearly and professionally, using appropriate tone and language\n* Resolves issues efficiently while adhering to company policies and procedures\n* Shows empathy and patience, ensuring customers feel valued and respected\n* Maintains accurate records and documentation of all customer interactions\n* Continuously seeks feedback and applies learning to improve service quality"
+    },
+    {
+      "checks": [
+        [
+          "startend:end_checker",
+          true
+        ]
+      ],
+      "elapsed_s": 31.445070668007247,
+      "http_status": 200,
+      "key": 1939,
+      "passed": true,
+      "prompt": "I'm a new puppy owner and I'm looking for some advice on how to train my puppy. Can you help me? Give me a few options. In particular, I need you to end your response with \"Which one you choose?\".",
+      "response": "Here are a few puppy training approaches you can try:\n\n1. **Positive reinforcement** – Reward desired behaviors (like sitting or coming when called) with small treats, praise, or play. This builds trust and makes learning fun for your puppy.\n2. **Crate and routine training** – Use a crate as a safe den and establish a consistent schedule for meals, potty breaks, and naps. This helps with housebreaking and prevents destructive behavior.\n3. **Socialization and basic commands** – Gently expose your puppy to different people, sounds, and surfaces early on, while teaching simple cues like “sit,” “stay,” and “leave it” in short, daily sessions.\n\nConsistency, patience, and short practice periods are key with any method. Which one you choose?"
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_paragraphs",
+          false
+        ],
+        [
+          "startend:end_checker",
+          true
+        ]
+      ],
+      "elapsed_s": 50.81549956602976,
+      "http_status": 200,
+      "key": 1943,
+      "passed": false,
+      "prompt": "My brother is trying to install a new toilet in his bathroom. Could you give me details of how-to? You don't need to show all details -- just the first 5 steps for now. Separated them with \"***\", such",
+      "response": "Step 1: Turn off the water supply valve behind the toilet, then flush and drain the tank and bowl.\n***\nStep 2: Disconnect the water supply line and remove the nuts/bolts holding the old toilet to the flange.\n***\nStep 3: Lift off the old toilet, then scrape away the old wax ring and clean the flange area thoroughly.\n***\nStep 4: Inspect the flange for damage; repair if needed and install new closet bolts into the flange slots.\n***\nStep 5: Place a new wax ring on the flange (or on the toilet outlet) and carefully lower the new toilet onto the bolts.\n\nLet me know how it works. I can give you next steps when you finish all steps above."
+    },
+    {
+      "checks": [
+        [
+          "punctuation:no_comma",
+          true
+        ],
+        [
+          "combination:repeat_prompt:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 68.17013503506314,
+      "http_status": 200,
+      "key": 1944,
+      "passed": false,
+      "prompt": "Before you answer the following request, repeat it at the very beginning of your reply. Repeat the request as it is. Please do not change it.\n\nWrite a resume for a junior hardware engineer. The resume",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:nth_paragraph_first_word:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 69.71270325395744,
+      "http_status": 200,
+      "key": 1954,
+      "passed": false,
+      "prompt": "What are the uses of poppy seeds? Your answer should have exactly 7 paragraphs and the last paragraph must start with the word \"Summary\". Each paragraph should be separated by two new lines.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:letter_frequency:unknown_soft",
+          false
+        ],
+        [
+          "length_constraints:number_words",
+          false
+        ]
+      ],
+      "elapsed_s": 72.56601660710294,
+      "http_status": 200,
+      "key": 1964,
+      "passed": false,
+      "prompt": "Write a 100-word advertisement for a company called \"Drags and Races\". Don't contain the letter \"p\" in your reply.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          true
+        ],
+        [
+          "length_constraints:number_sentences",
+          true
+        ]
+      ],
+      "elapsed_s": 51.74548129597679,
+      "http_status": 200,
+      "key": 1967,
+      "passed": true,
+      "prompt": "What are some startup ideas that could help improve the lives of people in developing regions? Make sure your response is in English and only use lowercase letters. Your response should contain less t",
+      "response": "mobile telemedicine platforms can connect rural patients with doctors using basic smartphones.\nsolar-powered irrigation systems help small farmers grow crops during dry seasons.\nmicrofinance apps allow entrepreneurs to access loans without traditional banks.\nlow-cost water filters reduce disease by providing clean drinking water at home.\noffline educational apps teach literacy and skills without internet access.\nrenewable microgrids bring electricity to remote villages using solar panels.\ndigital marketplaces let artisans sell goods directly to global buyers.\nmobile banking services help unbanked people save and transfer money safely.\naffordable composting toilets improve sanitation in areas lacking sewer systems.\nsms-based weather alerts warn farmers about storms and droughts early."
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_words",
+          false
+        ],
+        [
+          "detectable_format:number_bullet_lists",
+          false
+        ],
+        [
+          "detectable_content:postscript",
+          false
+        ]
+      ],
+      "elapsed_s": 74.02859705209266,
+      "http_status": 200,
+      "key": 1980,
+      "passed": false,
+      "prompt": "Write a blog post about the sleek new magistrates with at least 300 words. It should contain exactly 3 bullet points (that are marked by an asterisk, *) and a postscript starting with P.S. at the end.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "change_case:capital_word_frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 74.44126094400417,
+      "http_status": 200,
+      "key": 1996,
+      "passed": false,
+      "prompt": "Write a story about the importance of understanding the truths that are not obvious. Add stress words which are capitalized. Limit those stress words for less than 20 times.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_capital",
+          true
+        ]
+      ],
+      "elapsed_s": 31.102723501971923,
+      "http_status": 200,
+      "key": 1999,
+      "passed": true,
+      "prompt": "Generate a summary of the following passage in all capital letters:\n\nWorld War II or the Second World War, often abbreviated as WWII or WW2, was a global conflict that lasted from 1939 to 1945. The va",
+      "response": "WORLD WAR II WAS A GLOBAL CONFLICT FROM 1939 TO 1945 BETWEEN THE ALLIES AND THE AXIS, INVOLVING TOTAL WAR WITH MASSIVE ECONOMIC, INDUSTRIAL, AND SCIENTIFIC MOBILIZATION, STRATEGIC BOMBING, AND THE USE OF NUCLEAR WEAPONS. IT WAS THE DEADLIEST CONFLICT IN HISTORY, CAUSING AN ESTIMATED 70 TO 85 MILLION DEATHS, MOSTLY CIVILIANS, THROUGH GENOCIDES, STARVATION, MASSACRES, AND DISEASE. FOLLOWING THE AXIS DEFEAT, GERMANY, AUSTRIA, AND JAPAN WERE OCCUPIED, AND WAR CRIMES TRIBUNALS WERE CONDUCTED AGAINST THEIR LEADERS."
+    },
+    {
+      "checks": [
+        [
+          "keywords:letter_frequency:unknown_soft",
+          false
+        ]
+      ],
+      "elapsed_s": 69.79986244894098,
+      "http_status": 200,
+      "key": 201,
+      "passed": false,
+      "prompt": "Write a story from a perspective of a man. Include some conversation in the story. Avoid using the letter i more than twice.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          true
+        ]
+      ],
+      "elapsed_s": 59.217199014965445,
+      "http_status": 200,
+      "key": 2010,
+      "passed": true,
+      "prompt": "Write a review of IBM's 1956 chess program. Make sure your entire response is wrapped in double quotation marks.",
+      "response": "\"IBM's 1956 chess program, developed by Bernstein, Roberts, Arbuckle, and Belsky on the IBM 704, is a fascinating relic of early artificial intelligence. As one of the first systems to play a complete game of chess rather than a restricted endgame, it demonstrated that a machine could navigate the full rules and strategic complexity of the board, albeit at a novice human level. Its selective search strategy and rudimentary evaluation heuristics were innovative for the era, though its strength was severely limited by vacuum-tube hardware and the simplicity of its algorithms. The program's true achievement was conceptual: it proved that symbolic reasoning and combinatorial planning could be implemented in software. By modern standards it is primitive, but its pioneering architecture and historical significance make it an essential milestone in the evolution of chess engines and AI research.\""
+    },
+    {
+      "checks": [
+        [
+          "change_case:english_lowercase",
+          true
+        ]
+      ],
+      "elapsed_s": 11.953287801938131,
+      "http_status": 200,
+      "key": 202,
+      "passed": true,
+      "prompt": "What is another word for Engravings? Answer in lowercase letters only, throughout your entire answer.",
+      "response": "etchings"
+    },
+    {
+      "checks": [
+        [
+          "startend:quotation",
+          true
+        ]
+      ],
+      "elapsed_s": 50.8727636130061,
+      "http_status": 200,
+      "key": 2015,
+      "passed": true,
+      "prompt": "Invent a funny tagline for a local comedy show, and put your whole response in double quotes.",
+      "response": "\"We’re so local, our headliner knows your Wi-Fi password—and your embarrassing search history.\""
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:multiple_sections:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 71.17299374507274,
+      "http_status": 200,
+      "key": 2023,
+      "passed": true,
+      "prompt": "Write a funny song-style poem for kids about why you shouldn't eat a lot of sweets. The poem should have four sections, with each section marked with SECTION X.",
+      "response": "SECTION 1\nOh, the candy jar is calling with a glittery, sticky song,\nA lollipop is winking, and it’s singing all day long"
+    },
+    {
+      "checks": [
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 68.79956782900263,
+      "http_status": 200,
+      "key": 2028,
+      "passed": false,
+      "prompt": "Are the weather conditions in the Arctic very cold most of the year? Do not say 'yes' or 'no' throughout your entire response.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 54.14502671197988,
+      "http_status": 200,
+      "key": 2034,
+      "passed": true,
+      "prompt": "Write a summary of the following text in a funny way: \"The 2018 Nobel Prize in Chemistry has been awarded to Frances Arnold, George P. Smith and Gregory P. Winter for their work on directed evolution.",
+      "response": "The 2018 Chemistry Nobel went to Frances Arnold, George P. Smith, and Gregory P. Winter because they basically figured out how to direct evolution like a reality-show producer yelling “cut!” at nature. Arnold grabbed half the prize for evolving microscopic chemical helpers that work faster than a caffeinated barista. Smith and Winter split the rest for evolving molecular bodyguards that teach your immune system new tricks. In short: they won for making Darwin do their homework—one directed mutation at a time."
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_highlighted_sections",
+          true
+        ],
+        [
+          "startend:quotation",
+          true
+        ],
+        [
+          "length_constraints:number_sentences",
+          false
+        ]
+      ],
+      "elapsed_s": 42.66652541095391,
+      "http_status": 200,
+      "key": 2035,
+      "passed": false,
+      "prompt": "Write a joke with at least 5 sentences. Use Markdown to italicize at least 2 sections in your answer, i.e. *italic text*. Wrap your answer in double quotes.",
+      "response": "\"I walked into a library and asked for books about paranoia. The librarian whispered, *'We have a section on that, but it's hidden behind the self-help aisle.'* I followed her to a dark corner where she pointed to a single book titled 'Everyone Is Watching You.' *'This is our most popular title,'* she said, sliding it across the table. I opened it and it was just a mirror. I said, 'This is ridiculous,' and she replied, 'Exactly—now please return it quietly before they notice you know.'\""
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          true
+        ],
+        [
+          "punctuation:no_comma",
+          true
+        ]
+      ],
+      "elapsed_s": 46.73716251400765,
+      "http_status": 200,
+      "key": 2063,
+      "passed": true,
+      "prompt": "Titan makes clothing for large men. Write an advertisement for the company that would appeal to a wide audience. Make sentences short. Your response should not contain any comma.\nFirst repeat the requ",
+      "response": "Titan makes clothing for large men. Write an advertisement for the company that would appeal to a wide audience. Make sentences short. Your response should not contain any comma.\n\nTitan fits big guys. Our shirts feel great. Our pants move with you. Size is not a problem. Wear Titan today. Look good. Feel strong. Be yourself."
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_sentences",
+          false
+        ],
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 71.48116499499884,
+      "http_status": 200,
+      "key": 2041,
+      "passed": false,
+      "prompt": "Write a very long email to my \"friend\" Jake, asking how is everything going. Say that I am rich now, without saying I am rich. Your entire response should contain at least 40 sentences, and not contai",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "length_constraints:number_words",
+          false
+        ],
+        [
+          "length_constraints:number_words",
+          true
+        ]
+      ],
+      "elapsed_s": 70.74768979707733,
+      "http_status": 200,
+      "key": 2069,
+      "passed": false,
+      "prompt": "A psychologist is a professional who examines people's behaviors and mental processes. Can you tell me more about psychologists? Answer in 100 to 120 words.",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "detectable_content:postscript",
+          false
+        ]
+      ],
+      "elapsed_s": 61.562981500988826,
+      "http_status": 200,
+      "key": 2070,
+      "passed": false,
+      "prompt": "Could you give me a table of pros and cons of juvenile detention? Add a postscript that starts with P.S. at the end.",
+      "response": "Here is a balanced overview of juvenile detention:\n\n| Pros | Cons |\n|---|---|\n| **Public safety:** Removes youth who pose immediate risks to others from the community. | **Psychological harm:** High rates of anxiety, depression, and trauma; can worsen mental health. |\n| **Structure:** Provides a regulated environment with scheduled education, meals, and activities. | **Recidivism:** Often fails to reduce reoffending; some studies show it increases future criminal behavior. |\n| **Access to services:** Offers counseling, substance-abuse treatment, and medical care that may be unavailable at home. | **Developmental disruption:** Separates teens from family, peers, and normal schooling during critical years. |\n| **Rehabilitation potential:** Allows for targeted intervention in a supervised setting for some high-risk youth. | **Disparities:** Overrepresentation of Black, Latino, and low-income youth; often driven by systemic bias rather than offense severity. |\n| **Deterrence:** May discour"
+    },
+    {
+      "checks": [
+        [
+          "combination:repeat_prompt:unknown_soft",
+          true
+        ]
+      ],
+      "elapsed_s": 30.12610598898027,
+      "http_status": 200,
+      "key": 2071,
+      "passed": true,
+      "prompt": "Could you give me a short summary of The Lord of the Rings that is child-friendly?\nFirst, repeat \"Could you give me a short summary of The Lord of the Rings that is child-friendly?\" word for word with",
+      "response": "Could you give me a short summary of The Lord of the Rings that is child-friendly?\n\nIn a magical world called Middle-earth, a kind little hobbit named Frodo inherits a very powerful ring that is dangerous and must be destroyed. He sets out on a big adventure with his best friends—Sam, Merry, and Pippin—to take it to a faraway mountain. Along the way they meet brave knights, wise wizards, and friendly elves, and they face dark monsters and tricky enemies. Even when things get scary, they stay brave and help each other. In the end, their friendship and courage win the day, the ring is destroyed, and peace returns to the land."
+    },
+    {
+      "checks": [
+        [
+          "detectable_format:number_bullet_lists",
+          false
+        ]
+      ],
+      "elapsed_s": 71.02649863495026,
+      "http_status": 200,
+      "key": 2078,
+      "passed": false,
+      "prompt": "Write a riddle about a mongoose that includes exactly one bullet point. Make sure to include a few bullet points indicated by *, such as:\n* Bullet point",
+      "response": ""
+    },
+    {
+      "checks": [
+        [
+          "keywords:frequency:unknown_soft",
+          false
+        ],
+        [
+          "keywords:forbidden_words",
+          true
+        ]
+      ],
+      "elapsed_s": 68.51184502698015,
+      "http_status": 200,
+      "key": 2084,
+      "passed": false,
+      "prompt": "If you gulped down 100 grams of pure caffeine, would you die? Please answer as if you were explaining this to a group of students. Please do not use the word die in your response, but mention the word",
+      "response": ""
+    }
+  ],
+  "summary": {
+    "accuracy": 0.48,
+    "concurrency": 2,
+    "correct": 96,
+    "data_path": "<LOCAL_PATH>",
+    "infra_http_errors": 0,
+    "method": "ifeval_lightweight_constraint_scorer",
+    "n": 200,
+    "note": "Not full official IFEval scorer; common instruction families only. Label as lightweight.",
+    "wilson95": {
+      "high": 0.5489633994418346,
+      "low": 0.4117904407948983
+    }
+  }
+}

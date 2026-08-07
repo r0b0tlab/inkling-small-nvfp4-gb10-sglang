@@ -1,0 +1,155 @@
+{
+  "drop_first_rep": true,
+  "failed": 0,
+  "method": "openai_chat_stream_c1_latency",
+  "nonstream": {
+    "e2el_ms_mean": 7678.855766484048,
+    "n_stable": 2,
+    "rows": [
+      {
+        "completion_tokens": 128,
+        "e2el_ms": 8099.603925016709,
+        "elapsed_s": 8.099603925016709,
+        "http_status": 200,
+        "ok": true,
+        "prompt_tokens": 30,
+        "rep": 1
+      },
+      {
+        "completion_tokens": 128,
+        "e2el_ms": 7682.633816963062,
+        "elapsed_s": 7.682633816963062,
+        "http_status": 200,
+        "ok": true,
+        "prompt_tokens": 30,
+        "rep": 2
+      },
+      {
+        "completion_tokens": 128,
+        "e2el_ms": 7675.077716005035,
+        "elapsed_s": 7.675077716005035,
+        "http_status": 200,
+        "ok": true,
+        "prompt_tokens": 30,
+        "rep": 3
+      }
+    ]
+  },
+  "output_tokens": 128,
+  "reps": 5,
+  "stream": {
+    "e2el_ms_mean": 7739.050552016124,
+    "itl_ms_mean": null,
+    "itl_ms_p50_mean": null,
+    "itl_ms_p95_mean": null,
+    "n_stable": 4,
+    "rows": [
+      {
+        "e2el_ms": 8189.056711969897,
+        "elapsed_s": 8.189056711969897,
+        "finish_reason": "length",
+        "http_status": 200,
+        "itl_ms_mean": null,
+        "itl_ms_p50": null,
+        "itl_ms_p95": null,
+        "ok": true,
+        "rep": 1,
+        "stream_completion_chunks": 0,
+        "text": "",
+        "ttft_ms": null,
+        "usage": {
+          "completion_tokens": 128,
+          "prompt_tokens": 30,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 128,
+          "total_tokens": 158
+        }
+      },
+      {
+        "e2el_ms": 7808.102992014028,
+        "elapsed_s": 7.808102992014028,
+        "finish_reason": "length",
+        "http_status": 200,
+        "itl_ms_mean": null,
+        "itl_ms_p50": null,
+        "itl_ms_p95": null,
+        "ok": true,
+        "rep": 2,
+        "stream_completion_chunks": 0,
+        "text": "",
+        "ttft_ms": null,
+        "usage": {
+          "completion_tokens": 128,
+          "prompt_tokens": 30,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 128,
+          "total_tokens": 158
+        }
+      },
+      {
+        "e2el_ms": 7409.876263001934,
+        "elapsed_s": 7.409876263001934,
+        "finish_reason": "length",
+        "http_status": 200,
+        "itl_ms_mean": null,
+        "itl_ms_p50": null,
+        "itl_ms_p95": null,
+        "ok": true,
+        "rep": 3,
+        "stream_completion_chunks": 0,
+        "text": "",
+        "ttft_ms": null,
+        "usage": {
+          "completion_tokens": 128,
+          "prompt_tokens": 30,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 128,
+          "total_tokens": 158
+        }
+      },
+      {
+        "e2el_ms": 7814.288318040781,
+        "elapsed_s": 7.814288318040781,
+        "finish_reason": "length",
+        "http_status": 200,
+        "itl_ms_mean": null,
+        "itl_ms_p50": null,
+        "itl_ms_p95": null,
+        "ok": true,
+        "rep": 4,
+        "stream_completion_chunks": 0,
+        "text": "",
+        "ttft_ms": null,
+        "usage": {
+          "completion_tokens": 128,
+          "prompt_tokens": 30,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 128,
+          "total_tokens": 158
+        }
+      },
+      {
+        "e2el_ms": 7923.934635007754,
+        "elapsed_s": 7.923934635007754,
+        "finish_reason": "length",
+        "http_status": 200,
+        "itl_ms_mean": null,
+        "itl_ms_p50": null,
+        "itl_ms_p95": null,
+        "ok": true,
+        "rep": 5,
+        "stream_completion_chunks": 0,
+        "text": "",
+        "ttft_ms": null,
+        "usage": {
+          "completion_tokens": 128,
+          "prompt_tokens": 30,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 128,
+          "total_tokens": 158
+        }
+      }
+    ],
+    "ttft_ms_mean": null
+  }
+}

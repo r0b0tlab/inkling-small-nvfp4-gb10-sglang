@@ -1,0 +1,23 @@
+{
+  "artifacts": {
+    "humaneval.json": "<LOCAL_PATH>",
+    "samples.jsonl": "<LOCAL_PATH>"
+  },
+  "elapsed_s": 1924.1214760639705,
+  "imported": false,
+  "infra_errors": 0,
+  "lane_id": "humaneval",
+  "status": "PASS",
+  "summary": {
+    "concurrency": 2,
+    "data_path": "<LOCAL_PATH>",
+    "eval_error": null,
+    "infra_http_errors": 0,
+    "method": "humaneval_functional_correctness",
+    "n": 164,
+    "pass@1": 0.7134146341463414,
+    "pass_at": {
+      "pass@1": 0.7134146341463414
+    }
+  }
+}

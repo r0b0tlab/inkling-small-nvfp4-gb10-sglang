@@ -1,0 +1,12 @@
+{
+  "client_output_tokens_per_second": 0.807672322096441,
+  "completion_tokens": 16,
+  "elapsed_s": 19.810013989917934,
+  "finish_reason": "length",
+  "http_status": 200,
+  "kind": "prefill",
+  "ok": true,
+  "prompt_tokens": 22776,
+  "rep": 1,
+  "server_prompt_tokens_per_second": 1149.7215505042839
+}

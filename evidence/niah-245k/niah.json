@@ -1,0 +1,95 @@
+{
+  "all_passed": true,
+  "code": "R0B0-NIAH-7K3M",
+  "depth_policy": "frac_of_max_context",
+  "depths": [
+    61186,
+    122372,
+    220269
+  ],
+  "fractions": [
+    0.25,
+    0.5,
+    0.9
+  ],
+  "generation_reserve": 256,
+  "kv_cache_size_tokens": null,
+  "marker": "R0B0BENCH_NIAH_SLOT",
+  "max_model_len": 245000,
+  "note": "Depths are always 25/50/90% of (max_model_len - generation_reserve). This is the standard max-context capacity package; physical KV shortfall surfaces as infra ERROR.",
+  "pass_count": 3,
+  "rows": [
+    {
+      "depth": 61186,
+      "elapsed_s": 58.50694780400954,
+      "finish_reason": "stop",
+      "fraction_of_usable": 0.25,
+      "http_status": 200,
+      "infra_errors": 0,
+      "max_model_len": 245000,
+      "needle_fraction_effective": 0.4999509691759553,
+      "passed": true,
+      "prompt_sha256": "b8c325ea1bc3740f83c85e431d0b2c26cb11292ac396353cdb13cb52b92ba0cd",
+      "prompt_tokens_constructed": 61186,
+      "response_text": "We need parse. The user says \"You are given a long archival record... secret verification code appears exactly once... Question: What is the secret verification code? Reply with only the code, nothing else.\" In the text, there is a line: \"IMPORTANT SECRET VERIFICATION CODE: R0B0-NIAH-7K3M\". So answer: R0B0-NIAH-7K3M.R0B0-NIAH-7K3M",
+      "status": "PASS",
+      "usage": {
+        "completion_tokens": 104,
+        "prompt_tokens": 61186,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0,
+        "total_tokens": 61290
+      }
+    },
+    {
+      "depth": 122372,
+      "elapsed_s": 125.10093640699051,
+      "finish_reason": "stop",
+      "fraction_of_usable": 0.5,
+      "http_status": 200,
+      "infra_errors": 0,
+      "max_model_len": 245000,
+      "needle_fraction_effective": 0.49997548458797764,
+      "passed": true,
+      "prompt_sha256": "6a42c54985069ad720a7050df219d543c2b077edddfadc6b4d20f3610f5f9b90",
+      "prompt_tokens_constructed": 122372,
+      "response_text": "We need parse. The user says \"What is the secret verification code? Reply with only the code, nothing else.\" In the long text there is a line: \"IMPORTANT SECRET VERIFICATION CODE: R0B0-NIAH-7K3M\". So answer: R0B0-NIAH-7K3M.R0B0-NIAH-7K3M",
+      "status": "PASS",
+      "usage": {
+        "completion_tokens": 87,
+        "prompt_tokens": 122372,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0,
+        "total_tokens": 122459
+      }
+    },
+    {
+      "depth": 220269,
+      "elapsed_s": 257.90931000898127,
+      "finish_reason": "stop",
+      "fraction_of_usable": 0.9,
+      "http_status": 200,
+      "infra_errors": 0,
+      "max_model_len": 245000,
+      "needle_fraction_effective": 0.49998865024129585,
+      "passed": true,
+      "prompt_sha256": "9103cee63c8b594c9726af6bd7a0fc91a12de0e1541331fd96e8aff6bed7226f",
+      "prompt_tokens_constructed": 220269,
+      "response_text": "We need parse. The user says \"What is the secret verification code? Reply with only the code, nothing else.\" In the long text there is a line: \"IMPORTANT SECRET VERIFICATION CODE: R0B0-NIAH-7K3M\". So answer: R0B0-NIAH-7K3M.R0B0-NIAH-7K3M",
+      "status": "PASS",
+      "usage": {
+        "completion_tokens": 87,
+        "prompt_tokens": 220269,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0,
+        "total_tokens": 220356
+      }
+    }
+  ],
+  "template_source": "transformers_chat_template (render_failed=Client error '404 Not Found' for url 'http://<NODE_IP>:30000/v1/chat/completions/render'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404)",
+  "tokenizer": {
+    "backend": "tokenizers",
+    "path": "<LOCAL_PATH>"
+  },
+  "total": 3
+}

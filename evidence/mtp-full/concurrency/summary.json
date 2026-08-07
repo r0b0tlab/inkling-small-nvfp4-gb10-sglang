@@ -1,0 +1,60 @@
+{
+  "backend": "openai_portable",
+  "drop_first_rep": true,
+  "levels": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "method": "openai_portable_concurrency_ladder",
+  "output_tokens": 512,
+  "reps": 3,
+  "rows": [
+    {
+      "aggregate_output_tok_s": 16.38795070885272,
+      "completed": 4,
+      "concurrency": 1,
+      "failed": 0,
+      "mean_e2el_ms": 31295.11854998418,
+      "median_client_output_tok_s": 16.392597931169245,
+      "output_tokens": 512,
+      "repetitions_present": 3,
+      "warmup_rep_dropped": 1
+    },
+    {
+      "aggregate_output_tok_s": 29.983192871179476,
+      "completed": 8,
+      "concurrency": 2,
+      "failed": 0,
+      "mean_e2el_ms": 34151.89098400879,
+      "median_client_output_tok_s": 14.993668443646884,
+      "output_tokens": 512,
+      "repetitions_present": 3,
+      "warmup_rep_dropped": 1
+    },
+    {
+      "aggregate_output_tok_s": 47.87572454383138,
+      "completed": 16,
+      "concurrency": 4,
+      "failed": 0,
+      "mean_e2el_ms": 42767.00407167664,
+      "median_client_output_tok_s": 11.977886001845356,
+      "output_tokens": 512,
+      "repetitions_present": 3,
+      "warmup_rep_dropped": 1
+    },
+    {
+      "aggregate_output_tok_s": 63.22196522841806,
+      "completed": 24,
+      "concurrency": 6,
+      "failed": 0,
+      "mean_e2el_ms": 48568.27297704392,
+      "median_client_output_tok_s": 10.540845776074946,
+      "output_tokens": 512,
+      "repetitions_present": 3,
+      "warmup_rep_dropped": 1
+    }
+  ],
+  "total_failed": 0
+}
